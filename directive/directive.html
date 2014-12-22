@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<link rel="shortcut icon" href="../image/angularico.png" type="image/x-icon">
+    <title>Directive : Restrict</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../css/styles/shThemeDefault.css"/>
+	<link type="text/css" rel="stylesheet" href="../css/styles/shCore.css"/>
+	<style>.my-menu{background-color: #222;}.container-main{margin-top: 70px;}.lesson-header{background-color: #9c2e2e;color:white}.lesson-body{margin-bottom: 70px;}</style>
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top " role="navigation" style="height:75px">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html"><img src="../image/AngularJS-large.png" style="width:200px" /></a>
+        </div>
+        <div class="collapse navbar-collapse my-menu">
+          <ul class="nav navbar-nav ">
+            <li ><a href="../home.html">Getting Started</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lesson<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li class="dropdown-header">Basic AngularJS</li>
+                <li><a href="../lesson/lesson1.html">Lesson 1</a></li>
+                <li><a href="../lesson/lesson2.html">Lesson 2</a></li>
+                <li><a href="../lesson/lesson3.html">Lesson 3</a></li>
+                <li><a href="../lesson/lesson4.html">Lesson 4</a></li>
+                <li><a href="../lesson/lesson5.html">Lesson 5</a></li>
+                <li><a href="../lesson/lesson6.html">Lesson 6</a></li>
+                <li><a href="../lesson/lesson7.html">Lesson 7</a></li>
+                <li><a href="../lesson/lesson8.html">Lesson 8</a></li>
+                <li><a href="../lesson/lesson9.html">Lesson 9</a></li>
+               	<li><a href="../lesson/lesson10.html">Lesson 10</a></li>
+                <li><a href="../lesson/lesson11.html">Lesson 11</a></li>
+                <li><a href="../lesson/lesson12.html">Lesson 12</a></li>
+              </ul>
+            </li>
+			<li class="dropdown active">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Directive<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li class="dropdown-header">Basic Directive</li>
+				<li class="active"><a href="directive.html">Directive Restrict</a></li>
+				<li><a href="template.html">Directive Template</a></li>
+				<li><a href="controller.html">Directive Controller</a></li>
+				<li><a href="link.html">Directive Link</a></li>
+				<li class="dropdown-header">Isolated Scope</li>
+                <li><a href="isolate.html">Isolated Scope</a></li>
+                <li><a href="scopeand.html">Scope Expression & </a></li>
+                <li><a href="scopeadd.html">Scope Attribute @ </a></li>
+                <li><a href="scopeequal.html">Scope Two way Binding =</a></li>
+				<li><a href="scopedifferent.html">$scope VS scope</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Scope<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../scope/rootscope.html">rootScope & Scope</a></li>
+				<li><a href="../scope/watch.html">$watch()</a></li>
+				<li><a href="../scope/apply.html">$apply()</a></li>
+				<li><a href="../scope/broadcast.html">$broadcast() & $on()</a></li>
+				<li><a href="../scope/emit.html">$emit() & $on()</a></li>
+				<li><a href="../scope/destory.html">$destory()</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown">
+				<a href="../service/service.html" >Service</a>
+			</li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">UI Router<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../ui-route/uiroute.html">Introduction UI Router</a></li>
+				<li><a href="../ui-route/basicroute.html">Basic Routing</a></li>
+				<li><a href="../ui-route/resolve.html">Resolve & Data</a></li>
+				<li><a href="../ui-route/nestedrouting.html">Nested Routing</a></li>
+				<li><a href="../ui-route/multipleview.html">Multiple Views</a></li>
+				<li><a href="../ui-route/event.html">Event</a></li>
+				<li><a href="../ui-route/urlprovider.html">URL Provider</a></li>
+				<li><a href="../ui-route/statego.html">$state.go()</a></li>
+				<li><a href="../ui-route/challenge.html">Challenge</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Example<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../example/validate.html">Input Validation</a></li>
+				<li><a href="../example/advance.html">Advance Validation</a></li>
+				<li><a href="../example/alert.html">Alert Validation</a></li>
+				<li><a href="../example/dynamic.html">Dynamic Validation</a></li>
+				<li><a href="../example/custom.html">Custom Validation</a></li>
+				<li><a href="../example/ngform.html">ngForm Validation</a></li>
+           	  </ul>
+            </li>
+            <li><a href="../about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	<div class="lesson-header">
+		<div class="container container-main">
+			<h1>Directive: ชนิดของ Directive (Restrict) </h1>
+		</div>
+	</div>
+    <div class="container lesson-body">
+      <div class="row">
+        <div class="col-md-9" role="main">
+			<div>
+            	<h2 class="page-header">สิ่งที่ควรรู้</h2>
+				<h4>ใน AngularJS Framework เราสามารถสร้าง Directive ขึ้นมาเองได้</h4>
+				<h4>โดยชนิดของ Directive (restrict) มี 2 ชนิด
+					<ul>
+						<li>Element Directive</li>
+						<li>Attribute Directive</li>
+					</ul>
+				</h4>
+				<h4 style="color: red">ในการกำหนดชื่อ Directive จะกำหนดด้วยหลักการของ camelCase </h4>
+				<h4 style="color: red">ส่วนในการเรียกใช้ใน HTML จะต้องเรียกใช้ด้วยหลักของ dash</h4>
+				<h3>Element Directive</h3>
+				<p>การกำหนด Directive แบบ Element จะมีลักษณะเป็น tag ของ HTML</p>
+				<p>เช่นเราสร้าง Directive ชนิด element ชื่อ someElement
+				<pre class="brush: js">
+angular.directive('someElement', function() {
+	return {
+		restrict: 'E'
+	};
+});
+</pre>
+				<p>เมื่อเรียกใช้ใน html เราจะกำหนด &lt;some-element> โดยใช้หลัก dash ของ html</p>
+				<pre class="brush: html">&lt;some-element>&lt;/some-element></pre>
+				<h3>Attribute Directive</h3>
+				<p>การกำหนด Directive แบบ Attribute จะมีลักษณะเป็น Attribute ใน tag ของ HTML </p>
+				<p>เช่นเราสร้าง Directive ชนิด Attribute ชื่อ someAttr</p>
+				<pre class="brush: js">
+angular.directive('someAttr', function() {
+	return {
+		restrict: 'A'
+	};
+});
+</pre>
+				<p>เมื่อเรียกใช้ใน html จะเพิ่ม Attribute ไปใน tag ที่เราต้องการ</p>
+				<pre class="brush: html">
+&lt;div some-attr>&lt;/div>
+&lt;div some-attr="">&lt;/div>
+</pre>
+				<h3>ข้อดี - ข้อเสียของ Element Directive</h3>
+				<p>ข้อดี
+					<ul>
+						<li>ง่ายต่อการจัดการส่วนต่างๆในหน้าเว็บ เข้าใจได้ง่าย</li>
+					</ul>
+				</p>
+				<p>ข้อเสีย
+					<ul>
+						<li>ไม่สามารถใช้ใน IE เวอร์ชั่นเก่าได้ เนื่องจาก IE จะไม่เห็นว่ามันเป็น tag</li>
+					</ul>
+				</p>
+				<h3>ข้อดี - ข้อเสียของ Attribute Directive</h3>
+				<p>ข้อดี
+		  			<ul>
+						<li>สามารถใช้งานได้กับทุก browser </li>
+		  			</ul>
+		  		</p>
+				<p>ข้อเสีย
+					<ul>
+						<li>ในกรณีที่มี attribute มากๆ อาจจะทำให้โค้ดอ่านยาก</li>
+					</ul>
+				</p>
+			</div>
+			<ul class="btn-group pull-right">
+				<a href="template.html">
+					<li class="btn btn-primary">ถัดไป <i class="glyphicon glyphicon-step-forward"></i></li>
+				</a>
+			</ul>
+        </div>
+		
+        <!--div class="col-md-3">
+          <div class="hidden-print hidden-xs hidden-sm affix" role="complementary">
+            <ul class="nav">
+                <li class="active"><a href="#download">Download</a></li>
+                <li><a href="#whats-included">What's included</a></li>
+                <li><a class="back-to-top" href="#top">Back to top</a></li>
+            </ul>
+          </div>
+        </div-->
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">              
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="สัญญาอนุญาตของครีเอทีฟคอมมอนส์" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />ผลงานนี้ ใช้<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">สัญญาอนุญาตของครีเอทีฟคอมมอนส์แบบ แสดงที่มา-ไม่ใช้เพื่อการค้า 4.0 International</a>.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/lib/jquery.min.js"></script>
+    <script src="../js/lib/bootstrap.min.js"></script>
+  	<script type="text/javascript" src="../js/scripts/shCore.js"></script>
+	<script type="text/javascript" src="../js/scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="../js/scripts/shBrushXml.js"></script>    
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+</body></html>

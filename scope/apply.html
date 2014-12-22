@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en"  ng-app="application" >
+<head>
+    <meta charset="utf-8">
+	<link rel="shortcut icon" href="../image/angularico.png" type="image/x-icon">
+    <title>Scope : $apply()</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../css/styles/shThemeDefault.css"/>
+	<link type="text/css" rel="stylesheet" href="../css/styles/shCore.css"/>
+	<style>.my-menu{background-color: #222;}.container-main{margin-top: 70px;}.lesson-header{background-color: #9c2e2e;color:white}.lesson-body{margin-bottom: 70px;}</style>
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top " role="navigation" style="height:75px">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html"><img src="../image/AngularJS-large.png" style="width:200px" /></a>
+        </div>
+        <div class="collapse navbar-collapse my-menu">
+          <ul class="nav navbar-nav ">
+            <li ><a href="../home.html">Getting Started</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lesson<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li class="dropdown-header">Basic AngularJS</li>
+                <li><a href="../lesson/lesson1.html">Lesson 1</a></li>
+                <li><a href="../lesson/lesson2.html">Lesson 2</a></li>
+                <li><a href="../lesson/lesson3.html">Lesson 3</a></li>
+                <li><a href="../lesson/lesson4.html">Lesson 4</a></li>
+                <li><a href="../lesson/lesson5.html">Lesson 5</a></li>
+                <li><a href="../lesson/lesson6.html">Lesson 6</a></li>
+                <li><a href="../lesson/lesson7.html">Lesson 7</a></li>
+                <li><a href="../lesson/lesson8.html">Lesson 8</a></li>
+                <li><a href="../lesson/lesson9.html">Lesson 9</a></li>
+               	<li><a href="../lesson/lesson10.html">Lesson 10</a></li>
+                <li><a href="../lesson/lesson11.html">Lesson 11</a></li>
+                <li><a href="../lesson/lesson12.html">Lesson 12</a></li>
+              </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Directive<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li class="dropdown-header">Basic Directive</li>
+				<li><a href="../directive/directive.html">Directive Restrict</a></li>
+				<li><a href="../directive/template.html">Directive Template</a></li>
+				<li><a href="../directive/controller.html">Directive Controller</a></li>
+				<li><a href="../directive/link.html">Directive Link</a></li>
+				<li class="dropdown-header">Isolated Scope</li>
+                <li><a href="../directive/isolate.html">Isolated Scope</a></li>
+                <li><a href="../directive/scopeand.html">Scope Expression & </a></li>
+                <li><a href="../directive/scopeadd.html">Scope Attribute @ </a></li>
+                <li><a href="../directive/scopeequal.html">Scope Two way Binding =</a></li>
+				<li><a href="../directive/scopedifferent.html">$scope VS scope</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown active">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Scope<span class="caret"></span></a>
+              <ul class="dropdown-menu  active" role="menu">
+				<li><a href="rootscope.html">rootScope & Scope</a></li>
+				<li><a href="watch.html">$watch()</a></li>
+				<li class="active"><a href="apply.html">$apply()</a></li>
+				<li><a href="broadcast.html">$broadcast() & $on()</a></li>
+				<li><a href="emit.html">$emit() & $on()</a></li>
+				<li><a href="destory.html">$destory()</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown">
+				<a href="../service/service.html">Service</a>
+			</li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">UI Router<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../ui-route/uiroute.html">Introduction UI Router</a></li>
+				<li><a href="../ui-route/basicroute.html">Basic Routing</a></li>
+				<li><a href="../ui-route/resolve.html">Resolve & Data</a></li>
+				<li><a href="../ui-route/nestedrouting.html">Nested Routing</a></li>
+				<li><a href="../ui-route/multipleview.html">Multiple Views</a></li>
+				<li><a href="../ui-route/event.html">Event</a></li>
+				<li><a href="../ui-route/urlprovider.html">URL Provider</a></li>
+				<li><a href="../ui-route/statego.html">$state.go()</a></li>
+				<li><a href="../ui-route/challenge.html">Challenge</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Example<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../example/validate.html">Input Validation</a></li>
+				<li><a href="../example/advance.html">Advance Validation</a></li>
+				<li><a href="../example/alert.html">Alert Validation</a></li>
+				<li><a href="../example/dynamic.html">Dynamic Validation</a></li>
+				<li><a href="../example/custom.html">Custom Validation</a></li>
+				<li><a href="../example/ngform.html">ngForm Validation</a></li>
+           	  </ul>
+            </li>
+            <li><a href="../about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	<div class="lesson-header">
+		<div class="container container-main">
+			<h1>Scope : $apply()</h1>
+		</div>
+	</div>
+    <div class="container lesson-body">
+      <div class="row">
+        <div class="col-md-9" role="main">
+			<div>
+            	<h2 class="page-header">สิ่งที่ควรรู้</h2>
+				<h3>$digest() คือ อะไร ?</h3>
+				<p>$digest เป็นฟังก์ชั่นที่ถูกเรียกทุกครั้งเมื่อมีการเปลี่ยนแปลงของข้อมูลใน scope ของ Controller โดยจะทำการประมวลผลของ Angular ใหม่</p>
+				<u>$digest จะทำงานอัตโนมัติ ไม่ต้องทำการเรียกใช้</u>
+				<h3>$apply() คือ อะไร ?</h3>
+				<p>$apply เป็นฟังก์ชั่นที่ใช้เมื่อต้องการใช้ javascript ใดๆที่อยู่นอกเหนือของ AngularJS </p><p>(DOM events, setTimeout, XHR or third party libraries)</p>
+				<p>โดยเมื่อ $apply ทำงานเสร็จจะไปเรียกใช้ $digest ให้ update เนื้อหาของ angular</p>
+				<h4>$digest จะไม่ถูกเรียกใน directive หากไม่มีการใช้ $apply</h4>
+
+				<p>โดยมีโครงสร้างดังนี้</p>
+				<pre>$apply( expression/function );</pre>
+				<p>ซึ่งภายในของ $apply มีลักษณะดังนี้</p>
+				<pre>
+function $apply(expr) {
+ try {
+   return $eval(expr);
+ } catch (e) {
+   $exceptionHandler(e);
+ } finally {
+   $root.$digest();
+ }
+}
+</pre>
+			</div>
+			<div>
+				<h3>ตัวอย่างการใช้งาน $apply</h3>
+				<p style="color: red">ใน Directive ถ้าต้องการแสดงค่าที่เปลี่ยนแปลงไปจะต้องทำเรียก $apply() เพื่อที่ $apply() จะไปเรียก $digest() อีกที</p>
+				<p style="color: red">ใน Controller $digest() ทำงานอัตโนมัติ</p>
+				<p>ในไฟล์ js กำหนดฟังก์ชั่นเปลี่ยนค่าเมื่อ click ใน controller และ directive  โดยมีรายละเอียดดังนี้</p>
+				<pre class="brush: js; highlight: [5,6,7,8,15,16,17,18,19,20]">
+angular.module('application', [])
+    .controller('demoController', function ($scope) {
+        $scope.foo = 0;
+        $scope.bar = 0;
+		$scope.addCount = function () {
+			$scope.foo++;	
+			$scope.bar++;	
+		};
+    })
+    .directive('clickable', function () {
+        return {
+            restrict:'E',
+            template: '&lt;ul style="background-color: lightgreen">&lt;li>{{foo}}&lt;/li>&lt;li>{{bar}}&lt;/li>&lt;/ul>',
+            link: function (scope,element,attr) {
+                element.bind('click', function () {
+                    scope.$apply(function () {
+						scope.foo++;
+						scope.bar++;
+					});
+                });
+            }
+        };
+    });</pre>
+				<p>ในไฟล์ html ทำการเรียกใช้งาน directive ใน Controller</p>
+				<pre class="brush: html">
+&lt;div ng-app="application" ng-controller="demoController" style="background-color: pink">
+	&lt;p ng-click="addCount()">controller (foo) : \{\{foo}}&lt;/p>
+	&lt;p ng-click="addCount()">controller (bar) : \{\{bar}}&lt;/p>
+	&lt;clickable>&lt;/clickable>
+&lt;/div>
+</pre>
+				<p>จะได้ผลลัพธ์ดังนี้</p>
+				<div ng-controller="demoController" style="background-color: pink">
+					<p ng-click="addCount()">controller (foo) : {{foo}}</p>
+					<p ng-click="addCount()">controller (bar) : {{bar}}</p>
+					<clickable-apply></clickable-apply>
+				</div>
+				<p style="color:red">เมื่อทำการคลิกที่ clickable เรียกใช้งาน $apply() ค่าที่เปลี่ยนแปลงจะถูกแสดงผล</p>
+				<h3>ถ้าไม่ใส่ $apply() ละจะเกิดอะไรขึ้น</h3>
+				<p>ในกรณีที่เอา $apply() ออกจากภายใน directive</p>
+				<pre class="brush: js; highlight: [11,12]">
+angular.module('application', [])
+    .controller('demoController', function ($scope) {
+        ...
+    })
+    .directive('clickable', function () {
+        return {
+            restrict:'E',
+            template: '&lt;ul style="background-color: lightgreen">&lt;li>{{foo}}&lt;/li>&lt;li>{{bar}}&lt;/li>&lt;/ul>',
+            link: function (scope,element,attr) {
+                element.bind('click', function () {
+                    scope.foo++;
+                    scope.bar++;
+                });
+            }
+        };
+    });
+</pre>
+				<p>เมื่อ click ใน Directive ค่าที่เปลี่ยนแปลงจะไม่ถูกแสดงผล</p>
+				<p>จะได้ผลลัพธ์ดังนี้</p>
+				<div ng-controller="demoController" style="background-color: pink">
+					<p ng-click="addCount()">controller (foo) : {{foo}}</p>
+					<p ng-click="addCount()">controller (bar) : {{bar}}</p>
+					<clickable></clickable>
+				</div>
+				<p style="color:red">เมื่อทำการคลิกที่ข้อมูลใน Controller เกิดการเปลี่ยนแปลงของข้อมูล $digest() ถูกเรียกใช้ ค่าถูกแสดงผล</p>
+				<p style="color:red">เมื่อทำการคลิกที่ข้อมูลใน clickable ค่าเปลี่ยนไป แต่ไม่ได้ถูกนำมาแสดงผล เพราะ $digest() ไม่ได้ถูกเรียกใน directive</p>
+				
+			</div>
+			<ul class="btn-group pull-right">
+				<a href="watch.html">
+					<li class="btn btn-primary"><i class="glyphicon glyphicon-step-backward"></i> ย้อนกลับ</li>
+				</a>
+				<a href="broadcast.html">
+					<li class="btn btn-primary">ถัดไป <i class="glyphicon glyphicon-step-forward"></i></li>
+				</a>
+			</ul>
+        </div>
+		
+        <!--div class="col-md-3">
+          <div class="hidden-print hidden-xs hidden-sm affix" role="complementary">
+            <ul class="nav">
+                <li class="active"><a href="#download">Download</a></li>
+                <li><a href="#whats-included">What's included</a></li>
+                <li><a class="back-to-top" href="#top">Back to top</a></li>
+            </ul>
+          </div>
+        </div-->
+      </div>
+    </div>
+      <footer class="footer">
+      <div class="container">
+        <p class="text-muted">              
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="สัญญาอนุญาตของครีเอทีฟคอมมอนส์" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />ผลงานนี้ ใช้<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">สัญญาอนุญาตของครีเอทีฟคอมมอนส์แบบ แสดงที่มา-ไม่ใช้เพื่อการค้า 4.0 International</a>.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/lib/jquery.min.js"></script>
+    <script src="../js/lib/bootstrap.min.js"></script>
+	<!--AngularJS Javascript -->
+    <script src="../js/lib/angular.min.js"></script>
+    <script src="../js/demo/apply.js"></script>
+    <script src="../js/plugin/tree.js"></script>
+	<script type="text/javascript" src="../js/scripts/shCore.js"></script>
+	<script type="text/javascript" src="../js/scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="../js/scripts/shBrushXml.js"></script>    
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+</body></html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<link rel="shortcut icon" href="../image/angularico.png" type="image/x-icon">
+    <title>Angular UI : Challenge</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../css/styles/shThemeDefault.css"/>
+	<link type="text/css" rel="stylesheet" href="../css/styles/shCore.css"/>
+	<style>.my-menu{background-color: #222;}.container-main{margin-top: 70px;}.lesson-header{background-color: #9c2e2e;color:white}.lesson-body{margin-bottom: 70px;}</style>
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top " role="navigation" style="height:75px">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html"><img src="../image/AngularJS-large.png" style="width:200px" /></a>
+        </div>
+        <div class="collapse navbar-collapse my-menu">
+          <ul class="nav navbar-nav">
+            <li ><a href="../home.html">Getting Started</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lesson<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li class="dropdown-header">Basic AngularJS</li>
+                <li><a href="../lesson/lesson1.html">Lesson 1</a></li>
+                <li><a href="../lesson/lesson2.html">Lesson 2</a></li>
+                <li><a href="../lesson/lesson3.html">Lesson 3</a></li>
+                <li><a href="../lesson/lesson4.html">Lesson 4</a></li>
+                <li><a href="../lesson/lesson5.html">Lesson 5</a></li>
+                <li><a href="../lesson/lesson6.html">Lesson 6</a></li>
+                <li><a href="../lesson/lesson7.html">Lesson 7</a></li>
+                <li><a href="../lesson/lesson8.html">Lesson 8</a></li>
+                <li><a href="../lesson/lesson9.html">Lesson 9</a></li>
+                <li><a href="../lesson/lesson10.html">Lesson 10</a></li>
+                <li><a href="../lesson/lesson11.html">Lesson 11</a></li>
+                <li><a href="../lesson/lesson12.html">Lesson 12</a></li>
+              </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Directive<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li class="dropdown-header">Basic Directive</li>
+				<li><a href="../directive/directive.html">Directive Restrict</a></li>
+				<li><a href="../directive/template.html">Directive Template</a></li>
+				<li><a href="../directive/controller.html">Directive Controller</a></li>
+				<li><a href="../directive/link.html">Directive Link</a></li>
+				<li class="dropdown-header">Isolated Scope</li>
+                <li><a href="../directive/isolate.html">Isolated Scope</a></li>
+                <li><a href="../directive/scopeand.html">Scope Expression & </a></li>
+                <li><a href="../directive/scopeadd.html">Scope Attribute @ </a></li>
+                <li><a href="../directive/scopeequal.html">Scope Two way Binding =</a></li>
+				<li><a href="../directive/scopedifferent.html">$scope VS scope</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Scope<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../scope/rootscope.html">rootScope & Scope</a></li>
+				<li><a href="../scope/watch.html">$watch()</a></li>
+				<li><a href="../scope/apply.html">$apply()</a></li>
+				<li><a href="../scope/broadcast.html">$broadcast() & $on()</a></li>
+				<li><a href="../scope/emit.html">$emit() & $on()</a></li>
+				<li><a href="../scope/destory.html">$destory()</a></li>
+           	  </ul>
+            </li>
+        			<li class="dropdown">
+				<a href="../service/service.html">Service</a>
+			</li>
+			<li class="dropdown active">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">UI Router<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../ui-route/uiroute.html">Introduction UI Router</a></li>
+				<li><a href="../ui-route/basicroute.html">Basic Routing</a></li>
+				<li><a href="../ui-route/resolve.html">Resolve & Data</a></li>
+				<li><a href="../ui-route/nestedrouting.html">Nested Routing</a></li>
+				<li><a href="../ui-route/multipleview.html">Multiple Views</a></li>
+				<li><a href="../ui-route/event.html">Event</a></li>
+				<li><a href="../ui-route/urlprovider.html">URL Provider</a></li>
+				<li class="active"><a href="../ui-route/challenge.html">Challenge</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Example<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../example/validate.html">Input Validation</a></li>
+				<li><a href="../example/advance.html">Advance Validation</a></li>
+				<li><a href="../example/alert.html">Alert Validation</a></li>
+				<li><a href="../example/dynamic.html">Dynamic Validation</a></li>
+				<li><a href="../example/custom.html">Custom Validation</a></li>
+				<li><a href="../example/ngform.html">ngForm Validation</a></li>
+           	  </ul>
+            </li>
+            <li><a href="../about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	<div class="lesson-header">
+		<div class="container container-main">
+			<h1>Angular UI: URL Provider</h1>
+		</div>
+	</div>
+    <div class="container lesson-body">
+      <div class="row">
+        <div class="col-md-9" role="main">
+			<div>
+            	<h2 class="page-header">สิ่งที่ควรรู้</h2>
+				<h3>การใช้งาน $state.go()</h3>
+				<p>จากตัวอย่างที่ผ่านมาเราใช้ ui-sref ในการย้าย state คราวนี้เราจะมาลองใช้ $state.go() ดูกันบ้าง โดยการใช้งานมีลักษณะดังนี้</p>
+				<ul>
+					<li><strong>to</strong> - ชื่อ state ที่ต้องการจะไป โดยมีตัวอย่างการใช้ดังนี้
+						<ul>
+							<li><strong>$state.go('contact.detail')</strong> - จะไปยัง state contact.detail</li>
+							<li><strong>$state.go('^')</strong> - จะไปยัง parent state</li>
+							<li><strong>$state.go('^.sibling')</strong> - จะไปยัง state sibling ที่มี parent เดียวกัน</li>
+							<li><strong>$state.go('.child.grandchild')</strong> - จะไปยัง state ลูกของลูก</li>
+						</ul>
+					</li>
+					<li><strong>toParams</strong> - พารามิเตอร์ส่งไปยัง state นั้น</li>
+					<li><strong>options</strong> - ใช้สำหรับกำหนดค่าเพิ่มเติม โดยมีตัวเลือกดังนี้
+						<ul>
+							<li><strong>location (Boolean / "replace")</strong> - [default: true] กรณีที่เป็น true จะทำการ update url ใน location bar ของ browser กรณีที่เป็น "replace" จะทำการ update url และ replace history record สุดท้าย</li>
+							<li><strong>inherit (Boolean)</strong> - [default: false] กรณีที่เป็น true จะทำการ inherit url parameter ของ url ส่งไปด้วย</li>
+							<li><strong>relative (stateObject)</strong> - [default: $state.$current] เมื่อทำการเปลี่ยน state ด้วย relative path 
+								<p>เช่น '^' จะกำหนดให้ state นั้นเป็น relative from</p></li>
+							<li><strong>notify (Boolean)</strong> - [default: true] กรณีที่เป็น true จะทำการ broadcast event [$stateChangeStart] และ [$stateChangeSuccess]</li>
+							<li><strong>reload (Boolean)</strong> - [default: false] กรณที่เป็น true จะบังคับให้ทำการเปลี่ยน state หากอยู่ใน state เดิมก็ทำการ reload หน้านั้นใหม่</li>
+
+						</ul>
+					</li>
+				</ul>
+				<pre class="brush: js;">
+$state.go(to [, toParams] [, options]);
+</pre>
+			</div>
+			<div>
+				<h2 class="page-header">ตัวอย่างการใช้งาน $state.go()</h2>
+				<p>กำหนด state ไว้ 3 state โดยให้มี controller ประกาศฟังก์ชั่นสำหรับเรียกใช้งาน $state.go() และกำหนดปุ่ม ให้เมื่อคลิกจะข้ามไป state อื่นๆ</p>
+				<pre class="brush:js;highlight: [7,8,9,10,11,12,13,14,15,16,17]">
+angular.module('application', ['ui.router'])
+    .config(function ($stateProvider, $urlRouterProvider) {
+		$urlRouterProvider.otherwise('/one');
+        $stateProvider
+            .state('one', {
+                url: '/one',
+                template: '&lt;p>this is state one&lt;/p>&lt;p ui-view>&lt;/p>' +
+				'&lt;button class="btn btn-default" ng-click="linkTo(stateName)">State Two&lt;/button>' +
+				'&lt;button class="btn btn-default" ng-click="linkTo(stateName2)">State Three&lt;/button>',
+				controller: function ($state, $scope) {
+					$scope.stateName = "one.two";
+					$scope.stateName2 = "three";
+					$scope.linkTo = function (state) {
+						console.log(state);
+						$state.go(state);
+					};
+				}
+            })
+			.state('one.two', {
+                url: '/two',
+                template: '&lt;p>this is state one-two&lt;/p>'
+            })
+			.state('three', {
+                url: '/three',
+                template: '&lt;p>this is state three&lt;/p>'
+            });
+    });
+</pre>
+				<p>ในไฟล์ html ทำการกำหนดดังนี้</p>
+				<pre class="brush:html">
+&lt;div class="container">
+	&lt;ul class="nav nav-pills">
+		&lt;li>&lt;a ui-sref="one">State One&lt;/a>&lt;/li>
+		&lt;li>&lt;a ui-sref="one.two">State Two&lt;/a>&lt;/li>
+		&lt;li>&lt;a ui-sref="three">State Three&lt;/a>&lt;/li>
+	&lt;/ul>
+	&lt;div>
+		&lt;p>Event show on log ,please open the console&lt;/p>
+		&lt;div ui-view>&lt;/div>
+	&lt;/div>
+&lt;/div>
+</pre>
+				<h4>สามารถดูตัวอย่างผลลัพธ์ได้ที่นี่ <a href="../demo/statego.html">Demo</a></h4>
+				<h3>กรณีที่มีตัวแปรส่งแบบ Object เราจำเป็นต้องกำหนดดังนี้</h3>
+				<pre class="brush:js;highlight: [4,5,7,8,13,14,15]">
+$stateProvider
+    .state('A', {
+        controller: function ($scope, $state) {
+            $scope.arrayOject = [{name: 'bob',age: 20}, {name: 'john', age: 24}, {name: 'Jane', age: 30}];
+
+            $scope.checkOut = function () {
+                var params = {"arrayOject":$scope.arrayOject};
+                $state.go("checkout", params);
+            };
+        }
+    })
+    .state('B', {
+        params: {'arrayOject':''},
+        controller: function ($scope, $stateParams) {
+            $stateParams.arrayOject;
+        }
+    });
+</pre>
+			</div>
+			<div>
+				<h2 class="page-header">Challenge!! The Sushi Shop</h2>
+				<h4>จากที่เราได้ทำการศึกษา UI Router ไป เราจะมาลองสร้างด้วยตัวเองดู</h4>
+				<h4>ให้ทำการสร้างร้านซูชิ มี 2 หน้าเว็บ คือ menu และ checkout</h4>
+				<h4>menu จะแยกออกเป็น 3 ประเภท คือ sushi appetizer drink</h4>
+				<h4>แต่ละประเภทจะใช้ template เดียวกัน</h4>
+				<h4>โดยกรณีที่ลิงค์ไม่ถูกหน้าให้ทำการ redirect มาที่หน้าเมนูซูชิ</h4>
+				<h4>โดยเราจะมีไฟล์ javascript และ html บางส่วนให้ดังนี้</p>
+				<h4>index.html</h4>
+				<pre class="brush:html">
+&lt;!DOCTYPE html>
+&lt;html ng-app="application">
+&lt;head>
+    &lt;!-- bootstrap CSS -->
+    &lt;link rel="stylesheet" href="css/bootstrap.min.css">
+    &lt;!-- bootstrap theme -->
+    &lt;link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	&lt;style>.container {margin:50px} .item{display: block; } &lt;/style>
+&lt;/head>
+&lt;body>
+    &lt;div class="container">
+		&lt;div class="row" ui-view>&lt;/div>
+	&lt;/div>
+    &lt;!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    &lt;script src="js/lib/jquery.min.js">&lt;/script>
+    &lt;!-- Bootstrap JavaScript -->
+    &lt;script src="js/lib/bootstrap.min.js">&lt;/script>
+    &lt;!-- AngularJS JavaScript -->
+    &lt;script src="js/lib/angular.js">&lt;/script>
+	&lt;!--AngularUI Router Library -->
+	&lt;script src="js/lib/angular-ui-router.js">&lt;/script>
+    &lt;script src="js/app.js">&lt;/script>
+&lt;/body>
+&lt;/html>				
+</pre>
+				<h4>app.js</h4>
+				<pre class="brush: js">
+angular.module('application', ['ui.router'])
+.config(function ($stateProvider, $urlRouterProvider) {
+	// Missing... set default when url is not found
+
+	$stateProvider
+		.state('menu', {
+			abstract: true,
+			templateUrl: 'template.html',
+			controller: function ($scope, $state) {
+				$scope.orderItem = [];
+				$scope.increase = function (item) {
+					if (item.quantity !== null) item.quantity += 1;
+				};
+				$scope.decrease = function (item) {
+					if (item.quantity !== null && item.quantity > 0) item.quantity -= 1;
+				};
+				$scope.orderCall = function (item) {
+					if (item.quantity !== null && item.quantity > 0) {
+						var addItem = angular.copy(item);
+						$scope.orderItem.push(addItem);
+						item.quantity = 0;
+					}
+				};
+				$scope.removeOrder = function (item) {
+					var index = $scope.orderItem.indexOf(item);
+					$scope.orderItem.splice(index, 1);
+				}
+				$scope.checkOut = function () {
+					var params = {"orderItem":$scope.orderItem};
+					// Missing... set go to checkout state with parameter params 
+				};
+			}
+		})
+		.state('menu.sushi', {
+			url: '/sushi',
+			resolve: {
+				sushiItem: function () {
+					var item = [
+						{name: "Otaro", price: 200},
+						{name: "Maguro", price: 300},
+						{name: "Tamago", price: 120},
+						{name: "Saba", price: 100},
+						{name: "Tako", price: 150}
+					];
+					return item;
+				}
+			},
+			views: {
+				"menulist": {
+					templateUrl: 'menu.html',
+					controller: function ($scope, sushiItem) {
+						$scope.menuItem = sushiItem;
+					}
+				},
+				"order": {
+					templateUrl: 'order.html'
+				}
+			}
+		})
+		.state('menu.appetizer', {
+			url: '/appetizer',
+			resolve: ''//missing... Resolve appetizerItem
+			views: {
+				"menulist": {
+					templateUrl: ''// templateUrl is missing... 
+					controller: function () {} // controller is missing... 
+					//set Resolve Data in Controller
+				},
+				"order": {
+					templateUrl: ''// templateUrl is missing...
+				}
+			}
+		})
+		.state('menu.drink', {
+			url: '/drink',
+			resolve: {
+				drinkItem: function () {
+					var item = [
+						{name: "Coke", price: 100},
+						{name: "Water", price: 100},
+						{name: "Lemon Soda", price: 250},
+						{name: "Matcha", price: 200}
+					];
+					return item;
+				}
+			},
+			views: {
+				"menulist": {
+					templateUrl: ''// templateUrl is missing... 
+					controller: function () {} // controller is missing... 
+					//set Resolve Data in Controller
+				},
+				"order": {
+					templateUrl: ''// templateUrl is missing...
+				}
+			}
+		})
+		.state('checkout', {
+			url: '/checkout',
+			params: {'orderItem':''},
+			templateUrl: 'checkout.html',
+			controller: function ($scope, $stateParams, $state) {
+				// get orderItem from params
+				$scope.sum = 0;
+				angular.forEach($scope.orderItem, function (item) {
+					$scope.sum += (item.price * item.quantity);
+				});
+				$scope.payMoney = function () {
+					alert("Thank you.");
+					// missing... Back to menu.sushi
+				}
+			}
+		});
+});
+</pre>
+				<h4>template.html</h4>
+				<pre class="brush: html">
+&lt;div class="col-md-8" ui-view="menu">
+	&lt;ul class="nav nav-pills navbar-default">
+		&lt;li>&lt;a ui-sref="#">Sushi&lt;/a>&lt;/li>
+		&lt;li>&lt;a ui-sref="#">Appetizer&lt;/a>&lt;/li>
+		&lt;li>&lt;a ui-sref="#">Drink&lt;/a>&lt;/li>
+	&lt;/ul>&lt;div ui-view="menulist">&lt;/div>&lt;/div>
+	&lt;div class="col-md-4" ui-view="order">
+	&lt;/div>
+&lt;/div>
+</pre>
+				<h4>menu.html</h4>
+				<pre class="brush: html">
+&lt;div class="list-group">
+	&lt;div class="list-group-item row" ng-repeat="item in menuItem" ng-init="item.quantity = 0">
+		&lt;h2 class="col-md-4">{{item.name}}&lt;/h2>
+		&lt;div class="col-md-2">&lt;em>{{item.price | number:2}} Yen &lt;/div>
+		&lt;div class="col-md-2">&lt;p>X {{item.quantity}}&lt;/p> &lt;button class="btn btn-default" ng-click="increase(item)">increse&lt;/button>
+		&lt;button class="btn btn-default" ng-click="decrease(item)">decrese&lt;/button>&lt;/div>
+		&lt;div class="col-md-2">&lt;button class="btn btn-default pull-right" ng-click="orderCall(item)">+&lt;/button>&lt;/div>
+	&lt;/div>
+&lt;/div>
+</pre>		
+				<h4>order.html</h4>
+				<pre class="brush: html">
+&lt;div class="list-group">
+	&lt;div class="list-group-item row" ng-repeat="item in orderItem">
+		&lt;h2 class="col-md-4">{{item.name}}&lt;/h2>
+		&lt;div class="col-md-4">&lt;em>{{item.price | number:2}} Yen &lt;/div>
+		&lt;div class="col-md-2">&lt;p>X {{item.quantity}}&lt;/p>&lt;/div>
+		&lt;div class="col-md-2">&lt;button class="btn btn-default pull-right" ng-click="removeOrder(item)">X&lt;/button>&lt;/div>
+	&lt;/div>
+	&lt;button ng-show="orderItem.length > 0" ng-click="checkOut()" class="btn btn-danger col-md-12">Check Out&lt;/button>
+&lt;/div>
+</pre>
+				<h4>checkout.html</h4>
+				<pre class="brush: html">
+&lt;div>
+	&lt;ul class="nav nav-pills navbar-default">
+		&lt;li>&lt;a ui-sref="menu.sushi">Back&lt;/a>&lt;/li>
+	&lt;/ul>
+&lt;/div>
+&lt;div class="list-group">
+	&lt;div class="list-group-item row" ng-repeat="item in orderItem">
+		&lt;h2 class="col-md-4">{{item.name}}&lt;/h2>
+		&lt;div class="col-md-4">
+			&lt;em>{{item.price | number:2}} Yen X {{item.quantity}} = {{item.quantity * item.price}} Yen
+		&lt;/div>
+	&lt;/div>
+	&lt;div class="list-group-item row" >
+		&lt;h2 class="col-md-4">Total&lt;/h2>
+		&lt;h2 class="col-md-4">{{sum}} Yen&lt;/h2>
+	&lt;/div>
+	&lt;button ng-click="payMoney()" class="btn btn-danger col-md-12">Pay&lt;/button>
+&lt;/div>
+</pre>
+				<h4>สามารถดูผลลัพธ์ได้ <a href="../demo/uirouterchallenge.html">ที่นี่</a></h4>
+			</div>
+			<ul class="btn-group pull-right">
+				<a href="urlprovider.html">
+					<li class="btn btn-primary"><i class="glyphicon glyphicon-step-backward"></i> ย้อนกลับ</li>
+				</a>
+			</ul>
+        </div>
+		
+        <!--div class="col-md-3">
+          <div class="hidden-print hidden-xs hidden-sm affix" role="complementary">
+            <ul class="nav">
+                <li class="active"><a href="#download">Download</a></li>
+                <li><a href="#whats-included">What's included</a></li>
+                <li><a class="back-to-top" href="#top">Back to top</a></li>
+            </ul>
+          </div>
+        </div-->
+      </div>
+    </div>
+      <footer class="footer">
+      <div class="container">
+        <p class="text-muted">              
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="สัญญาอนุญาตของครีเอทีฟคอมมอนส์" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />ผลงานนี้ ใช้<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">สัญญาอนุญาตของครีเอทีฟคอมมอนส์แบบ แสดงที่มา-ไม่ใช้เพื่อการค้า 4.0 International</a>.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/lib/jquery.min.js"></script>
+    <script src="../js/lib/bootstrap.min.js"></script>
+  	<script type="text/javascript" src="../js/scripts/shCore.js"></script>
+	<script type="text/javascript" src="../js/scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="../js/scripts/shBrushXml.js"></script>    
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+</body></html>

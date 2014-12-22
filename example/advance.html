@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<link rel="shortcut icon" href="../image/angularico.png" type="image/x-icon">
+    <title>Example : Advance Validation</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../css/styles/shThemeDefault.css"/>
+	<link type="text/css" rel="stylesheet" href="../css/styles/shCore.css"/>
+	<style>.my-menu{background-color: #222;}.container-main{margin-top: 70px;}.lesson-header{background-color: #9c2e2e;color:white}.lesson-body{margin-bottom: 70px;}
+		.ng-dirty.ng-invalid{border-color:red;}
+        .ng-dirty.ng-valid{border-color:green!important;}
+        span.require{color:red}
+        .help-block{color:red}
+        .error{border-color:red}</style>
+
+</head>
+<body ng-app="demo2">
+    <div class="navbar navbar-inverse navbar-fixed-top " role="navigation" style="height:75px">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html"><img src="../image/AngularJS-large.png" style="width:200px" /></a>
+        </div>
+        <div class="collapse navbar-collapse my-menu">
+          <ul class="nav navbar-nav ">
+            <li ><a href="../home.html">Getting Started</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lesson<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li class="dropdown-header">Basic AngularJS</li>
+                <li><a href="../lesson/lesson1.html">Lesson 1</a></li>
+                <li><a href="../lesson/lesson2.html">Lesson 2</a></li>
+                <li><a href="../lesson/lesson3.html">Lesson 3</a></li>
+                <li><a href="../lesson/lesson4.html">Lesson 4</a></li>
+                <li><a href="../lesson/lesson5.html">Lesson 5</a></li>
+                <li><a href="../lesson/lesson6.html">Lesson 6</a></li>
+                <li><a href="../lesson/lesson7.html">Lesson 7</a></li>
+                <li><a href="../lesson/lesson8.html">Lesson 8</a></li>
+                <li><a href="../lesson/lesson9.html">Lesson 9</a></li>
+               	<li><a href="../lesson/lesson10.html">Lesson 10</a></li>
+                <li><a href="../lesson/lesson11.html">Lesson 11</a></li>
+                <li><a href="../lesson/lesson12.html">Lesson 12</a></li>
+              </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Directive<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li class="dropdown-header">Basic Directive</li>
+				<li><a href="../directive/directive.html">Directive Restrict</a></li>
+				<li><a href="../directive/template.html">Directive Template</a></li>
+				<li><a href="../directive/controller.html">Directive Controller</a></li>
+				<li><a href="../directive/link.html">Directive Link</a></li>
+				<li class="dropdown-header">Isolated Scope</li>
+                <li><a href="../directive/isolate.html">Isolated Scope</a></li>
+                <li><a href="../directive/scopeand.html">Scope Expression & </a></li>
+                <li><a href="../directive/scopeadd.html">Scope Attribute @ </a></li>
+                <li><a href="../directive/scopeequal.html">Scope Two way Binding =</a></li>
+				<li><a href="../directive/scopedifferent.html">$scope VS scope</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Scope<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../scope/rootscope.html">rootScope & Scope</a></li>
+				<li><a href="../scope/watch.html">$watch()</a></li>
+				<li><a href="../scope/apply.html">$apply()</a></li>
+				<li><a href="../scope/broadcast.html">$broadcast() & $on()</a></li>
+				<li><a href="../scope/emit.html">$emit() & $on()</a></li>
+				<li><a href="../scope/destory.html">$destory()</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown">
+				<a href="../service/service.html">Service</a>
+			</li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">UI Router<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../ui-route/uiroute.html">Introduction UI Router</a></li>
+				<li><a href="../ui-route/basicroute.html">Basic Routing</a></li>
+				<li><a href="../ui-route/resolve.html">Resolve & Data</a></li>
+				<li><a href="../ui-route/nestedrouting.html">Nested Routing</a></li>
+				<li><a href="../ui-route/multipleview.html">Multiple Views</a></li>
+				<li><a href="../ui-route/event.html">Event</a></li>
+				<li><a href="../ui-route/urlprovider.html">URL Provider</a></li>
+				<li><a href="../ui-route/statego.html">$state.go()</a></li>
+				<li><a href="../ui-route/challenge.html">Challenge</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown active">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Example<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="validate.html">Input Validation</a></li>
+				<li class="active"><a href="advance.html">Advance Validation</a></li>
+				<li><a href="alert.html">Alert Validation</a></li>
+				<li><a href="dynamic.html">Dynamic Validation</a></li>
+				<li><a href="custom.html">Custom Validation</a></li>
+				<li><a href="ngform.html">ngForm Validation</a></li>
+           	  </ul>
+            </li>
+			
+            <li><a href="../about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	<div class="lesson-header">
+		<div class="container container-main">
+			<h1>Example: Advance Validation</h1>
+		</div>
+	</div>
+    <div class="container lesson-body">
+      <div class="row">
+        <div class="col-md-9" role="main">
+			<div>
+            	<div class="panel panel-success" ng-controller="demo2AdvanceCtrl as advance">
+				   <div class="panel-body">
+					  <legend>Advance Example - ตัวอย่างการตรวจสอบ checkbox และ select ของ Angular</legend>
+					  <form class="form-horizontal" name="form" novalidate>
+						<!-- Multiple Radios -->
+						<div class="form-group">
+						  <label class="col-md-4 control-label" for="radio">Radio<span class="require">*</span></label>
+						  <div class="col-md-4">
+							  <div class="radio">
+								<label for="radio-0">
+								  <input type="radio" name="radio" ng-model="radio" id="radio-0" value="1" required>
+								  Option one
+								</label>
+								</div>
+							  <div class="radio">
+								<label for="radio-1">
+								  <input type="radio" name="radio" ng-model="radio" id="radio-1" value="2" required>
+								  Option two
+								</label>
+							  </div>
+							  <div class="radio">
+								<label for="radio-1">
+								  <input type="radio" name="radio" ng-model="radio" id="radio-1" value="3" required>
+								  Option two
+								</label>
+							  </div>
+						  </div>
+						  <span class="help-block" ng-show="advance.isSubmit()">
+							<p ng-show="form.radio.$error.required">This field is required.</p>
+						  </span>
+						</div>
+						<!-- Select Basic -->
+						<div class="form-group">
+						  <label class="col-md-4 control-label" for="select">Select<span class="require">*</span></label>
+						  <div class="col-md-4">
+							<select id="select" name="select" ng-model="select" ng-class="{dirty:advance.isSubmit()}" class="form-control" required>
+							  <option value="" selected></option>
+							  <option value="1">Option one</option>
+							  <option value="2">Option two</option>
+							</select>
+						  </div>
+						  <span class="help-block" ng-show="advance.isSubmit()">
+							<p ng-show="form.select.$error.required">This field is required.</p>
+						  </span>
+						</div>
+						<!-- Button -->
+						<div class="form-group">
+						  <label class="col-md-4 control-label" for="submit"></label>
+						  <div class="col-md-4">
+							<button name="submit" class="btn btn-primary" ng-click="advance.onSubmit()">Test Validation</button>
+						  </div>
+						</div>
+					   </form>
+					 </div>
+				   </div>
+				   <div class="panel panel-info" ng-controller="demo2CustomCtrl as custom">
+					   <div class="panel-body">
+						  <legend>Custom Example - ตัวอย่างการตรวจสอบข้อมูลเบอร์โทรศัพท์ บัตรประชาชน บัตรเครดิต</legend>
+						  <form class="form-horizontal" name="form" novalidate>
+							<!-- phone input-->
+							<div class="form-group">
+							  <label class="col-md-4 control-label" for="phone">Phone No.<span class="require">*</span></label>  
+							  <div class="col-md-4">
+								<input name="phone" ng-model="phone" type="text"  class="form-control input-md"
+									   ng-class="{error: custom.isSubmit() && form.phone.$invalid}" phone required>
+								<span class="help-block" ng-show="(form.phone.$invalid && form.phone.$dirty)|| custom.isSubmit()">
+									<p ng-show="form.phone.$error.required">This field is required.</p>
+									<p ng-show="form.phone.$error.phoneValidate">Please enter a valid phone number.</p>
+								</span>   
+							  </div>
+							  <div class="col-md-4">
+								<label>เมื่อกรอกข้อมูลเสร็จจะทำการใส่ format <br> (0XX)-XXX-XXXX</label>  
+							  </div>
+							</div>
+							<!-- money input -->
+							<div class="form-group">
+							  <label class="col-md-4 control-label" for="money">Money<span class="require">*</span></label>  
+							  <div class="col-md-4">
+								<input name="money" ng-model="money" type="text" class="form-control input-md"  
+									   ng-class="{error: custom.isSubmit() && form.money.$invalid}" money point="2" ng-pattern="/^[0-9.,\-()+]+$/" required>
+								<span class="help-block" ng-show="(form.peopleidcard.$invalid && form.peopleidcard.$dirty)|| custom.isSubmit()">
+									<p ng-show="form.money.$error.required">This field is required.</p>
+									<p ng-show="form.money.$error.moneyValidate || form.money.$error.pattern">Please enter a valid money.</p>
+								</span> 
+							  </div>
+							  <div class="col-md-4">
+								<label>เมื่อกรอกข้อมูลจะทำการใส่ format <br> 0,000,000.00</label>  
+							  </div>
+							</div>
+							<!-- Button -->
+							<div class="form-group">
+							  <label class="col-md-4 control-label" for="submit"></label>
+							  <div class="col-md-4">
+								<button name="submit" class="btn btn-primary" ng-click="custom.onSubmit()">Test Validation</button>
+							  </div>
+							</div>
+						</form>
+					 </div>
+				   </div>
+			</div>
+			<ul class="btn-group pull-right">
+				<a href="validate.html">
+					<li class="btn btn-primary"><i class="glyphicon glyphicon-step-backward"></i> ย้อนกลับ</li>
+				</a>
+				<a href="alert.html">
+					<li class="btn btn-primary">ถัดไป <i class="glyphicon glyphicon-step-forward"></i></li>
+				</a>
+			</ul>
+        </div>
+		
+        <!--div class="col-md-3">
+          <div class="hidden-print hidden-xs hidden-sm affix" role="complementary">
+            <ul class="nav">
+                <li class="active"><a href="#download">Download</a></li>
+                <li><a href="#whats-included">What's included</a></li>
+                <li><a class="back-to-top" href="#top">Back to top</a></li>
+            </ul>
+          </div>
+        </div-->
+      </div>
+    </div>
+      <footer class="footer">
+      <div class="container">
+        <p class="text-muted">              
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="สัญญาอนุญาตของครีเอทีฟคอมมอนส์" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />ผลงานนี้ ใช้<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">สัญญาอนุญาตของครีเอทีฟคอมมอนส์แบบ แสดงที่มา-ไม่ใช้เพื่อการค้า 4.0 International</a>.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/lib/jquery.min.js"></script>
+    <script src="../js/lib/bootstrap.min.js"></script>
+	<!--AngularJS Javascript -->
+    <script src="../js/lib/angular.min.js"></script>
+	<script src="../js/example/advance.js"></script>
+  	<script type="text/javascript" src="../js/scripts/shCore.js"></script>
+	<script type="text/javascript" src="../js/scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="../js/scripts/shBrushXml.js"></script>    
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+</body></html>

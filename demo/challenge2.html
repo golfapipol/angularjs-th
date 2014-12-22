@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="application">
+<head>
+    <!-- bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- bootstrap theme -->
+    <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+</head>
+<body>
+    <header>
+      <h1 class="text-center">{{"Tanaka-San"}}'s Sushi Store</h1>
+      <h2 class="text-center">Open Since {{10*200}}.</h2>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="list-group">
+                    <div class="list-group-item" ng-controller="storeController as store">
+                        <h1>{{sushi.name}}</h1>
+						<h2>{{sushi.price}} yen</h2>
+						<p>{{sushi.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/lib/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="../js/lib/bootstrap.min.js"></script>
+    <!-- AngularJS JavaScript -->
+    <script src="../js/lib/angular.min.js"></script>
+    <script src="../js/demo/challenge2.js"></script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<link rel="shortcut icon" href="../image/angularico.png" type="image/x-icon">
+    <title>Scope : $destroy()</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../css/styles/shThemeDefault.css"/>
+	<link type="text/css" rel="stylesheet" href="../css/styles/shCore.css"/>
+	<style>.my-menu{background-color: #222;}.container-main{margin-top: 70px;}.lesson-header{background-color: #9c2e2e;color:white}.lesson-body{margin-bottom: 70px;}</style>
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top " role="navigation" style="height:75px">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html"><img src="../image/AngularJS-large.png" style="width:200px" /></a>
+        </div>
+        <div class="collapse navbar-collapse my-menu">
+          <ul class="nav navbar-nav ">
+            <li ><a href="../home.html">Getting Started</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lesson<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li class="dropdown-header">Basic AngularJS</li>
+                <li><a href="../lesson/lesson1.html">Lesson 1</a></li>
+                <li><a href="../lesson/lesson2.html">Lesson 2</a></li>
+                <li><a href="../lesson/lesson3.html">Lesson 3</a></li>
+                <li><a href="../lesson/lesson4.html">Lesson 4</a></li>
+                <li><a href="../lesson/lesson5.html">Lesson 5</a></li>
+                <li><a href="../lesson/lesson6.html">Lesson 6</a></li>
+                <li><a href="../lesson/lesson7.html">Lesson 7</a></li>
+                <li><a href="../lesson/lesson8.html">Lesson 8</a></li>
+                <li><a href="../lesson/lesson9.html">Lesson 9</a></li>
+               	<li><a href="../lesson/lesson10.html">Lesson 10</a></li>
+                <li><a href="../lesson/lesson11.html">Lesson 11</a></li>
+                <li><a href="../lesson/lesson12.html">Lesson 12</a></li>
+              </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Directive<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li class="dropdown-header">Basic Directive</li>
+				<li><a href="../directive/directive.html">Directive Restrict</a></li>
+				<li><a href="../directive/template.html">Directive Template</a></li>
+				<li><a href="../directive/controller.html">Directive Controller</a></li>
+				<li><a href="../directive/link.html">Directive Link</a></li>
+				<li class="dropdown-header">Isolated Scope</li>
+                <li><a href="../directive/isolate.html">Isolated Scope</a></li>
+                <li><a href="../directive/scopeand.html">Scope Expression & </a></li>
+                <li><a href="../directive/scopeadd.html">Scope Attribute @ </a></li>
+                <li><a href="../directive/scopeequal.html">Scope Two way Binding =</a></li>
+				<li><a href="../directive/scopedifferent.html">$scope VS scope</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown active">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Scope<span class="caret"></span></a>
+              <ul class="dropdown-menu  active" role="menu">
+				<li><a href="rootscope.html">rootScope & Scope</a></li>
+				<li><a href="watch.html">$watch()</a></li>
+				<li><a href="apply.html">$apply()</a></li>
+				<li><a href="broadcast.html">$broadcast() & $on()</a></li>
+				<li><a href="emit.html">$emit() & $on()</a></li>
+				<li class="active"><a href="destory.html">$destory()</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown">
+				<a href="../service/service.html">Service</a>
+			</li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">UI Router<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../ui-route/uiroute.html">Introduction UI Router</a></li>
+				<li><a href="../ui-route/basicroute.html">Basic Routing</a></li>
+				<li><a href="../ui-route/resolve.html">Resolve & Data</a></li>
+				<li><a href="../ui-route/nestedrouting.html">Nested Routing</a></li>
+				<li><a href="../ui-route/multipleview.html">Multiple Views</a></li>
+				<li><a href="../ui-route/event.html">Event</a></li>
+				<li><a href="../ui-route/urlprovider.html">URL Provider</a></li>
+				<li><a href="../ui-route/statego.html">$state.go()</a></li>
+				<li><a href="../ui-route/challenge.html">Challenge</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Example<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../example/validate.html">Input Validation</a></li>
+				<li><a href="../example/advance.html">Advance Validation</a></li>
+				<li><a href="../example/alert.html">Alert Validation</a></li>
+				<li><a href="../example/dynamic.html">Dynamic Validation</a></li>
+				<li><a href="../example/custom.html">Custom Validation</a></li>
+				<li><a href="../example/ngform.html">ngForm Validation</a></li>
+           	  </ul>
+            </li>
+            <li><a href="../about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	<div class="lesson-header">
+		<div class="container container-main">
+			<h1>Scope : $destroy()</h1>
+		</div>
+	</div>
+    <div class="container lesson-body">
+      <div class="row">
+        <div class="col-md-9" role="main">
+			<div>
+            	<h2 class="page-header">สิ่งที่ควรรู้</h2>
+				<h3>$destroy() คือ อะไร ?</h3>
+				<p>$destroy เป็นฟังก์ชั่นที่ทำการลบ scope ที่เรียกใช้และ scope ที่เป็นลูกหลานออกจาก rootScope</p>
+				<p> และลบ event ต่างๆที่เรา binding ไว้ใน jQuery และ DOM Element </p>
+				<p>โดยมีโครงสร้างดังนี้</p>
+				<pre>$destroy();</pre>
+			</div>
+			<div>
+				<h3>ตัวอย่างการใช้งาน $destroy</h3>
+				<p>ในไฟล์ js ทำการสร้าง directive timer จะแสดง log ให้ดูว่า timer ถูกใช้งานแล้ว </p>
+				<pre class="brush: js">
+angular.module('application', [])
+	.controller('demoController', function ($scope) {
+		$scope.choice = "true";
+		$scope.toggle = function () {
+			if ($scope.choice === "true") {
+				$scope.choice = "false";
+			} else {
+				$scope.choice = "true";
+			}
+		};
+	})
+	.directive('timer', function ($timeout) {
+		return {
+			restrict: 'A',
+			link: function (scope, element, attr) {
+				var timer = $timeout( 
+					//wait 2 sec and do this function 
+					function () {
+						console.log("Timeout Executed", Date.now());
+					},
+					2000 
+				);
+				
+				timer.then(
+					//if timer is executed
+					function () {
+						console.log("Timer resolved!", Date.now());
+					},// else timer is not executed
+					function () {
+						console.log("Timer rejected!!", Date.now());
+					}
+				);
+				
+				scope.$on("$destroy", function (event) {
+					// when ng-switch destroy element will cancel old timer
+					$timeout.cancel(timer);
+				});
+			}
+		};
+	});
+</pre>
+				<p>ในไฟล์ html ทำการกำหนดดังนี้</p>
+				<p style="color: red">หมายเหตุ: ng-switch จะแสดงผลเฉพาะ case ที่ถูกต้อง และ destroy element ที่ไม่ใช่ออกไป </p>
+				<p style="color: red">ซึ่งการทำงานจะต่างกับ ng-show,ng-hide ที่ทำการซ่อน/แสดงเฉยๆ</p>
+				<pre class="brush:html">
+&lt;div ng-app="application" ng-controller="demoController as demo">
+	&lt;button ng-click="toggle()">change choice&lt;/button>
+	&lt;div ng-switch="choice">
+		&lt;p ng-switch-when="true" timer>
+			Oh, Timer run
+		&lt;/p>
+		&lt;p ng-switch-when="false" timer>
+			Wow, Timer run agian 
+		&lt;/p>
+	&lt;/div>
+	
+&lt;/div>
+</pre>
+				<p>จะได้ผลลัพธ์ดังนี้ (เปิด console เพื่อดู log)</p>
+				<div ng-app="application" ng-controller="demoController as demo">
+					<button ng-click="toggle()">change choice</button>
+					<p>choice is : {{choice}}</p>
+					<div ng-switch="choice">
+						<p ng-switch-when="true" timer>
+							Oh, Timer run
+						</p>
+						<p ng-switch-when="false" timer>
+							Wow, Timer run agian
+						</p>
+						<ul class="code"></ul>
+					</div>
+
+				</div>
+				<p style="color: red">สังเกตได้ว่าเมื่อมี destroy element timer จะถูกยกเลิก และแสดงผลให้เห็นว่า timer ถูก rejected แล้วเริ่ม timer ตัวใหม่</p>
+			</div>
+			<ul class="btn-group pull-right">
+				<a href="emit.html">
+					<li class="btn btn-primary"><i class="glyphicon glyphicon-step-backward"></i> ย้อนกลับ</li>
+				</a>
+			</ul>
+        </div>
+		
+        <!--div class="col-md-3">
+          <div class="hidden-print hidden-xs hidden-sm affix" role="complementary">
+            <ul class="nav">
+                <li class="active"><a href="#download">Download</a></li>
+                <li><a href="#whats-included">What's included</a></li>
+                <li><a class="back-to-top" href="#top">Back to top</a></li>
+            </ul>
+          </div>
+        </div-->
+      </div>
+    </div>
+      <footer class="footer">
+      <div class="container">
+        <p class="text-muted">              
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="สัญญาอนุญาตของครีเอทีฟคอมมอนส์" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />ผลงานนี้ ใช้<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">สัญญาอนุญาตของครีเอทีฟคอมมอนส์แบบ แสดงที่มา-ไม่ใช้เพื่อการค้า 4.0 International</a>.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/lib/jquery.min.js"></script>
+    <script src="../js/lib/bootstrap.min.js"></script>
+	<!--AngularJS Javascript -->
+    <script src="../js/lib/angular.min.js"></script>
+    <script src="../js/demo/destroy.js"></script>
+	<script type="text/javascript" src="../js/scripts/shCore.js"></script>
+	<script type="text/javascript" src="../js/scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="../js/scripts/shBrushXml.js"></script>    
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+</body></html>

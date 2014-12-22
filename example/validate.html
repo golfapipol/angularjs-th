@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<link rel="shortcut icon" href="../image/angularico.png" type="image/x-icon">
+    <title>Example : Input Validation</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../css/styles/shThemeDefault.css"/>
+	<link type="text/css" rel="stylesheet" href="../css/styles/shCore.css"/>
+	<style>.my-menu{background-color: #222;}.container-main{margin-top: 70px;}.lesson-header{background-color: #9c2e2e;color:white}.lesson-body{margin-bottom: 70px;}
+		.ng-dirty.ng-invalid{border-color:red;}
+        .ng-dirty.ng-valid{border-color:green!important;}
+        span.require{color:red}
+        .help-block{color:red}
+        .error{border-color:red}</style>
+
+</head>
+<body ng-app="demo">
+    <div class="navbar navbar-inverse navbar-fixed-top " role="navigation" style="height:75px">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html"><img src="../image/AngularJS-large.png" style="width:200px" /></a>
+        </div>
+        <div class="collapse navbar-collapse my-menu">
+          <ul class="nav navbar-nav ">
+            <li ><a href="../home.html">Getting Started</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lesson<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li class="dropdown-header">Basic AngularJS</li>
+                <li><a href="../lesson/lesson1.html">Lesson 1</a></li>
+                <li><a href="../lesson/lesson2.html">Lesson 2</a></li>
+                <li><a href="../lesson/lesson3.html">Lesson 3</a></li>
+                <li><a href="../lesson/lesson4.html">Lesson 4</a></li>
+                <li><a href="../lesson/lesson5.html">Lesson 5</a></li>
+                <li><a href="../lesson/lesson6.html">Lesson 6</a></li>
+                <li><a href="../lesson/lesson7.html">Lesson 7</a></li>
+                <li><a href="../lesson/lesson8.html">Lesson 8</a></li>
+                <li><a href="../lesson/lesson9.html">Lesson 9</a></li>
+               	<li><a href="../lesson/lesson10.html">Lesson 10</a></li>
+                <li><a href="../lesson/lesson11.html">Lesson 11</a></li>
+                <li><a href="../lesson/lesson12.html">Lesson 12</a></li>
+              </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Directive<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li class="dropdown-header">Basic Directive</li>
+				<li><a href="../directive/directive.html">Directive Restrict</a></li>
+				<li><a href="../directive/template.html">Directive Template</a></li>
+				<li><a href="../directive/controller.html">Directive Controller</a></li>
+				<li><a href="../directive/link.html">Directive Link</a></li>
+				<li class="dropdown-header">Isolated Scope</li>
+                <li><a href="../directive/isolate.html">Isolated Scope</a></li>
+                <li><a href="../directive/scopeand.html">Scope Expression & </a></li>
+                <li><a href="../directive/scopeadd.html">Scope Attribute @ </a></li>
+                <li><a href="../directive/scopeequal.html">Scope Two way Binding =</a></li>
+				<li><a href="../directive/scopedifferent.html">$scope VS scope</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Scope<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../scope/rootscope.html">rootScope & Scope</a></li>
+				<li><a href="../scope/watch.html">$watch()</a></li>
+				<li><a href="../scope/apply.html">$apply()</a></li>
+				<li><a href="../scope/broadcast.html">$broadcast() & $on()</a></li>
+				<li><a href="../scope/emit.html">$emit() & $on()</a></li>
+				<li><a href="../scope/destory.html">$destory()</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown">
+				<a href="../service/service.html">Service</a>
+			</li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">UI Router<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../ui-route/uiroute.html">Introduction UI Router</a></li>
+				<li><a href="../ui-route/basicroute.html">Basic Routing</a></li>
+				<li><a href="../ui-route/resolve.html">Resolve & Data</a></li>
+				<li><a href="../ui-route/nestedrouting.html">Nested Routing</a></li>
+				<li><a href="../ui-route/multipleview.html">Multiple Views</a></li>
+				<li><a href="../ui-route/event.html">Event</a></li>
+				<li><a href="../ui-route/urlprovider.html">URL Provider</a></li>
+				<li><a href="../ui-route/statego.html">$state.go()</a></li>
+				<li><a href="../ui-route/challenge.html">Challenge</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown active">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Example<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li class="active"><a href="validate.html">Input Validation</a></li>
+				<li><a href="advance.html">Advance Validation</a></li>
+				<li><a href="alert.html">Alert Validation</a></li>
+				<li><a href="dynamic.html">Dynamic Validation</a></li>
+				<li><a href="custom.html">Custom Validation</a></li>
+				<li><a href="ngform.html">ngForm Validation</a></li>
+           	  </ul>
+            </li>
+			
+            <li><a href="../about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	<div class="lesson-header">
+		<div class="container container-main">
+			<h1>Example: Input Validation</h1>
+		</div>
+	</div>
+    <div class="container lesson-body">
+      <div class="row">
+        <div class="col-md-9" role="main">
+			<div>
+            	<div class="panel panel-success" ng-controller="demoBasicCtrl as basic">
+				   <div class="panel-body">
+					  <legend>Basic Example - ตัวอย่างการตรวจสอบค่า input ต่างๆที่มีอยู่ใน AngularJS</legend>
+					  <form class="form-horizontal" name="form" ng-submit="" novalidate>
+						<!-- required input-->
+						<div class="form-group">
+						  <label class="col-md-4 control-label" for="required">Required<span class="require">*</span></label>  
+						  <div class="col-md-4">
+							<input class="form-control input-md" name="required" ng-model="required" type="text" 
+								   ng-class="{error: basic.isSubmit() && form.required.$invalid}" required>
+							<span class="help-block" 
+								  ng-show=" ( form.required.$invalid && form.required.$dirty ) || basic.isSubmit()">
+								<p ng-show="form.required.$error.required">
+									This field is required.
+								</p>
+							</span>  
+						  </div>
+						</div>
+						<!-- E-Mail input -->
+						<div class="form-group">
+						  <label class="col-md-4 control-label" for="email">E-Mail<span class="require">*</span></label>  
+						  <div class="col-md-4">
+							<input class="form-control input-md" name="email" ng-model="email" type="email" 
+								   ng-class="{error: basic.isSubmit() && form.email.$invalid}" required>
+							<span class="help-block" 
+								  ng-show=" ( form.email.$invalid && form.email.$dirty ) || basic.isSubmit()">
+								<p ng-show="form.email.$error.required">
+									This field is required.
+								</p>
+								<p ng-show="form.email.$error.email">
+									Please enter a valid email address.
+								</p>
+							</span>  
+						  </div>
+						</div>
+						<!-- URL input -->
+						<div class="form-group">
+						  <label class="col-md-4 control-label" for="url">URL<span class="require">*</span></label>  
+						  <div class="col-md-4">
+							<input class="form-control input-md" name="url" ng-model="url" type="url"
+								   ng-class="{error: basic.isSubmit() && form.url.$invalid}" required>
+							<span class="help-block" ng-show="(form.url.$invalid && form.url.$dirty)|| basic.isSubmit()">
+								<p ng-show="form.url.$error.required">This field is required.</p>
+								<p ng-show="form.url.$error.url">Please enter a valid URL.</p>
+							</span> 
+						  </div>
+						</div>
+						<!-- number input-->
+						<div class="form-group">
+						  <label class="col-md-4 control-label" for="number">Number<span class="require">*</span></label>  
+						  <div class="col-md-4">
+							<input class="form-control input-md" name="number" ng-model="number" type="number"
+								   ng-class="{error: basic.isSubmit() && form.number.$invalid}" required>
+							<span class="help-block" ng-show="(form.number.$invalid && form.number.$dirty)|| basic.isSubmit()">
+								<p ng-show="form.number.$error.required">This field is required.</p>
+								<p ng-show="form.number.$error.number">Please enter a digit.</p>
+							</span> 
+						  </div>
+						</div>
+						<!-- Button -->
+						<div class="form-group">
+						  <label class="col-md-4 control-label" for="submit"></label>
+						  <div class="col-md-4">
+							<button name="submit" class="btn btn-primary" ng-click="basic.onSubmit()">Test Validation</button>
+						  </div>
+						</div>
+						</form>
+					 </div>
+				   </div>
+				   <div class="panel panel-info" ng-controller="demoSpecificCtrl as specific">
+					   <div class="panel-body">
+						  <legend>Specific Example - ตัวอย่างการใช้งาน input ของ angular แบบมีเงื่อนไขเพิ่มเติม</legend>
+						  <form class="form-horizontal" name="form" ng-submit="" novalidate>
+							<!-- textOnly input-->
+							<div class="form-group">
+							  <label class="col-md-4 control-label" for="required">Text Only<span class="require">*</span></label>  
+							  <div class="col-md-4">
+								<input class="form-control input-md" name="textOnly" ng-model="textOnly" type="text"
+									   ng-class="{error: specific.isSubmit() && form.textOnly.$invalid}" ng-pattern="/^[a-zA-Z]+$/" required>
+								<span class="help-block" ng-show="(form.textOnly.$invalid && form.textOnly.$dirty)|| specific.isSubmit()">
+									<p ng-show="form.textOnly.$error.required">This field is required.</p>
+									<p ng-show="form.textOnly.$error.pattern">Please enter a Character.</p>
+								</span>  
+							  </div>
+							  <div class="col-md-4">
+								<label>กำหนด Pattern ในการกรอกข้อมูลได้ <br>ng-pattern="/^[a-zA-Z]+$/" </label>  
+							  </div>
+							</div>
+							<!-- MinLength input -->
+							<div class="form-group">
+							  <label class="col-md-4 control-label" for="minlength">Field[MinLength=5]<span class="require">*</span></label>  
+							  <div class="col-md-4">
+								<input class="form-control input-md" name="minlength" ng-model="minlength" ng-minlength="5" type="text"
+									   ng-class="{error: specific.isSubmit() && form.minlength.$invalid}" required>
+								<span class="help-block" ng-show="(form.minlength.$invalid && form.minlength.$dirty)|| specific.isSubmit()">
+									<p ng-show="form.minlength.$error.required">This field is required.</p>
+									<p ng-show="form.minlength.$error.minlength">Please enter at least 5 character.</p>
+								</span> 
+							  </div>
+							  <div class="col-md-4">
+								<label>กำหนด MinLength ในการกรอกข้อมูลได้ <br>ng-minlength="5" </label>  
+							  </div>
+							</div>
+							<!-- MaxLength input -->
+							<div class="form-group">
+							  <label class="col-md-4 control-label" for="maxlength">Field[MaxLength=5]<span class="require">*</span></label>  
+							  <div class="col-md-4">
+								<input class="form-control input-md" name="maxlength" ng-model="maxlength" type="text" ng-maxlength="5"
+									   ng-class="{error: specific.isSubmit() && form.maxlength.$invalid}" required>
+								<span class="help-block" ng-show="(form.maxlength.$invalid && form.maxlength.$dirty)|| specific.isSubmit()">
+									<p ng-show="form.maxlength.$error.required">This field is required.</p>
+									<p ng-show="form.maxlength.$error.maxlength">Please enter no more than 5 character.</p>
+								</span>  
+							  </div>
+							  <div class="col-md-4">
+								<label>กำหนด MaxLength ในการกรอกข้อมูลได้ <br>ng-maxlength="5" </label>  
+							  </div>
+							</div>
+							<!-- Range input -->
+							<div class="form-group">
+							  <label class="col-md-4 control-label" for="range">Field[5-10]<span class="require">*</span></label>  
+							  <div class="col-md-4">
+								<input class="form-control input-md" name="range" ng-model="range" type="text" ng-minlength="5" ng-maxlength="10"
+									   ng-class="{error: specific.isSubmit() && form.range.$invalid}" required>
+								<span class="help-block" ng-show="(form.range.$invalid && form.range.$dirty)|| specific.isSubmit()">
+									<p ng-show="form.range.$error.required">This field is required.</p>
+									<p ng-show="form.range.$error.minlength || form.range.$error.maxlength">Please enter a value between 5 and 10 characters long.</p>
+								</span>  
+							  </div>
+							  <div class="col-md-4">
+								<label>กำหนดช่วงของความยาวตัวอักษร <br>ng-minlength="5" ng-maxlength="10"</label>  
+							  </div>
+							</div>
+							<!-- minnumber input-->
+							<div class="form-group">
+							  <label class="col-md-4 control-label" for="minnumber">Number[min=5]<span class="require">*</span></label>  
+							  <div class="col-md-4">
+								<input class="form-control input-md" name="minnumber" ng-model="minnumber" min="5" type="number" 
+									   ng-class="{error: specific.isSubmit() && form.minnumber.$invalid}" required>
+								<span class="help-block" ng-show="(form.minnumber.$invalid && form.minnumber.$dirty)|| specific.isSubmit()">
+									<p ng-show="form.minnumber.$error.required">This field is required.</p>
+									<p ng-show="form.minnumber.$error.min">Please enter a value greater than or equal to 5.</p>
+								</span>  
+							  </div>
+							  <div class="col-md-4">
+								<label>กำหนดให้ใส่ค่าอย่างน้อย <br> min="5" </label>  
+							  </div>
+							</div>
+							<!-- maxnumber input-->
+							<div class="form-group">
+							  <label class="col-md-4 control-label" for="maxnumber">Number[max=10]<span class="require">*</span></label>  
+							  <div class="col-md-4">
+								<input class="form-control input-md" name="maxnumber" ng-model="maxnumber" max="10" type="number"
+									   ng-class="{error: specific.isSubmit() && form.maxnumber.$invalid}" required>
+								<span class="help-block" ng-show="(form.maxnumber.$invalid && form.maxnumber.$dirty)|| specific.isSubmit()">
+									<p ng-show="form.maxnumber.$error.required">This field is required.</p>
+									<p ng-show="form.maxnumber.$error.max">Please enter a value less than or equal to 10.</p>
+								</span>  
+							  </div>
+							  <div class="col-md-4">
+								<label>กำหนดให้ใส่ค่าสูงสุด <br> max="10" </label>  
+							  </div>
+							</div>
+							<!-- Password input-->
+							<div class="form-group">
+							  <label class="col-md-4 control-label" for="password">Password<span class="require">*</span></label>  
+							  <div class="col-md-4">
+								<input class="form-control input-md" name="password" ng-model="password" type="password"
+									   ng-class="{error: specific.isSubmit() && form.password.$invalid}" required>
+								<span class="help-block" ng-show="(form.password.$invalid && form.password.$dirty)|| specific.isSubmit()">
+									<p ng-show="form.password.$error.required">This field is required.</p>
+									<p ng-show="form.password.$error.number">Please enter a digit.</p>
+								</span> 
+							  </div>
+							</div>
+							<div class="form-group">
+							  <label class="col-md-4 control-label" for="number">Confirm Password<span class="require">*</span></label>  
+							  <div class="col-md-4">
+								<input class="form-control input-md" name="matchpassword" ng-model="matchpassword" type="password"
+									   ng-change="specific.comparePassword()"
+									   ng-class="{error: specific.isSubmit() && form.matchpassword.$invalid}" required>
+								<span class="help-block" ng-show="(form.matchpassword.$invalid && form.matchpassword.$dirty)|| specific.isSubmit()">
+									<p ng-show="form.matchpassword.$error.required">This field is required.</p>
+									<p ng-show="form.matchpassword.$error.matchValidate">Please enter same value agian.</p>
+								</span> 
+							  </div>
+							  <div class="col-md-4">
+								<label>ตรวจสอบความถูกต้องของ Password</label>  
+							  </div>
+							</div>
+							<!-- Button -->
+							<div class="form-group">
+							  <label class="col-md-4 control-label" for="submit"></label>
+							  <div class="col-md-4">
+								<button name="submit" class="btn btn-primary" ng-click="specific.onSubmit()">Test Validation</button>
+							  </div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<ul class="btn-group pull-right">
+				<!--a href="template.html">
+					<li class="btn btn-primary"><i class="glyphicon glyphicon-step-backward"></i> ย้อนกลับ</li>
+				</a-->
+				<a href="advance.html">
+					<li class="btn btn-primary">ถัดไป <i class="glyphicon glyphicon-step-forward"></i></li>
+				</a>
+			</ul>
+        </div>
+		
+        <!--div class="col-md-3">
+          <div class="hidden-print hidden-xs hidden-sm affix" role="complementary">
+            <ul class="nav">
+                <li class="active"><a href="#download">Download</a></li>
+                <li><a href="#whats-included">What's included</a></li>
+                <li><a class="back-to-top" href="#top">Back to top</a></li>
+            </ul>
+          </div>
+        </div-->
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">              
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="สัญญาอนุญาตของครีเอทีฟคอมมอนส์" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />ผลงานนี้ ใช้<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">สัญญาอนุญาตของครีเอทีฟคอมมอนส์แบบ แสดงที่มา-ไม่ใช้เพื่อการค้า 4.0 International</a>.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/lib/jquery.min.js"></script>
+    <script src="../js/lib/bootstrap.min.js"></script>
+	<!--AngularJS Javascript -->
+    <script src="../js/lib/angular.min.js"></script>
+	<script src="../js/example/validate.js"></script>
+  	<script type="text/javascript" src="../js/scripts/shCore.js"></script>
+	<script type="text/javascript" src="../js/scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="../js/scripts/shBrushXml.js"></script>    
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+</body></html>

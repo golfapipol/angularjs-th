@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<link rel="shortcut icon" href="../image/angularico.png" type="image/x-icon">
+    <title>Scope : $broadcast() & $on()</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../css/styles/shThemeDefault.css"/>
+	<link type="text/css" rel="stylesheet" href="../css/styles/shCore.css"/>
+	<style>.my-menu{background-color: #222;}.container-main{margin-top: 70px;}.lesson-header{background-color: #9c2e2e;color:white}.lesson-body{margin-bottom: 70px;}</style>
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top " role="navigation" style="height:75px">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html"><img src="../image/AngularJS-large.png" style="width:200px" /></a>
+        </div>
+        <div class="collapse navbar-collapse my-menu">
+          <ul class="nav navbar-nav ">
+            <li ><a href="../home.html">Getting Started</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lesson<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li class="dropdown-header">Basic AngularJS</li>
+                <li><a href="../lesson/lesson1.html">Lesson 1</a></li>
+                <li><a href="../lesson/lesson2.html">Lesson 2</a></li>
+                <li><a href="../lesson/lesson3.html">Lesson 3</a></li>
+                <li><a href="../lesson/lesson4.html">Lesson 4</a></li>
+                <li><a href="../lesson/lesson5.html">Lesson 5</a></li>
+                <li><a href="../lesson/lesson6.html">Lesson 6</a></li>
+                <li><a href="../lesson/lesson7.html">Lesson 7</a></li>
+                <li><a href="../lesson/lesson8.html">Lesson 8</a></li>
+                <li><a href="../lesson/lesson9.html">Lesson 9</a></li>
+               	<li><a href="../lesson/lesson10.html">Lesson 10</a></li>
+                <li><a href="../lesson/lesson11.html">Lesson 11</a></li>
+                <li><a href="../lesson/lesson12.html">Lesson 12</a></li>
+              </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Directive<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li class="dropdown-header">Basic Directive</li>
+				<li><a href="../directive/directive.html">Directive Restrict</a></li>
+				<li><a href="../directive/template.html">Directive Template</a></li>
+				<li><a href="../directive/controller.html">Directive Controller</a></li>
+				<li><a href="../directive/link.html">Directive Link</a></li>
+				<li class="dropdown-header">Isolated Scope</li>
+                <li><a href="../directive/isolate.html">Isolated Scope</a></li>
+                <li><a href="../directive/scopeand.html">Scope Expression & </a></li>
+                <li><a href="../directive/scopeadd.html">Scope Attribute @ </a></li>
+                <li><a href="../directive/scopeequal.html">Scope Two way Binding =</a></li>
+				<li><a href="../directive/scopedifferent.html">$scope VS scope</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown active">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Scope<span class="caret"></span></a>
+              <ul class="dropdown-menu  active" role="menu">
+				<li><a href="rootscope.html">rootScope & Scope</a></li>
+				<li><a href="watch.html">$watch()</a></li>
+				<li><a href="apply.html">$apply()</a></li>
+				<li class="active"><a href="broadcast.html">$broadcast() & $on()</a></li>
+				<li><a href="emit.html">$emit() & $on()</a></li>
+				<li><a href="destory.html">$destory()</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown">
+				<a href="../service/service.html">Service</a>
+			</li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">UI Router<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../ui-route/uiroute.html">Introduction UI Router</a></li>
+				<li><a href="../ui-route/basicroute.html">Basic Routing</a></li>
+				<li><a href="../ui-route/resolve.html">Resolve & Data</a></li>
+				<li><a href="../ui-route/nestedrouting.html">Nested Routing</a></li>
+				<li><a href="../ui-route/multipleview.html">Multiple Views</a></li>
+				<li><a href="../ui-route/event.html">Event</a></li>
+				<li><a href="../ui-route/urlprovider.html">URL Provider</a></li>
+				<li><a href="../ui-route/statego.html">$state.go()</a></li>
+				<li><a href="../ui-route/challenge.html">Challenge</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Example<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../example/validate.html">Input Validation</a></li>
+				<li><a href="../example/advance.html">Advance Validation</a></li>
+				<li><a href="../example/alert.html">Alert Validation</a></li>
+				<li><a href="../example/dynamic.html">Dynamic Validation</a></li>
+				<li><a href="../example/custom.html">Custom Validation</a></li>
+				<li><a href="../example/ngform.html">ngForm Validation</a></li>
+           	  </ul>
+            </li>
+            <li><a href="../about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	<div class="lesson-header">
+		<div class="container container-main">
+			<h1>Scope : $broadcast() & $on()</h1>
+		</div>
+	</div>
+    <div class="container lesson-body">
+      <div class="row">
+        <div class="col-md-9" role="main" ng-app="application">
+			<div>
+            	<h2 class="page-header">สิ่งที่ควรรู้</h2>
+				<h3>$on() คือ อะไร</h3>
+				<p>$on เป็นฟังก์ชั่นที่ไว้สำหรับกำหนด event ให้กับ element ต่างๆใน AngularJS โดยลักษณะการทำงาน<strong><u>เหมือนกับ on() ใน jQuery</u></strong></p>
+				<p>ซึ่งมีโครงสร้างดังนี้</p>
+				<pre>$on(ชื่อ event, ฟังก์ชั่นที่ถูกเรียกใช้);</pre>
+				<h3>$broadcast() คือ อะไร ?</h3>
+				<p>$broadcast เป็นฟังก์ชั่นที่เรียกใช้งาน event ที่กำหนดไว้กับฟังก์ชั่น $on โดยเรียกใช้นั้นมี<u>ขอบเขตตั้งแต่ตัวเองลงไป</u></p>
+				<p>โดยมีโครงสร้างดังนี้</p>
+				<pre>$broadcast(ชื่อ event, argument ต่างๆ);</pre>
+			</div>
+			<div>
+				<h3>ตัวอย่างการใช้งาน $broadcast และ $on </h3>
+				<p>เราจะทำตัวอย่างเพิ่มค่าโดยเรียกจากในส่วนที่ถูกใช้งาน ให้เกิดการเปลี่ยนแปลงที่ตัวมันกับลูกของมัน</p>
+				<p>ในไฟล์ js กำหนด ตัวแปร count ใน controller และฟังก์ชั่นในการเพิ่มค่า count</p>
+				<pre class="brush: js;highlight: [4,5,6,10,11,12,16,17,18]">
+angular.module('application', [])
+    .controller('rootController', function ($scope) {
+        $scope.count = 0;
+        $scope.$on('addCount', function () {
+            $scope.count += 1;
+        });
+    })
+	.controller('branchController', function ($scope) {
+        $scope.count = 0;
+        $scope.$on('addCount', function () {
+            $scope.count += 2;
+        });
+    })
+	.controller('nodeController', function ($scope) {
+        $scope.count = 0;
+        $scope.$on('addCount', function () {
+            $scope.count += 3;
+        });
+    });
+</pre>
+				<p>ในไฟล์ html ทำเรียกใช้ controller ดังกล่าว</p>
+				<pre class="brush: html;highlight: [6]">
+&lt;body ng-app="application">
+	&lt;div ng-controller="rootController as root">
+		&lt;p>root count is : \{\{count}}&lt;/p>
+		&lt;div ng-controller="branchController as branch">
+			&lt;p>branch count is : \{\{count}}
+				&lt;button type="button" ng-click="$broadcast('addCount')">branch button&lt;/button>
+			&lt;/p>
+			&lt;div ng-controller="nodeController as node">
+				&lt;p>node count is : \{\{count}}&lt;/p>
+			&lt;/div>
+		&lt;/div>
+	&lt;/div>
+&lt;/body>
+</pre>
+				<p>จะได้ผลลัพธ์ดังนี้</p>
+				<div >
+					<div ng-controller="rootController as root">
+						<p>root count is : {{count}}</p>
+
+						<div ng-controller="branchController as branch">
+							<p>branch count is : {{count}}
+								<button type="button" ng-click="$broadcast('addCount')">branch button</button>
+							</p>
+							<div ng-controller="nodeController as node">
+								<p>node count is : {{count}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<p style="color: red">สังเกตได้ว่า broadcast นั้นจะมีผลกับเฉพาะ element นั้นและลูกหลานของ element นั้น เท่านั้น</p>
+				<img src="../image/broadcast.png"/>
+			</div>
+			<div>
+				<h2 class="page-header">กรณีที่มีการส่ง Argument เข้ามาในฟังก์ชั่น</h2>
+				<p>ในไฟล์ js สร้าง event ที่รับพารามิเตอร์</p>
+				<pre class="brush: js;highlight: [7,8,9,10,17,18,19,20,27,28,29,30]">
+angular.module('application', [])
+	.controller('rootController', function ($scope) {
+        $scope.count = 0;
+        $scope.$on('addCount', function () {
+            $scope.count += 1;
+        });
+		$scope.$on('addMultiCount', function (event, num) {
+			console.log(num);
+            $scope.count += parseInt(num, 10);
+        });
+    })
+	.controller('branchController', function ($scope) {
+        $scope.count = 0;
+        $scope.$on('addCount', function () {
+            $scope.count += 2;
+        });
+		$scope.$on('addMultiCount', function (event, num) {
+			console.log(num);
+            $scope.count += parseInt(num, 10);
+        });
+    })
+	.controller('nodeController', function ($scope) {
+        $scope.count = 0;
+        $scope.$on('addCount', function () {
+            $scope.count += 3;
+        });
+		$scope.$on('addMultiCount', function (event, num) {
+			console.log(num);
+            $scope.count += parseInt(num, 10);
+        });
+    });		
+</pre>
+				<p>ในไฟล์ html ทำการเพิ่มปุ่มในการเพิ่มค่า count</p>
+				<pre class="brush: js;highlight: [7]">
+&lt;body ng-app="application">
+	&lt;div ng-controller="rootController as root">
+		&lt;p>root count is : \{\{count}}&lt;/p>
+		&lt;div ng-controller="branchController as branch">
+			&lt;p>branch count is : \{\{count}}
+				&lt;button type="button" ng-click="$broadcast('addCount')">branch button&lt;/button>
+				&lt;button type="button" ng-click="$broadcast('addMultiCount', 10)">branch multi button&lt;/button>
+			&lt;/p>
+			&lt;div ng-controller="nodeController as node">
+				&lt;p>node count is : \{\{count}}&lt;/p>
+			&lt;/div>
+		&lt;/div>
+	&lt;/div>
+&lt;/body>
+</pre>
+				<p>จะได้ผลลัพธ์ดังนี้</p>
+				<div>
+					<div ng-controller="rootController as root">
+						<p>root count is : {{count}}</p>
+						<div ng-controller="branchController as branch">
+							<p>branch count is : {{count}}
+								<button type="button" ng-click="$broadcast('addCount')">branch button</button>
+								<button type="button" ng-click="$broadcast('addMultiCount', 10)">branch multi button</button>
+							</p>
+							<div ng-controller="nodeController as node">
+								<p>node count is : {{count}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<ul class="btn-group pull-right">
+				<a href="apply.html">
+					<li class="btn btn-primary"><i class="glyphicon glyphicon-step-backward"></i> ย้อนกลับ</li>
+				</a>
+				<a href="emit.html">
+					<li class="btn btn-primary">ถัดไป <i class="glyphicon glyphicon-step-forward"></i></li>
+				</a>
+			</ul>
+        </div>
+		
+        <!--div class="col-md-3">
+          <div class="hidden-print hidden-xs hidden-sm affix" role="complementary">
+            <ul class="nav">
+                <li class="active"><a href="#download">Download</a></li>
+                <li><a href="#whats-included">What's included</a></li>
+                <li><a class="back-to-top" href="#top">Back to top</a></li>
+            </ul>
+          </div>
+        </div-->
+      </div>
+    </div>
+      <footer class="footer">
+      <div class="container">
+        <p class="text-muted">              
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="สัญญาอนุญาตของครีเอทีฟคอมมอนส์" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />ผลงานนี้ ใช้<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">สัญญาอนุญาตของครีเอทีฟคอมมอนส์แบบ แสดงที่มา-ไม่ใช้เพื่อการค้า 4.0 International</a>.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/lib/jquery.min.js"></script>
+    <script src="../js/lib/bootstrap.min.js"></script>
+	<!--AngularJS Javascript -->
+    <script src="../js/lib/angular.min.js"></script>
+    <script src="../js/demo/onevent.js"></script>
+	<script type="text/javascript" src="../js/scripts/shCore.js"></script>
+	<script type="text/javascript" src="../js/scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="../js/scripts/shBrushXml.js"></script>    
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+</body></html>

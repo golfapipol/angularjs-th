@@ -6,7 +6,7 @@
     <title>AngularJS: Getting Started</title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <style>.my-menu{background-color: #222;}.container-main{margin-top: 70px;}.lesson-header{background-color: #9c2e2e;color:white}.lesson-body{margin-bottom: 70px;}</style>
+    <style>.my-menu{background-color: #222;}.container-main{margin-top: 70px;margin-bottom: 50px}.lesson-header{background-color: #9c2e2e;color:white}.lesson-body{margin-bottom: 70px;}</style>
 
 </head>
 <body>
@@ -23,7 +23,7 @@
         </div>
         <div class="collapse navbar-collapse my-menu">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="home.html">Getting Started</a></li>
+            <li><a href="home.html">Getting Started</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lesson<span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
@@ -39,7 +39,7 @@
                 <li><a href="lesson/lesson9.html">Lesson 9</a></li>
                 <li><a href="lesson/lesson10.html">Lesson 10</a></li>
                 <li><a href="lesson/lesson11.html">Lesson 11</a></li>
-                <li><a href="lesson/lesson12.html">Lesson 12</a></li>
+                <li><a href="lesson12.html">Lesson 12</a></li>
               </ul>
             </li>
 			<li class="dropdown">
@@ -97,84 +97,53 @@
 				<li><a href="example/ngform.html">ngForm Validation</a></li>
            	  </ul>
             </li>
-			<li><a href="about.html">About</a></li>
+			<li class="active"><a href="about.html">About</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>
 	<div class="lesson-header">
 		<div class="container container-main">
-			<h1>Getting Started: เริ่มต้นกับ AngularJS Framework</h1>
-		</div>
-	</div>
-    <div class="container lesson-body">
-      <div class="row">
-        <div class="col-md-9" role="main">
-			<div>
-            	<h2 class="page-header">AngularJS คือ อะไร ?</h2>
-				<p>
-					AngularJS เป็น JavaScript Framework ที่พัฒนาโดย Google เพื่อลดการใช้งานของข้อมูลในเครื่องแม่ข่าย (Server) ใช้ในการพัฒนาเว็บแอปพลิเคชั่นแบบ single-page application และยังสามารถรองรับการใช้งานกับภาษาทางด้านโปรแกรมอื่นๆได้หลากหลาย
-	โดยการสร้าง Single-Page Application โดย AngularJS มีส่วนประกอบอยู่ 3 ส่วน ได้แก่
-				</p>
-				<ul>
-					<li>HTML</li>
-					<li>CSS</li>
-					<li>Javascript</li>
-				</ul>
-			</div>
-			<div>
-            	<h2 class="page-header">สิ่งที่ต้องใช้ก่อนเริ่มพัฒนาโปรแกรม</h2>
-				<p>
-					ในแบบฝึกหัดนี้เราจะใช้ Bootstrap 3 ควบคู่กับ AngularJS ในการพัฒนาโปรแกรม
-				</p>
-				<ul>
-					<li><h3>Bootstrap</h3> สามารถดาวห์โหลดได้จาก <a href="http://getbootstrap.com">http://getbootstrap.com</a></li>
-					<li><h3>AngularJS</h3> สามารถดาวห์โหลดได้จาก <a href="http://angularjs.org/">http://angularjs.org/</a></li>
-				</ul>
-				<p>โดยแบบฝึกหัดนี้เราจะเก็บที่อยู่ของไฟล์ดังนี้</p>
-				<pre><code class="bash">tutorial/
-├── css/
-│   ├── bootstrap.css
-│   ├── bootstrap.min.css
-│   ├── bootstrap-theme.css
-│   └── bootstrap-theme.min.css
-├── js/
-│   ├── lib/
-│   │ 	├── bootstrap.min.js
-│   │ 	└── angular.min.js
-└── fonts/
-    ├── glyphicons-halflings-regular.eot
-    ├── glyphicons-halflings-regular.svg
-    ├── glyphicons-halflings-regular.ttf
-    └── glyphicons-halflings-regular.woff</code>
-				</pre>
-			</div>
-			<ul class="btn-group pull-right">
-				<a href="lesson/lesson1.html">
-					<li class="btn btn-primary">ถัดไป <i class="glyphicon glyphicon-step-forward"></i></li>
-				</a>
-			</ul>
-        </div>
-		
-        <!--div class="col-md-3">
-          <div class="hidden-print hidden-xs hidden-sm affix" role="complementary">
-            <ul class="nav">
-                <li class="active"><a href="#download">Download</a></li>
-                <li><a href="#whats-included">What's included</a></li>
-                <li><a class="back-to-top" href="#top">Back to top</a></li>
-            </ul>
-          </div>
-        </div-->
-      </div>
+			<h1>About: เกี่ยวกับผู้เขียน</h1>
+            <h2 style="text-align: center;">ขอขอบคุณ <img src="image/mfec.jpg" style="width:10%"> ที่อนุญาตให้เผยแพร่ข้อมูลดังกล่าวเพื่อการศึกษาได้</h2>
+            <h2 style="text-align: center;">ขอขอบคุณ พี่มิ๊ก (Pongsatorn Paolanwat) ที่ทำให้ผมได้มีโอกาสเขียนเอกสารชุดนี้ขึ้น</h2>
     </div>
-    <footer class="footer">
+	</div>
+  <div class="container lesson-body">
+
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-1">
+          <img class="img-circle" src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpa1/v/t1.0-1/c0.58.160.160/p160x160/10407781_10201637832106465_5923831486518859869_n.jpg?oh=7f465b27c87abe01c706b13c1b5958ab&oe=5506266F&__gda__=1425608068_da359c9134cbe312f15655f537f22c71">
+          <h2>Apipol Sukgler [Golf]</h2><h3>(ผู้แต่ง, เรียบเรียงเนื้อหา)</h3>
+          <p>กำลังศึกษาอยู่ชั้นปีที่ 4 คณะวิทยาการสารสนเทศ สาขาวิชา วิศวกรรมซอฟต์แวร์ มหาวิทยาลัยบูรพา</p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xaf1/v/t1.0-1/c33.33.416.416/s160x160/265128_129348247146236_1487064_n.jpg?oh=09358469c85c5906d85fdf11117181b8&oe=553EE95F&__gda__=1426460820_5eec07fcec391b9027de682c7bfa4faf">
+          <h2>Supanat Prapassantigul [Keng]</h2><h3>(ตรวจสอบเนื้อหา)</h3>
+          <p>กำลังศึกษาอยู่ชั้นปีที่ 4 คณะวิทยาการสารสนเทศ สาขาวิชา วิศวกรรมซอฟต์แวร์ มหาวิทยาลัยบูรพา</p>
+        </div><!-- /.col-lg-4 -->
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-lg-offset-1">
+          <img class="img-circle" src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xap1/v/t1.0-1/p160x160/1897741_663911597003960_742075873_n.jpg?oh=ad77d54a709a5d6cd275b287e9278771&oe=5540217A&__gda__=1426139821_55dbc930c7ae629905c6f0093bebb85f">
+          <h2>Preuttipan Janpen [Nut]</h2><h3>(ตรวจสอบเนื้อหา)</h3>
+          <p>กำลังศึกษาอยู่ชั้นปีที่ 4 คณะวิทยาการสารสนเทศ สาขาวิชา วิศวกรรมซอฟต์แวร์ มหาวิทยาลัยบูรพา</p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/v/t1.0-1/p160x160/10849781_10153957272793532_8809844089065064376_n.jpg?oh=1e9a1df5a44b08ea83c0d094431a623b&oe=5536CA82&__gda__=1429802773_215e00a1d3d34196ab7c967ab4eea207"  >
+          <h2>Pongsatorn Paolanwat [Mix]</h2><h3>(เรียบเรียงเนื้อหา, ตรวจสอบเนื้อหา)</h3>
+          <p>Technical Team-Lead, MFEC </p>
+        </div><!-- /.col-lg-4 -->
+      </div>
+  </div>
+	 <footer class="footer">
       <div class="container">
         <p class="text-muted">              
           <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="สัญญาอนุญาตของครีเอทีฟคอมมอนส์" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />ผลงานนี้ ใช้<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">สัญญาอนุญาตของครีเอทีฟคอมมอนส์แบบ แสดงที่มา-ไม่ใช้เพื่อการค้า 4.0 International</a>.
         </p>
       </div>
     </footer>
-    <!-- Bootstrap core JavaScript
+	<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/lib/jquery.min.js"></script>

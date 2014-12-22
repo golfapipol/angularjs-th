@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<link rel="shortcut icon" href="../image/angularico.png" type="image/x-icon">
+    <title>AngularJS : Lesson 12</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../css/styles/shThemeDefault.css"/>
+	<link type="text/css" rel="stylesheet" href="../css/styles/shCore.css"/>
+	<style>.my-menu{background-color: #222;}.container-main{margin-top: 70px;}.lesson-header{background-color: #9c2e2e;color:white}.lesson-body{margin-bottom: 70px;}</style>
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top " role="navigation" style="height:75px">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html"><img src="../image/AngularJS-large.png" style="width:200px" /></a>
+        </div>
+        <div class="collapse navbar-collapse my-menu">
+          <ul class="nav navbar-nav ">
+            <li ><a href="../home.html">Getting Started</a></li>
+            <li class="dropdown active">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lesson<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li class="dropdown-header">Basic AngularJS</li>
+                <li><a href="lesson1.html">Lesson 1</a></li>
+                <li><a href="lesson2.html">Lesson 2</a></li>
+                <li><a href="lesson3.html">Lesson 3</a></li>
+                <li><a href="lesson4.html">Lesson 4</a></li>
+                <li><a href="lesson5.html">Lesson 5</a></li>
+                <li><a href="lesson6.html">Lesson 6</a></li>
+                <li><a href="lesson7.html">Lesson 7</a></li>
+                <li><a href="lesson8.html">Lesson 8</a></li>
+                <li><a href="lesson9.html">Lesson 9</a></li>
+                <li><a href="lesson10.html">Lesson 10</a></li>
+                <li><a href="lesson11.html">Lesson 11</a></li>
+                <li class="active"><a href="lesson12.html">Lesson 12</a></li>
+              </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Directive<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li class="dropdown-header">Basic Directive</li>
+				<li><a href="../directive/directive.html">Directive Restrict</a></li>
+				<li><a href="../directive/template.html">Directive Template</a></li>
+				<li><a href="../directive/controller.html">Directive Controller</a></li>
+				<li><a href="../directive/link.html">Directive Link</a></li>
+				<li class="dropdown-header">Isolated Scope</li>
+                <li><a href="../directive/isolate.html">Isolated Scope</a></li>
+                <li><a href="../directive/scopeand.html">Scope Expression & </a></li>
+                <li><a href="../directive/scopeadd.html">Scope Attribute @ </a></li>
+                <li><a href="../directive/scopeequal.html">Scope Two way Binding =</a></li>
+				<li><a href="../directive/scopedifferent.html">$scope VS scope</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Scope<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../scope/rootscope.html">rootScope & Scope</a></li>
+				<li><a href="../scope/watch.html">$watch()</a></li>
+				<li><a href="../scope/apply.html">$apply()</a></li>
+				<li><a href="../scope/broadcast.html">$broadcast() & $on()</a></li>
+				<li><a href="../scope/emit.html">$emit() & $on()</a></li>
+				<li><a href="../scope/destory.html">$destory()</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">UI Router<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../ui-route/uiroute.html">Introduction UI Router</a></li>
+				<li><a href="../ui-route/basicroute.html">Basic Routing</a></li>
+				<li><a href="../ui-route/resolve.html">Resolve & Data</a></li>
+				<li><a href="../ui-route/nestedrouting.html">Nested Routing</a></li>
+				<li><a href="../ui-route/multipleview.html">Multiple Views</a></li>
+				<li><a href="../ui-route/event.html">Event</a></li>
+				<li><a href="../ui-route/urlprovider.html">URL Provider</a></li>
+				<li><a href="../ui-route/statego.html">$state.go()</a></li>
+				<li><a href="../ui-route/challenge.html">Challenge</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Example<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../example/validate.html">Input Validation</a></li>
+				<li><a href="../example/advance.html">Advance Validation</a></li>
+				<li><a href="../example/alert.html">Alert Validation</a></li>
+				<li><a href="../example/dynamic.html">Dynamic Validation</a></li>
+				<li><a href="../example/custom.html">Custom Validation</a></li>
+				<li><a href="../example/ngform.html">ngForm Validation</a></li>
+           	  </ul>
+            </li>
+            <li><a href="../about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	<div class="lesson-header">
+		<div class="container container-main">
+			<h1>Lesson 12: การดึงข้อมูลผ่านทาง HTTP </h1>
+		</div>
+	</div>
+    <div class="container lesson-body">
+      <div class="row">
+        <div class="col-md-9" role="main">
+			<div>
+            	<h2 class="page-header">สิ่งที่ควรรู้</h2>
+				<h3>การดึงข้อมูลผ่านทาง HTTP</h3>
+				<p>โดยในการที่เราจะให้ Service ดึงข้อมูลมาได้นั้นจำเป็นต้องใช้ <strong>$http</strong> และ <strong>$q</strong></p>
+				<pre class="brush: js; highlight: [1]">
+app.factory('someService', function ($http, $q) {
+	return {
+		getData: function () {...}
+	};
+});
+</pre>
+				<h3>$http คือ อะไร ?</h3>
+				<p>$http เป็น library ที่ทำมาให้รองรับการเรียกใช้งาน HTTP Request โดยประกอบไปด้วย</p>
+				<ul>
+					<li>get()</li>
+					<li>post()</li>
+					<li>delete()</li>
+					<li>head()</li>
+					<li>patch()</li>
+				</ul>
+				<p>ลักษณะการใช้เหมือนใน jQuery</p>
+				<h3>$q คือ อะไร ?</h3>
+				<p>$q เป็น library ที่ไว้ใช้ในการทำงานแบบ On Background / Multitasking</p>
+				<p>โดยจะมีองค์ประกอบดังนี้</p>
+				<ul>
+					<li><strong>defer()</strong> กำหนดให้โปรเซสทำงานหลังบ้าน (On Background) โดยจะได้ค่าจากฟังก์ชั่นกลับมา คือ <strong>deferred</strong></li>
+					<li><strong>deferred.resolve(data)</strong> เมื่อทำงานจนจบโปรเซส ให้ทำการส่งค่าไป โดยใช้ฟังก์ชั่น <strong>then()</strong> ในการรับ</li>
+					<li><strong>deferred.promise</strong> กำหนดให้ทำการรอจนกว่าจะจบโปรเซส</li>
+				</ul>
+				<pre class="brush: js;highlight: [4,5,6,11,13,14,15,16]">
+app.controller('someController',['$scope','someService', function ($scope, someService) {
+	$scope.datas = [];
+
+	someService.getData().then(function (data) { // รับค่าจาก deferred.resolve(data)
+		$scope.datas = data;
+	});
+}]).				
+factory('someService', function ($http, $q) {
+	return {
+		getData: function () {
+			var deferred = $q.defer();//เริ่มทำงาน
+				
+			$http.get('data.json').success(function (data) {
+				deferred.resolve(data);// เสร็จแล้วเอาไปเลย!!
+			});
+			return deferred.promise; //รอตามสัญญา ขอเวลาอีกไม่นาน
+		}
+	};
+});
+</pre>
+			</div>
+			<div>
+            	<h1 class="page-header">Challenge 11: Load Data From Service</h1>
+				<h4>คุณทานากะอยากให้ทำการย้ายข้อมูลจากที่เขียนใน Javascript มาอยู่ในไฟล์ JSON เพื่อให้ง่ายต่อการจัดการข้อมูล</h4>
+				<h4>โดยข้อมูลทั้งหมดจะถูกเก็บไว้ในนี้ <a href="../demo/sushi.json">sushi.json</a></h4>
+				<h3>สามารถดูตัวอย่างได้ในลิงค์ <a href="../demo/challenge11.html">Demo</a></h3>
+				<h3>สามารถดูเฉลยได้จาก <a href="../js/demo/challenge11.js">Demo Javascript</a></h3>
+				<h4>ไฟล์ sushistore.html</h4>
+				<pre class="brush: html; ruler: true;">&lt;!DOCTYPE html>
+&lt;html ng-app="application">
+&lt;head>
+	&lt;meta charset="utf-8">
+    &lt;!-- bootstrap CSS -->
+    &lt;link rel="stylesheet" href="css/bootstrap.min.css">
+    &lt;!-- bootstrap theme -->
+    &lt;link rel="stylesheet" href="css/bootstrap-theme.min.css">
+&lt;/head>
+&lt;body>
+	<header>
+      <h1 class="text-center">{{"Tanaka" | uppercase}}{{"-San"}}'s Sushi Store</h1>
+      <h2 class="text-center">Open Since {{10*200}}.</h2>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+				<div class="list-group" ng-controller="storeController as store" >
+					<!-- clearfix class: find answer in Bootstrap CSS -->
+					<div class="list-group-item clearfix" ng-repeat="sushi in sushis" ng-class="{'selected':purchase(sushi)}">
+						<h1>{{sushi.name}}
+							<em class="pull-right">{{sushi.price | number:2}} yen</em>
+						</h1>
+						<div class="col-md-6"><img ng-src="{{sushi.image}}" /></div>
+						<div class="col-md-6">
+							<h3><strong>{{sushi.quantity}}</strong></h3>
+							<button class="btn btn-default pull-right" ng-show="purchase(sushi)">สั่งซื้อ</button>
+							<button class="btn btn-default" ng-click="clickAdd(sushi)">&Delta;</button>
+							<button class="btn btn-default" ng-click="clickRemove(sushi)">&nabla;</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>  
+    &lt;!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    &lt;script src="js/lib/jquery.min.js">&lt;/script>
+    &lt;!-- Bootstrap JavaScript -->
+    &lt;script src="js/lib/bootstrap.min.js">&lt;/script>
+    &lt;!-- AngularJS JavaScript -->
+    &lt;script src="js/lib/angular.min.js">&lt;/script>
+    &lt;script src="js/app.js">&lt;/script>
+&lt;/body>
+&lt;/html></pre>
+				<h4>ไฟล์ app.js</h4>
+				<pre class="brush: js; ">
+(function () {
+	'use strict';
+	
+	var app = angular.module('application', []);
+	app.controller('storeController', ['$scope', function ($scope) {
+		$scope.sushis = [
+			{
+				name: 'Maguro',
+				price: 200,
+				description: "Fat Tuna",
+				quantity: 0,
+				image: '../image/sushi/maguro.jpg'
+			},
+			{
+				name: 'Tamago',
+				price: 120,
+				description: "Rice With Egg",
+				quantity: 0,
+				image: '../image/sushi/tamago.jpg'
+			},
+			{
+				name: 'Ebi',
+				price: 150,
+				description: "Rice With shrimp",
+				quantity: 0,
+				image: '../image/sushi/ebi.jpg'
+			},
+			{
+				name: 'Tako',
+				price: 180,
+				description: "Rice With Octopus",
+				quantity: 0,
+				image: '../image/sushi/tako.jpg'
+			}
+		];
+		$scope.purchase = function (item) {
+			if (item.quantity > 0) {
+				return true;
+			} else {
+				return false;
+			}
+		};
+		$scope.clickAdd = function (item) {
+			item.quantity += 1;
+		};
+		$scope.clickRemove = function (item) {
+			if (item.quantity > 0) {
+				item.quantity -= 1;
+				return true;
+			} else {
+				return false;	
+			}
+		};
+	}]);
+	
+})();</pre>
+			</div>
+			<ul class="btn-group pull-right">
+				<a href="lesson11.html">
+					<li class="btn btn-primary"><i class="glyphicon glyphicon-step-backward"></i> ย้อนกลับ</li>
+				</a>
+			</ul>
+        </div>
+		
+        <!--div class="col-md-3">
+          <div class="hidden-print hidden-xs hidden-sm affix" role="complementary">
+            <ul class="nav">
+                <li class="active"><a href="#download">Download</a></li>
+                <li><a href="#whats-included">What's included</a></li>
+                <li><a class="back-to-top" href="#top">Back to top</a></li>
+            </ul>
+          </div>
+        </div-->
+      </div>
+    </div>
+      <footer class="footer">
+      <div class="container">
+        <p class="text-muted">              
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="สัญญาอนุญาตของครีเอทีฟคอมมอนส์" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />ผลงานนี้ ใช้<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">สัญญาอนุญาตของครีเอทีฟคอมมอนส์แบบ แสดงที่มา-ไม่ใช้เพื่อการค้า 4.0 International</a>.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/lib/jquery.min.js"></script>
+    <script src="../js/lib/bootstrap.min.js"></script>
+  	<script type="text/javascript" src="../js/scripts/shCore.js"></script>
+	<script type="text/javascript" src="../js/scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="../js/scripts/shBrushXml.js"></script>    
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+</body></html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="application">
+<head>
+	<meta charset="utf-8">
+    <!-- bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- bootstrap theme -->
+    <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+	<style>.selected{background-color: red;color:white}</style>
+</head>
+<body>
+	<div class="list-group" ng-controller="demoController as demo">
+		<div class="list-group-item clearfix">
+			<input type="text" ng-model="text" />
+			<p>Text is {{text}}</p>
+			<p>เมื่อมีการเปลี่ยนแปลงค่าใน model (input) ค่าของ text ที่แสดง(view) ก็จะเปลี่ยนไปด้วย</p>
+		</div>
+	</div>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/lib/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="../js/lib/bootstrap.min.js"></script>
+    <!-- AngularJS JavaScript -->
+    <script src="../js/lib/angular.min.js"></script>
+    <script src="../js/demo/lesson8ngmodel.js"></script>
+</body>
+</html>

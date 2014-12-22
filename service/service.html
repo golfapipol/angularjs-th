@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en"  ng-app="application" >
+<head>
+    <meta charset="utf-8">
+	<link rel="shortcut icon" href="../image/angularico.png" type="image/x-icon">
+    <title>AngularJS : Service</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../css/styles/shThemeDefault.css"/>
+	<link type="text/css" rel="stylesheet" href="../css/styles/shCore.css"/>
+	<style>.my-menu{background-color: #222;}.container-main{margin-top: 70px;}.lesson-header{background-color: #9c2e2e;color:white}.lesson-body{margin-bottom: 70px;}</style>
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top " role="navigation" style="height:75px">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html"><img src="../image/AngularJS-large.png" style="width:200px" /></a>
+        </div>
+        <div class="collapse navbar-collapse my-menu">
+          <ul class="nav navbar-nav ">
+            <li ><a href="../home.html">Getting Started</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lesson<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li class="dropdown-header">Basic AngularJS</li>
+                <li><a href="../lesson/lesson1.html">Lesson 1</a></li>
+                <li><a href="../lesson/lesson2.html">Lesson 2</a></li>
+                <li><a href="../lesson/lesson3.html">Lesson 3</a></li>
+                <li><a href="../lesson/lesson4.html">Lesson 4</a></li>
+                <li><a href="../lesson/lesson5.html">Lesson 5</a></li>
+                <li><a href="../lesson/lesson6.html">Lesson 6</a></li>
+                <li><a href="../lesson/lesson7.html">Lesson 7</a></li>
+                <li><a href="../lesson/lesson8.html">Lesson 8</a></li>
+                <li><a href="../lesson/lesson9.html">Lesson 9</a></li>
+               	<li><a href="../lesson/lesson10.html">Lesson 10</a></li>
+                <li><a href="../lesson/lesson11.html">Lesson 11</a></li>
+                <li><a href="../lesson/lesson12.html">Lesson 12</a></li>
+              </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Directive<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li class="dropdown-header">Basic Directive</li>
+				<li><a href="../directive/directive.html">Directive Restrict</a></li>
+				<li><a href="../directive/template.html">Directive Template</a></li>
+				<li><a href="../directive/controller.html">Directive Controller</a></li>
+				<li><a href="../directive/link.html">Directive Link</a></li>
+				<li class="dropdown-header">Isolated Scope</li>
+                <li><a href="../directive/isolate.html">Isolated Scope</a></li>
+                <li><a href="../directive/scopeand.html">Scope Expression & </a></li>
+                <li><a href="../directive/scopeadd.html">Scope Attribute @ </a></li>
+                <li><a href="../directive/scopeequal.html">Scope Two way Binding =</a></li>
+				<li><a href="../directive/scopedifferent.html">$scope VS scope</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Scope<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../scope/rootscope.html">rootScope & Scope</a></li>
+				<li><a href="../scope/watch.html">$watch()</a></li>
+				<li><a href="../scope/apply.html">$apply()</a></li>
+				<li><a href="../scope/broadcast.html">$broadcast() & $on()</a></li>
+				<li><a href="../scope/emit.html">$emit() & $on()</a></li>
+				<li><a href="../scope/destory.html">$destory()</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown active">
+				<a href="../service/service.html" class="dropdown-toggle" data-toggle="dropdown">Service</a>
+			</li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">UI Router<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../ui-route/uiroute.html">Introduction UI Router</a></li>
+				<li><a href="../ui-route/basicroute.html">Basic Routing</a></li>
+				<li><a href="../ui-route/resolve.html">Resolve & Data</a></li>
+				<li><a href="../ui-route/nestedrouting.html">Nested Routing</a></li>
+				<li><a href="../ui-route/multipleview.html">Multiple Views</a></li>
+				<li><a href="../ui-route/event.html">Event</a></li>
+				<li><a href="../ui-route/urlprovider.html">URL Provider</a></li>
+				<li><a href="../ui-route/statego.html">$state.go()</a></li>
+				<li><a href="../ui-route/challenge.html">Challenge</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Example<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../example/validate.html">Input Validation</a></li>
+				<li><a href="../example/advance.html">Advance Validation</a></li>
+				<li><a href="../example/alert.html">Alert Validation</a></li>
+				<li><a href="../example/dynamic.html">Dynamic Validation</a></li>
+				<li><a href="../example/custom.html">Custom Validation</a></li>
+				<li><a href="../example/ngform.html">ngForm Validation</a></li>
+           	  </ul>
+            </li>
+            <li><a href="../about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	<div class="lesson-header">
+		<div class="container container-main">
+			<h1>AngularJS : Service</h1>
+		</div>
+	</div>
+    <div class="container lesson-body">
+      <div class="row">
+        <div class="col-md-9" role="main">
+			<div>
+            	<h2 class="page-header">สิ่งที่ควรรู้</h2>
+				<p>ปกติเมื่อเราพัฒนาเว็บด้วย AngularJS เราจะไม่ใส่ Business Logic ลงไปในหน้าเว็บ กรณีที่มีการ logic ที่ไม่ได้เป็นความลับก็จะใส่ไว้ใน controller ส่วนข้อมูลและ business logic ต่างๆ จะเก็บไว้ประมวลผลหลังบ้าน (Back Office) โดยเรียกใช้ข้อมูลผ่านทาง Service ซึ่งทำหน้าที่เหมือนตัวกลางในการรับส่งข้อมูล</p>
+<!--				<p>ในการพัฒนาซอฟต์แวร์ด้วย AngularJS ไม่ควรใส่กระบวนการทำงาน หรือ Business Process ลงไป เนื่องจากภาษา javascript สามารถเปิดดู sourcecode ที่เขียนลงไปได้ ทำให้เราต้องทำการย้ายกระบวนการทำงานไปไว้ด้านหลัง (Back Office) โดยส่วนที่เป็นกระบวนการคิดต่างๆจะเรียกใช้งานผ่าน Service</p>-->
+				<h3>Service คือ อะไร ?</h3>
+				<p>Service เป็น function / object ที่ใช้สำหรับในการแชร์ข้อมูลภายในแต่ละส่วนของ AngularJS เช่น ใน Directive,ใน Controller</p>
+				<p>ซึ่ง Service มีลักษณะเป็น <a href="http://en.wikipedia.org/wiki/Singleton_pattern">singleton</a> คือข้อมูลที่อยู่ใน Service จะมีเพียงค่าเดียวตั้งแต่ต้นจนจบ application </p>
+				<p>โดยในการสร้าง Service ขึ้นมาสามารถทำได้ดังนี้</p>
+				<ul>
+					<li>service()</li>
+					<li>factory()</li>
+					<li>provider()</li>
+				</ul>
+				<h3>service()</h3>
+				<p>service() จะทำการกำหนด contructor function โดยจะทำการ return instance ของ function มีลักษณะเหมือนการ new object ของ Object Oriented</p>
+				<pre>angular.service('someService', constructor)</pre>
+				<h3>factory()</h3>
+				<p>factory() จะทำการกำหนด factory function โดยจะทำการ return ข้อมูลต่างๆ ผ่านทางการเรียกใช้งาน function ที่กำหนดไว้ใน factory</p>
+				<pre>angular.factory('someFactory', function)</pre>
+				<h3>provider()</h3>
+				<p>provider() จะทำการกำหนด factory function ที่สามารถทำการตั้งค่าต่างๆให้กับ factory function ผ่านทาง app.config() ได้</p>
+				<pre>angular.provider('someProvider', provider)</pre>
+			</div>
+			<div>
+				<h2 class="page-header">ลักษณะการใช้งาน</h2>
+				<h3>การใช้งาน service() </h3>
+				<p>ทำการกำหนด Service ชื่อ helloWorldService โดยใช้ service() </p>
+				<p>โดยการกำหนดฟังก์ชั่น/ตัวแปร ด้วย this เหมือนกับ Object Oriented มีลักษณะดังนี้</p>
+				<pre class="brush: js">
+angular.service('helloWorldService', function () {
+	this.sayHello = function () {
+		return "Hello, World From service()";
+	};
+});
+</pre>
+				<h3>การใช้งาน factory() </h3>
+				<p>ทำการกำหนด Service ชื่อว่า helloWorldFactory โดยใช้ factory() </p>
+				<p>โดยจะกำหนดฟังก์ชั่นต่างๆในลักษณะของ function reference มีลักษณะดังนี้</p>
+				<pre class="brush: js">
+angular.factory('helloWorldFactory', function () {
+	return {
+		sayHello: function () {
+			return "Hello, World From factory()"; 
+		}
+	};
+});
+</pre>
+				<h3>การใช้งาน provider() </h3>
+				<p>ทำการกำหนด Service ชื่อว่า helloWorldProvider โดยใช้ provider() </p>
+				<p>ฟังก์ชั่นที่กำหนดไว้ให้เรียกใช้ใน return ของ $get</p>
+				<p>โดยเราสามารถกำหนดฟังก์ชั่นที่ทำการกำหนดค่าต่างๆ ใน provider และเรียกใช้ผ่านทาง config() มีลักษณะดังนี้</p>
+				<pre class="brush: js">
+angular.provider('helloWorld', function () {
+	
+	this.name = "";
+	this.$get = function () {
+		var name = this.name;
+		return {
+			sayHello: function () {
+				return "Hello, " + name + " From provider()";
+			}
+		};
+	};
+	this.setName = function (name) {
+		this.name = name;
+	};
+})
+.config(function (helloWorldProvider) {
+	helloWorldProvider.setName("World");
+})
+.controller('someController', function (helloWorld) {
+	alert(helloWorld.sayHello());
+});
+</pre>
+				<h4>สามารถดูผลลัพธ์ได้ <a href="../demo/service.html">DEMO</a></h4>
+				<h4 style="color:red">การใช้งาน Service แต่ละแบบนั้นขึ้นอยู่กับสถานะการที่ใช้และความถนัดของแต่ละคน</h4>
+			</div>
+			<div>
+				<h2 class="page-header">Service เป็น singleton อย่างไร</h2>
+				<p>เราจะมาทำการทดลองว่า เมื่อมีการกำหนดค่าให้ service แล้วค่านั้นจะยังอยู่ไปเรื่อยๆ ตามแบบ singleton หรือไม่</p>
+				<p>สร้าง Service ชื่อ singletonService ที่มีฟังก์ชั่น setText(text) และ getText() โดยใช้ service()</p>
+				<pre class="brush: js">
+angular.module('application', [])				
+	.service('singletonService', function () {
+		this.text = "First Text";
+		this.setText = function (text) {
+			this.text = text;
+		};
+		this.getText = function () {
+			return this.text;
+		};
+	})
+	.controller('testSingleton', function ($scope, singletonService) {
+		$scope.showText = singletonService.getText();
+		$scope.sendText = function (text) {
+			singletonService.setText(text);
+			$scope.showText = singletonService.getText();
+		};
+		
+		$scope.receiveText = function () {
+			$scope.showText = singletonService.getText();
+		}
+	});
+</pre>
+				<p>ในไฟล์ html ทำการใส่ข้อความที่แสดง ช่องกรองข้อความ และปุ่มที่ทำการอัพเดทข้อมูล</p>
+				<pre class="brush: html">
+&lt;div ng-controller="testSingleton as demo1">
+	&lt;h3>text From singletonService is : [ {{ showText }} ]&lt;/h3>
+	&lt;input type="text" ng-model="updateText">
+	&lt;button ng-click="sendText(updateText)">Set&lt;/button>
+	&lt;button ng-click="receiveText()">Get&lt;/button>
+&lt;/div>
+&lt;div ng-controller="testSingleton as demo2">
+	&lt;h3>text From singletonService is : [ {{ showText }} ]&lt;/h3>
+	&lt;input type="text" ng-model="updateText">
+	&lt;button ng-click="sendText(updateText)">Set&lt;/button>
+	&lt;button ng-click="receiveText()">Get&lt;/button>
+&lt;/div>
+</pre>
+				<h4>จะได้ผลลัพธ์ดังนี้ <a href="../demo/">DEMO</a></h4>
+			</div>
+        </div>
+		
+        <!--div class="col-md-3">
+          <div class="hidden-print hidden-xs hidden-sm affix" role="complementary">
+            <ul class="nav">
+                <li class="active"><a href="#download">Download</a></li>
+                <li><a href="#whats-included">What's included</a></li>
+                <li><a class="back-to-top" href="#top">Back to top</a></li>
+            </ul>
+          </div>
+        </div-->
+      </div>
+    </div>
+      <footer class="footer">
+      <div class="container">
+        <p class="text-muted">              
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="สัญญาอนุญาตของครีเอทีฟคอมมอนส์" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />ผลงานนี้ ใช้<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">สัญญาอนุญาตของครีเอทีฟคอมมอนส์แบบ แสดงที่มา-ไม่ใช้เพื่อการค้า 4.0 International</a>.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/lib/jquery.min.js"></script>
+    <script src="../js/lib/bootstrap.min.js"></script>
+	<!--AngularJS Javascript -->
+    <script src="../js/lib/angular.min.js"></script>
+    <script src="../js/plugin/tree.js"></script>
+	<script type="text/javascript" src="../js/scripts/shCore.js"></script>
+	<script type="text/javascript" src="../js/scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="../js/scripts/shBrushXml.js"></script>    
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+</body></html>

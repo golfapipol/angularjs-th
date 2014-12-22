@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<link rel="shortcut icon" href="../image/angularico.png" type="image/x-icon">
+    <title>Angular UI : Nested Routing</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../css/styles/shThemeDefault.css"/>
+	<link type="text/css" rel="stylesheet" href="../css/styles/shCore.css"/>
+	<style>.my-menu{background-color: #222;}.container-main{margin-top: 70px;}.lesson-header{background-color: #9c2e2e;color:white}.lesson-body{margin-bottom: 70px;}</style>
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top " role="navigation" style="height:75px">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html"><img src="../image/AngularJS-large.png" style="width:200px" /></a>
+        </div>
+        <div class="collapse navbar-collapse my-menu">
+          <ul class="nav navbar-nav">
+            <li ><a href="../home.html">Getting Started</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lesson<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li class="dropdown-header">Basic AngularJS</li>
+                <li><a href="../lesson/lesson1.html">Lesson 1</a></li>
+                <li><a href="../lesson/lesson2.html">Lesson 2</a></li>
+                <li><a href="../lesson/lesson3.html">Lesson 3</a></li>
+                <li><a href="../lesson/lesson4.html">Lesson 4</a></li>
+                <li><a href="../lesson/lesson5.html">Lesson 5</a></li>
+                <li><a href="../lesson/lesson6.html">Lesson 6</a></li>
+                <li><a href="../lesson/lesson7.html">Lesson 7</a></li>
+                <li><a href="../lesson/lesson8.html">Lesson 8</a></li>
+                <li><a href="../lesson/lesson9.html">Lesson 9</a></li>
+                <li><a href="../lesson/lesson10.html">Lesson 10</a></li>
+                <li><a href="../lesson/lesson11.html">Lesson 11</a></li>
+                <li><a href="../lesson/lesson12.html">Lesson 12</a></li>
+              </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Directive<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li class="dropdown-header">Basic Directive</li>
+				<li><a href="../directive/directive.html">Directive Restrict</a></li>
+				<li><a href="../directive/template.html">Directive Template</a></li>
+				<li><a href="../directive/controller.html">Directive Controller</a></li>
+				<li><a href="../directive/link.html">Directive Link</a></li>
+				<li class="dropdown-header">Isolated Scope</li>
+                <li><a href="../directive/isolate.html">Isolated Scope</a></li>
+                <li><a href="../directive/scopeand.html">Scope Expression & </a></li>
+                <li><a href="../directive/scopeadd.html">Scope Attribute @ </a></li>
+                <li><a href="../directive/scopeequal.html">Scope Two way Binding =</a></li>
+				<li><a href="../directive/scopedifferent.html">$scope VS scope</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Scope<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../scope/rootscope.html">rootScope & Scope</a></li>
+				<li><a href="../scope/watch.html">$watch()</a></li>
+				<li><a href="../scope/apply.html">$apply()</a></li>
+				<li><a href="../scope/broadcast.html">$broadcast() & $on()</a></li>
+				<li><a href="../scope/emit.html">$emit() & $on()</a></li>
+				<li><a href="../scope/destory.html">$destory()</a></li>
+           	  </ul>
+            </li>
+            			<li class="dropdown">
+				<a href="../service/service.html">Service</a>
+			</li>
+			<li class="dropdown active">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">UI Router<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../ui-route/uiroute.html">Introduction UI Router</a></li>
+				<li><a href="../ui-route/basicroute.html">Basic Routing</a></li>
+				<li><a href="../ui-route/resolve.html">Resolve & Data</a></li>
+				<li class="active"><a href="../ui-route/nestedrouting.html">Nested Routing</a></li>
+				<li><a href="../ui-route/multipleview.html">Multiple Views</a></li>
+				<li><a href="../ui-route/event.html">Event</a></li>
+				<li><a href="../ui-route/urlprovider.html">URL Provider</a></li>
+				<li><a href="../ui-route/statego.html">$state.go()</a></li>
+				<li><a href="../ui-route/challenge.html">Challenge</a></li>
+           	  </ul>
+            </li>
+			
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Example<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../example/validate.html">Input Validation</a></li>
+				<li><a href="../example/advance.html">Advance Validation</a></li>
+				<li><a href="../example/alert.html">Alert Validation</a></li>
+				<li><a href="../example/dynamic.html">Dynamic Validation</a></li>
+				<li><a href="../example/custom.html">Custom Validation</a></li>
+				<li><a href="../example/ngform.html">ngForm Validation</a></li>
+           	  </ul>
+            </li>
+            <li><a href="../about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	<div class="lesson-header">
+		<div class="container container-main">
+			<h1>Angular UI: Nested Routing</h1>
+		</div>
+	</div>
+    <div class="container lesson-body">
+      <div class="row">
+        <div class="col-md-9" role="main">
+			<div>
+            	<h2 class="page-header">สิ่งที่ควรรู้</h2>
+				<h3>URL Parameter</h3>
+				<h4>โดยปกติจะมีการส่งตัวแปรผ่านมาทาง url และจะทำการเก็บค่าไว้ใน $stateParams</h4>
+				<h4>โดยสามารถกำหนดได้ 3 แบบดังนี้</h4>
+				<ul>
+					<li><strong>url: 'url/:id'</strong> - ใช้ในกรณีที่มีพารามิเตอร์ปกติ โดยพารามิเตอร์สามารถเป็นอะไรก็ได้ 
+						<ul style='list-style-type: none;'>
+							<li><u>ยกตัวอย่าง</u> <strong>'url/12345!!', 'url/bob' รวมถึง 'url/'</strong></li>
+							<li style="color: red">ไม่รอบรับกรณี 'url' หรือ 'url/bob/details'</li>
+						</ul>
+					</li>
+					<li><strong>url: 'url/{id}'</strong> - ใช้ในกรณีที่มีพารามิเตอร์ เหมือนกับ :id แต่จะมีรูปแบบของ id ด้วย โดยสามารถระบุได้จาก regex 
+						<ul style='list-style-type: none;'>
+							<li><u>ยกตัวอย่าง</u> <pre>// Match only inbox ids that contain
+// 6 hexidecimal digits
+url: '/url/{id:[0-9a-fA-F]{6}}',
+// Or
+// match every url at the end of `/url` and `/url/id`
+url: '/url/{id:.*}'</pre></li>
+						</ul>
+					</li>
+					<li><strong>url: 'url?query'</strong> - ใช้ในกรณีที่มีส่งพารามิเตอร์มาในลักษณะของ query
+						<ul style='list-style-type: none;'>
+							<li><u>ยกตัวอย่าง</u> <pre>
+// for query parameter
+url: "/contacts?myParam" // match "/contacts?myParam=value"
+// for multi parameter
+url: "/contacts?myParam1&myParam2" // match "/contacts?myParam1=value1&myParam2=value2"
+</pre></li>
+						</ul>
+					</li>
+				</ul>
+				<h4>ในกรณีที่มีพารามิเตอร์จะใช้  ui-sref ใน &lt;a > ดังนี้</h4>
+				<pre>
+&lt;a ui-sref="stateName({id : value})">&lt;/a>
+</pre>
+				<h3>Nested Routing </h3>
+				<p>ส่วนที่ UI Router ต่างกับ ngRoute คือ Nested Routing หรือการ Route แบบมีลำดับชั้น ซึ่งใน ngRoute ของ AngularJS ไม่มี</p>
+				<p>และยังสามารถใช้ view ซ้อนใน view ได้ โดยเรียกใช้ผ่าน <u>ui-view</u></p>
+				<p>โดยการใช้งาน Nested Routing จะทำการกำหนดชั้นถัดไปโดยคั่นด้วย <strong>. (dot notation)</strong></p>
+				<pre class="brush: js">
+$stateProvider
+    .state('root', {
+        url: '/root',
+		...
+    })
+    .state('root.branch', {
+        url: '/:branchId',
+		...
+    })
+	.state('root.branch.element', {
+		url: '/element/{elementId}',
+		...
+	})
+</pre>
+				<h4>ตัวอย่าง url</h4>
+				<p>root state จะมี URL คือ '/root'</p>
+				<p>branch state จะมี URL คือ '/root/1'</p>
+				<p>element state จะมี URL คือ '/root/1/element/2'</p>
+			</div>
+			<div>
+				<h2 class="page-header">ตัวอย่างการใช้งาน Nested Routing</h2>
+				<p>จากตัวอย่างก่อนหน้านี้เราจะทำการเปลี่ยนการแสดงผลโดยจะแสดงเฉพาะชื่อคน</p>
+				<pre class="brush: js;highlight: [14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]">
+angular.module('application', ['ui.router'])
+	.config(function ($stateProvider, $urlRouterProvider) {
+		$stateProvider
+			.state('home', {
+				url: '/home',
+				template: '&lt;p>this is part of home&lt;/p>',
+				data: {
+					message: "Welcome Home"
+				},
+				controller: function ($state) {
+					alert($state.current.data.message);
+				}
+			})
+			.state('contact', {
+				url: '/contact',
+				template: '&lt;h3>This is Contact&lt;/h3>' +
+					'&lt;ul>' + '&lt;li ng-repeat="contact in contacts">' +
+					'&lt;a ui-sref="contact.detail({ id : contact.name})">{{contact.name}}&lt;/a>' + '&lt;/li>&lt;/ul>' + 
+					'&lt;div ui-view>&lt;/div>',
+				resolve: {
+					contacts: function ($http) {
+						return $http({method: 'GET', url: 'contacts.json'})
+							.then(function (response) {
+								return response.data;
+							});
+					}
+				},
+				controller: function ($scope, contacts) {
+					$scope.contacts = contacts;
+				}
+			})
+			.state('about', {
+				url: '/about',
+				template: '&lt;p>Creator is {{name}}&lt;/p>',
+				controller: function ($scope) {
+					$scope.name = "Google!!";
+				}
+			});
+	});
+</pre>
+				<p>กำหนด state contact.detail ขึ้นมาโดยแสดงข้อมูลรายละเอียดของคนๆนั้น</p>
+				<pre class="brush: js; highlight: [10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28]">
+angular.module('application', ['ui.router'])
+	.config(function ($stateProvider, $urlRouterProvider) {
+		$stateProvider
+			.state('home', {
+				...
+			})
+			.state('contact', {
+				...
+			})
+			.state('contact.detail', {
+				url: '/detail/:id',
+				template: '&lt;p>{{contact.name}} (age: {{contact.age}}) e-mail: {{contact.email}}&lt;/p>',
+				resolve: {
+					contact: function ($http, $stateParams) {
+						return $http({method: 'GET', url: 'contacts.json'})
+							.then(function (response) {
+								for (i = 0; i  < response.data.length; i++) {
+									if (response.data[i] === $stateParams.id) {
+										return response.data[i];
+									}
+								}
+							})
+					}
+				},
+				controller: function ($scope, contact) {
+					$scope.contact = contact;
+				}
+			})
+			.state('about', {
+				...
+			});
+	});
+</pre>
+				<h4>สามารถดูตัวอย่างผลลัพธ์ได้ที่นี่ <a href="../demo/nestedrouting.html">Demo</a> </h4>
+			</div>
+			<div>
+				<h2 class="page-header">ข้อควรรู้เพิ่มเติม</h2>
+				<h3>Absolute Route (^)</h3>
+				<p>Absolute Route เป็นการกำหนดให้ url ที่กำหนดเริ่มต้นที่ url นั้นเลย</p>
+				<h4>ตัวอย่างการ route แบบปกติ</h4>
+				<pre>
+$stateProvider
+  .state('contacts', {
+     url: '/contacts',
+     ...
+  })
+  .state('contacts.list', {
+     url: '/list',
+     ...
+  });				
+</pre>
+				<p style="color: red">เมื่อ state เป็น [contacts] url ที่แสดงจะเป็น '/contacts'</p>
+				<p style="color: red">เมื่อ state เป็น [contacts.list] url ที่แสดงจะเป็น '/contacts/list'</p>
+				<h4>หากใช้ absolute route</h4>
+				<pre>
+$stateProvider
+  .state('contacts', {
+     url: '/contacts',
+     ...
+  })
+  .state('contacts.list', {
+     url: '^/list',
+     ...
+  });					
+</pre>
+				<p style="color: red">เมื่อ state เป็น [contacts] url ที่แสดงจะเป็น '/contacts'</p>
+				<p style="color: red">เมื่อ state เป็น [contacts.list] url ที่แสดงจะเป็น '/list'</p>
+				<h3>การใช้ตัวแปรใน $stateParams ที่เป็นของ parent state</h3>
+				<p>ในกรณีที่มีการเรียกใช้ $stateParams จะไม่สามารถเรียกใช้ ของ parent ได้โดยตรง</p>
+				<pre class="brush: js; highlight: [4,9,10]">
+$stateProvider.state('contacts.detail', {
+   url: '/contacts/:contactId',   
+   controller: function($stateParams){
+      $stateParams.contactId  //*** Can Use! ***//
+   }
+}).state('contacts.detail.subitem', {
+   url: '/item/:itemId', 
+   controller: function($stateParams){
+      $stateParams.contactId //*** Can't Use Don't Have Value!! ***//
+      $stateParams.itemId //*** Can Use! ***//  
+   }
+})
+</pre>
+				<p>โดยเราสามารถใช้งาน $stateParams ของ parent ได้โดยใช้ resolve ช่วยดังนี้</p>
+				<pre class="brush: js; highlight: [6,7,8,9,13,14]">
+$stateProvider.state('contacts.detail', {
+   url: '/contacts/:contactId',   
+   controller: function($stateParams){
+      $stateParams.contactId  //*** Can Use! ***//
+   },
+   resolve:{ 
+      contactId: ['$stateParams', function($stateParams){
+          return $stateParams.contactId;
+      }]
+   }
+}).state('contacts.detail.subitem', {
+   url: '/item/:itemId', 
+   controller: function($stateParams, contactId){
+      contactId //*** Can Use!! From Resolve ***//
+      $stateParams.itemId //*** Can Use! ***//  
+   }
+})
+</pre>
+			</div>
+			<ul class="btn-group pull-right">
+				<a href="resolve.html">
+					<li class="btn btn-primary"><i class="glyphicon glyphicon-step-backward"></i> ย้อนกลับ</li>
+				</a>
+				<a href="multipleview.html">
+					<li class="btn btn-primary">ถัดไป <i class="glyphicon glyphicon-step-forward"></i></li>
+				</a>
+			</ul>
+        </div>
+		
+        <!--div class="col-md-3">
+          <div class="hidden-print hidden-xs hidden-sm affix" role="complementary">
+            <ul class="nav">
+                <li class="active"><a href="#download">Download</a></li>
+                <li><a href="#whats-included">What's included</a></li>
+                <li><a class="back-to-top" href="#top">Back to top</a></li>
+            </ul>
+          </div>
+        </div-->
+      </div>
+    </div>
+          <footer class="footer">
+      <div class="container">
+        <p class="text-muted">              
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="สัญญาอนุญาตของครีเอทีฟคอมมอนส์" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />ผลงานนี้ ใช้<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">สัญญาอนุญาตของครีเอทีฟคอมมอนส์แบบ แสดงที่มา-ไม่ใช้เพื่อการค้า 4.0 International</a>.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/lib/jquery.min.js"></script>
+    <script src="../js/lib/bootstrap.min.js"></script>
+  	<script type="text/javascript" src="../js/scripts/shCore.js"></script>
+	<script type="text/javascript" src="../js/scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="../js/scripts/shBrushXml.js"></script>    
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+</body></html>

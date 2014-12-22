@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html ng-app="application">
+<head>
+	<meta charset="utf-8">
+    <!-- bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- bootstrap theme -->
+    <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+</head>
+<body>
+	<header>
+      <h1 class="text-center">Review {{"Tanaka" | uppercase}}{{"-San"}}'s Sushi Store</h1>
+      <h2 class="text-center">Open Since {{10*200}}.</h2>
+    </header>
+    <div class="container" ng-controller="reviewController as review">
+		<div class="list-group">
+			<legend>Reviews</legend>
+			<blockquote ng-repeat="data in datas">
+				<b>{{data.text}} - {{data.select}} Star(s)</b>
+				<p>{{data.textarea}}</p>
+				<small>{{data.email}}</small>
+			</blockquote>
+			<blockquote>
+				<b>{{data.text}} <b ng-show="data.select">- {{data.select}} Star(s)</b></b>
+				<p>{{data.textarea}}</p>
+				<small>{{data.email}}</small>
+			</blockquote>
+		</div>
+		<form class="form-horizontal" ng-submit="addData(datas)">
+			<fieldset>
+			<!-- Form Name -->
+			<legend>Review Form</legend>
+			<!-- Text input-->
+			<div class="form-group">
+			  <label class="col-md-4 control-label" for="textinput">ชื่อ</label>  
+			  <div class="col-md-4">
+				<input type="text" ng-model="data.text" name="textinput" id="textinput" class="form-control input-md">
+			  </div>
+			</div>
+			<!-- email input-->
+			<div class="form-group">
+			  <label class="col-md-4 control-label" for="textinput">อีเมล์</label>  
+			  <div class="col-md-4">
+				<input type="text" ng-model="data.email" name="textinput" id="textinput" class="form-control input-md">
+			  </div>
+			</div>
+			<!-- Select Basic -->
+			<div class="form-group">
+			  <label class="col-md-4 control-label" for="selectbasic">จำนวนดาว</label>
+			  <div  class="col-md-4">
+				<select ng-model="data.select" id="selectbasic" name="selectbasic" class="form-control">
+				  <option value="1">1 Stars</option>
+				  <option value="2">2 Stars</option>
+				  <option value="3">3 Stars</option>
+				  <option value="4">4 Stars</option>
+				  <option value="5">5 Stars</option>
+				</select>
+			  </div>
+			</div>
+			<!-- Textarea -->
+			<div class="form-group">
+			  <label class="col-md-4 control-label" for="textarea">ความคิดเห็น</label>
+			  <div class="col-md-4">                     
+				<textarea ng-model="data.textarea" name="textarea" id="textarea"  class="form-control" ></textarea>
+			  </div>
+			</div>
+			<!-- Button -->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="singlebutton">&nbsp;</label>
+				<div class="col-md-4">
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</div>
+			</div>
+			</fieldset>
+		</form>
+	</div>  
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/lib/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="../js/lib/bootstrap.min.js"></script>
+    <!-- AngularJS JavaScript -->
+    <script src="../js/lib/angular.min.js"></script>
+    <script src="../js/demo/challenge8.js"></script>
+</body>
+</html>

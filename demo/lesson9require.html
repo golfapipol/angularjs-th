@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html ng-app="application">
+<head>
+	<meta charset="utf-8">
+    <!-- bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- bootstrap theme -->
+    <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+	<style>.form-group{border:1.5px solid blue;}</style>
+</head>
+<body ng-controller="demoController as demo">
+	<div class="container">
+	<form class="form-horizontal" name="form" novalidate>
+		<fieldset>
+		<!-- Form Name -->
+		<legend>Form Name="form"</legend>
+		<!-- Text input-->
+		<div class="form-group">
+		  <label class="col-md-4 control-label" for="textinput1" required>Text Input</label>  
+		  <div class="col-md-4">
+			<input type="text" ng-model="text" name="textinput1" id="textinput1" class="form-control input-md" required>
+		  </div>
+		  <div class="col-md-4">
+		  	  <p>
+				  <strong>form.textinput1.$valid:</strong>{{form.textinput1.$valid}} 
+				  <strong>form.textinput1.$invalid:</strong>{{form.textinput1.$invalid}} 
+			  </p>
+			  <p><strong>form.textinput1.$error:</strong>{{form.textinput1.$error}}</p>
+			  <p><strong>form.textinput1.$error.required:</strong>{{form.textinput1.$error.required}}</p>
+		  	  <p></p>
+		  </div>
+		</div>
+		<!-- Text input-->
+		<div class="form-group">
+		  <label class="col-md-4 control-label" for="textinput2" required>Number Input</label>  
+		  <div class="col-md-4">
+			<input type="number" ng-model="number" name="textinput2" id="textinput2" class="form-control input-md" required>
+		  </div>
+		  <div class="col-md-4">
+			  <p>
+				  <strong>form.textinput2.$valid:</strong>{{form.textinput2.$valid}} 
+				  <strong>form.textinput2.$invalid:</strong>{{form.textinput2.$invalid}} 
+			  </p>
+			  <p><strong>form.textinput2.$error:</strong>{{form.textinput2.$error}}</p>
+		  	  <p><strong>form.textinput2.$error.required:</strong>{{form.textinput2.$error.required}}</p>
+		  	  <p><strong>form.textinput2.$error.number:</strong>{{form.textinput2.$error.number}}</p>
+		  </div>
+		</div>
+		<!-- Text input-->
+		<div class="form-group">
+		  <label class="col-md-4 control-label" for="textinput3" required>E-Mail Input</label>  
+		  <div class="col-md-4">
+			<input type="email" ng-model="email" name="textinput3" id="textinput3" class="form-control input-md" required>
+		  </div>
+		  <div class="col-md-4">
+			  <p>
+				  <strong>form.textinput3.$valid:</strong>{{form.textinput3.$valid}} 
+				  <strong>form.textinput3.$invalid:</strong>{{form.textinput3.$invalid}} 
+			  </p>
+			  <p><strong>form.textinput3.$error:</strong>{{form.textinput3.$error}}</p>
+		  	  <p><strong>form.textinput3.$error.required:</strong>{{form.textinput3.$error.required}}</p>
+		  	  <p><strong>form.textinput3.$error.email:</strong>{{form.textinput3.$error.number}}</p>	
+		  </div>
+		</div>
+		<!-- Select Basic -->
+		<div class="form-group">
+		  <label class="col-md-4 control-label" for="selectbasic">Select Basic</label>
+		  <div ng-model="data.select" class="col-md-4">
+			<select id="selectbasic" ng-model="select" name="selectbasic" class="form-control" required>
+			  <option value="1">Option one</option>
+			  <option value="2">Option two</option>
+			</select>
+		  </div>
+		  <div class="col-md-4">
+			  <p>
+				  <strong>form.textinput3.$valid:</strong>{{form.selectbasic.$valid}} 
+				  <strong>form.textinput3.$invalid:</strong>{{form.selectbasic.$invalid}} 
+			  </p>
+			  <p><strong>form.textinput3.$error:</strong>{{form.selectbasic.$error}}</p>
+		  	  <p><strong>form.textinput3.$error.required:</strong>{{form.selectbasic.$error.required}}</p>	
+		  </div>
+		</div>
+		<!-- Textarea -->
+		<div class="form-group">
+		  <label class="col-md-4 control-label" for="textarea">Text Area</label>
+		  <div class="col-md-4">                     
+			<textarea ng-model="textarea" name="textarea" id="textarea"  class="form-control" required>default text</textarea>
+		  </div>
+		  <div class="col-md-4">
+			  <p>
+				  <strong>form.textarea.$valid:</strong>{{form.selectbasic.$valid}} 
+				  <strong>form.textarea.$invalid:</strong>{{form.selectbasic.$invalid}} 
+			  </p>
+			  <p><strong>form.textarea.$error:</strong>{{form.selectbasic.$error}}</p>
+		  	  <p><strong>form.textarea.$error.required:</strong>{{form.selectbasic.$error.required}}</p>	
+		  </div>
+		</div>
+		<!-- Button -->
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="singlebutton">
+				&nbsp;
+			</label>
+			<div class="col-md-4">
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</div>
+			<div class="col-md-4">
+				<p>
+				  <strong>form.$valid:</strong>{{form.$valid}} 
+				  <strong>form.$invalid:</strong>{{form.$invalid}} 
+			    </p>
+			  	<p><strong>form.$error:</strong>{{form.$error}}</p>
+			</div>
+		</div>
+		</fieldset>
+	</form>
+	
+		<div class="list-group">
+			<div class="list-group-item clearfix" ng-repeat="data in datas">
+				<h3>Text Input : {{data.text}}</h3>
+				<h3>Select : {{data.select}}</h3>
+				<h3>Text Area : {{data.textarea}}</h3>
+			</div>
+		</div>
+	</div>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/lib/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="../js/lib/bootstrap.min.js"></script>
+    <!-- AngularJS JavaScript -->
+    <script src="../js/lib/angular.min.js"></script>
+    <script src="../js/demo/lesson9require.js"></script>
+</body>
+</html>

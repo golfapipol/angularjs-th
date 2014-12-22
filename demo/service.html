@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app="application">
+<head>
+    <!-- bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- bootstrap theme -->
+    <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+	
+	<link type="text/css" rel="stylesheet" href="../css/styles/shThemeDefault.css"/>
+	<link type="text/css" rel="stylesheet" href="../css/styles/shCore.css"/>
+</head>
+<body ng-controller="serviceDemo">
+    <div class="container">
+		<h3>Array of hellos</h3>
+		<p>hellos is : {{hellos}}</p>
+		<h3>source code</h3>
+		<pre class="brush:js">
+angular.module('application', [])
+	.service('helloWorldService', function () {
+		this.sayHello = function () {
+			return "Hello, World From service()";
+		};
+	})
+	.factory('helloWorldFactory', function () {
+		return {
+			sayHello: function () {
+				return "Hello, World From factory()"; 
+			}
+		};
+	})
+	.provider('helloWorld', function () {
+		this.name = "";
+		this.$get = function () {
+			var name = this.name;
+			return {
+				sayHello: function () {
+					return "Hello, " + name + " From provider()";
+				}
+			};
+		};
+		this.setName = function (name) {
+			this.name = name;
+		};
+	})
+	.config(function (helloWorldProvider) {
+		helloWorldProvider.setName("World");
+	})
+	.controller('serviceDemo', function ($scope, helloWorldService, helloWorldFactory, helloWorld) {
+		$scope.hellos = [
+			helloWorldService.sayHello(),
+			helloWorldFactory.sayHello(),
+			helloWorld.sayHello()
+		];
+	});
+</pre>
+	</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/lib/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="../js/lib/bootstrap.min.js"></script>
+    <!-- AngularJS JavaScript -->
+    <script src="../js/lib/angular.js"></script>
+	<!--AngularUI Router Library -->
+	<script src="../js/lib/angular-ui-router.js"></script>
+    <script src="../js/demo/service.js"></script>
+	<script type="text/javascript" src="../js/scripts/shCore.js"></script>
+	<script type="text/javascript" src="../js/scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="../js/scripts/shBrushXml.js"></script>    
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+</body>
+</html>

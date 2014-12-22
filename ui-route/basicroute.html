@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<link rel="shortcut icon" href="../image/angularico.png" type="image/x-icon">
+    <title>Angular UI : Basic Routing</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../css/styles/shThemeDefault.css"/>
+	<link type="text/css" rel="stylesheet" href="../css/styles/shCore.css"/>
+	<style>.my-menu{background-color: #222;}.container-main{margin-top: 70px;}.lesson-header{background-color: #9c2e2e;color:white}.lesson-body{margin-bottom: 70px;}</style>
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top " role="navigation" style="height:75px">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html"><img src="../image/AngularJS-large.png" style="width:200px" /></a>
+        </div>
+        <div class="collapse navbar-collapse my-menu">
+          <ul class="nav navbar-nav">
+            <li ><a href="../home.html">Getting Started</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lesson<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li class="dropdown-header">Basic AngularJS</li>
+                <li><a href="../lesson/lesson1.html">Lesson 1</a></li>
+                <li><a href="../lesson/lesson2.html">Lesson 2</a></li>
+                <li><a href="../lesson/lesson3.html">Lesson 3</a></li>
+                <li><a href="../lesson/lesson4.html">Lesson 4</a></li>
+                <li><a href="../lesson/lesson5.html">Lesson 5</a></li>
+                <li><a href="../lesson/lesson6.html">Lesson 6</a></li>
+                <li><a href="../lesson/lesson7.html">Lesson 7</a></li>
+                <li><a href="../lesson/lesson8.html">Lesson 8</a></li>
+                <li><a href="../lesson/lesson9.html">Lesson 9</a></li>
+                <li><a href="../lesson/lesson10.html">Lesson 10</a></li>
+                <li><a href="../lesson/lesson11.html">Lesson 11</a></li>
+                <li><a href="../lesson/lesson12.html">Lesson 12</a></li>
+              </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Directive<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li class="dropdown-header">Basic Directive</li>
+				<li><a href="../directive/directive.html">Directive Restrict</a></li>
+				<li><a href="../directive/template.html">Directive Template</a></li>
+				<li><a href="../directive/controller.html">Directive Controller</a></li>
+				<li><a href="../directive/link.html">Directive Link</a></li>
+				<li class="dropdown-header">Isolated Scope</li>
+                <li><a href="../directive/isolate.html">Isolated Scope</a></li>
+                <li><a href="../directive/scopeand.html">Scope Expression & </a></li>
+                <li><a href="../directive/scopeadd.html">Scope Attribute @ </a></li>
+                <li><a href="../directive/scopeequal.html">Scope Two way Binding =</a></li>
+				<li><a href="../directive/scopedifferent.html">$scope VS scope</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Scope<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../scope/rootscope.html">rootScope & Scope</a></li>
+				<li><a href="../scope/watch.html">$watch()</a></li>
+				<li><a href="../scope/apply.html">$apply()</a></li>
+				<li><a href="../scope/broadcast.html">$broadcast() & $on()</a></li>
+				<li><a href="../scope/emit.html">$emit() & $on()</a></li>
+				<li><a href="../scope/destory.html">$destory()</a></li>
+           	  </ul>
+            </li>
+      <li class="dropdown">
+				<a href="../service/service.html">Service</a>
+			</li>
+			<li class="dropdown active">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">UI Router<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../ui-route/uiroute.html">Introduction UI Router</a></li>
+				<li class="active"><a href="../ui-route/basicroute.html">Basic Routing</a></li>
+				<li><a href="../ui-route/resolve.html">Resolve & Data</a></li>
+				<li><a href="../ui-route/nestedrouting.html">Nested Routing</a></li>
+				<li><a href="../ui-route/multipleview.html">Multiple Views</a></li>
+				<li><a href="../ui-route/event.html">Event</a></li>
+				<li><a href="../ui-route/urlprovider.html">URL Provider</a></li>
+				<li><a href="../ui-route/statego.html">$state.go()</a></li>
+				<li><a href="../ui-route/challenge.html">Challenge</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Example<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../example/validate.html">Input Validation</a></li>
+				<li><a href="../example/advance.html">Advance Validation</a></li>
+				<li><a href="../example/alert.html">Alert Validation</a></li>
+				<li><a href="../example/dynamic.html">Dynamic Validation</a></li>
+				<li><a href="../example/custom.html">Custom Validation</a></li>
+				<li><a href="../example/ngform.html">ngForm Validation</a></li>
+           	  </ul>
+            </li>
+            <li><a href="../about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	<div class="lesson-header">
+		<div class="container container-main">
+			<h1>Angular UI: Basic Routing</h1>
+		</div>
+	</div>
+    <div class="container lesson-body">
+      <div class="row">
+        <div class="col-md-9" role="main">
+			<div>
+            	<h2 class="page-header">สิ่งที่ควรรู้</h2>
+				<h3>UI Router Concept</h3>
+				<p>UI Router จะมองเว็บเพจแต่ละหน้าเป็น state ภายใน State Machine เมื่อมีการเปลี่ยนหน้าก็จะเป็นการเปลี่ยนแปลงไปยัง state ที่กำหนดไว้</p>
+            	<h3>Basic Routing</h3>
+				<p>$stateProvider เป็นฟังก์ชั่นที่ใช้สำหรับการกำหนด state ต่างๆใน single-page application</p>
+				<p>โดยจะทำการเรียกใช้ในฟังก์ชั่น config() ซึ่งโครงสร้างของ $stateProvider จะประกอบไปด้วย</p>
+				<ul>
+					<li>stateName : ชื่อของ state</li>
+					<li>url : url ของ state ที่ระบุไว้</li>
+					<li>template : ใช้ระบุส่วนเนื้อหาของ state นั้น (หรือใช้ templateUrl ใช้ในกรณีที่ include ไฟล์ html มา)</li>
+				</ul>
+				<p>ซึ่งมีรายละเอียดดังนี้</p>
+				<pre class="brush: js">
+angular.module('application', ['ui-router'])
+	.config(function ($stateProvider, $urlRouterProvider) {
+		$stateProvider
+			.state('stateName', {
+				url: 'url',
+				template: '&lt;p>this is part of stateName&lt;/p>' //or templateUrl: 'someFile.html'
+			});
+	});
+</pre>			
+				<p>โดยการเรียกใช้ template ของ state นั้นจะไปแสดงใน directive <strong><u>ui-view</u></strong></p>
+				<pre class="brush: html">
+&lt;div ui-view>&lt;/div>
+</pre>			
+				จะได้ผลลัพธ์ดังนี้
+				<pre class="brush: html;highlight: 2">
+&lt;div ui-view>
+	&lt;p>this is part of stateName&lt;/p>
+&lt;/div>
+</pre>			
+				<h4>หลักจากที่เราทำการกำหนด state ไว้แล้ว การที่เราจะเปลี่ยนข้ามไปในแต่ละ state นั้นมีได้ 3 วิธี ได้แก่</h4>
+				<ul>
+					<li><strong>เรียกใช้ฟังก์ชั่น $state.go()</strong> - ใน javascript เพื่อเปลี่ยน state</li>
+					<li><strong>คลิก link ที่มี ui-sref</strong> - กำหนด &lt;a> ใน ui-sref ใส่ state ที่ระบุไว้ลงไป</li>
+					<li><strong>เลือกไปยัง URL ที่เกียวข้องกับ state นั้น</strong> - โดย url เริ่มต้นจาก #/ ตามด้วย url ที่ระบุไว้</li>
+				</ul>
+				<h4>โดยในเบื้องต้นเราจะใช้ ui-sref</h4>
+				<h3>ui-sref คือ อะไร</h3>
+				<p>ในการที่จะทำการเปลี่ยนไปแต่ละ state ของ &lt;a> จะใช้ ui-sref แทน href โดยมีลักษณะดังนี้</p>
+				<pre class="brush: html">
+&lt;a ui-sref="stateName">&lt;/a>
+</pre>
+			</div>
+			<div>
+				<h2 class="page-header">ตัวอย่างการใช้งาน UI Router</h2>
+				<p>ในไฟล์ js ทำการกำหนด state ขึ้นมา 2 state คือ home และ about</p>
+				<pre class="brush: js">
+angular.module('application', ['ui-router'])
+	.config(function ($stateProvider, $urlRouterProvider) {
+		$stateProvider
+			.state('home', {
+				url: '/home',
+				template: '&lt;p>this is part of home&lt;/p>'
+			})
+			.state('about', {
+				url: '/about',
+				template: '&lt;p>this is part of about&lt;/p>'
+			});
+	});
+</pre>
+				<p>ในไฟล์ html ทำการสร้างเมนูลิงค์ไปยัง state ต่างๆ <u>โดย &lt;a> จะต้องกำหนด ui-sref เป็นชื่อ state ที่ระบุไว้</u> และใส่ ui-view ลงไป</p>
+				<pre class="brush: html">
+&lt;div class="container">
+	&lt;ul  class="nav nav-pills">
+		&lt;li>&lt;a ui-sref="home">Home&lt;/a>&lt;/li>
+		&lt;li>&lt;a ui-sref="about">about&lt;/a>&lt;/li>
+	&lt;/ul>
+	&lt;div>
+		&lt;p>Next of this line is ui-view&lt;/p>
+		&lt;div ui-view>&lt;/div>
+	&lt;/div>
+&lt;/div>
+</pre>
+				<h4>สามารถดูตัวอย่างผลลัพธ์ได้ที่นี่ <a href="../demo/basicroute.html">Demo</a> </h4>
+				<p style="color: red">สังเกตได้ว่า เมื่อมีการคลิกที่ link จะทำให้ state เนื้อหาในส่วน ui-view จะเปลี่ยนไปตาม template ของ state</p>
+				<!--p style="color: red">จะเห็นได้ว่าในตอนแรก ไม่ได้มีการแสดงผลข้อมูลใน ui-view เนื่องจากไม่มีการกำหนด state ให้กับ url เริ่มต้น </p>
+				<h3>กำหนด state ให้กับ state เริ่มต้น</h3>
+				<p>ทำการกำหนด state index โดยมีรายละเอียดดังนี้</p>
+				<pre class="brush: js; highlight: []">
+angular.module('application', ['ui-router'])
+	.config(function ($stateProvider, $urlRouterProvider) {
+		$stateProvider
+			.state('index', {
+				url: '/',
+				template: '&lt;p>this is part of index&lt;/p>'
+			})
+			.state('home', {
+				url: '/home',
+				template: '&lt;p>this is part of home&lt;/p>'
+			})
+			.state('about', {
+				url: '/about',
+				template: '&lt;p>this is part of about&lt;/p>'
+			});
+	});				
+</pre>
+				<h4>สามารถดูตัวอย่างผลลัพธ์ได้ที่นี่ <a href="../demo/basicroute2.html">Demo</a> </h4-->
+			</div>
+			<div>
+				<h2 class="page-header">เพิ่ม Controller ลงใน state</h2>
+				<p>ในกรณีที่ในแต่ละหน้ามีตัวแปรและฟังก์ชั่นต่างๆอยู่ภายในเราก็สามารถกำหนด property controller ใน state ได้</p>
+				<pre class="brush: js; highlight: [11,12,13]">
+angular.module('application', ['ui-router'])
+	.config(function ($stateProvider, $urlRouterProvider) {
+		$stateProvider
+			.state('home', {
+				url: '/home',
+				template: '&lt;p>this is part of home&lt;/p>'
+			})
+			.state('about', {
+				url: '/about',
+				template: '&lt;p>Creator is {{name}}&lt;/p>',
+				controller: function ($scope) {
+					$scope.name = "Google!!";
+				}
+			});
+	});				
+</pre>
+				<h4>สามารถดูตัวอย่างผลลัพธ์ได้ที่นี่ <a href="../demo/basicroute2.html">Demo</a> </h4>
+			</div>
+			<ul class="btn-group pull-right">
+				<a href="uiroute.html">
+					<li class="btn btn-primary"><i class="glyphicon glyphicon-step-backward"></i> ย้อนกลับ</li>
+				</a>
+				<a href="resolve.html">
+					<li class="btn btn-primary">ถัดไป <i class="glyphicon glyphicon-step-forward"></i></li>
+				</a>
+			</ul>
+        </div>
+		
+        <!--div class="col-md-3">
+          <div class="hidden-print hidden-xs hidden-sm affix" role="complementary">
+            <ul class="nav">
+                <li class="active"><a href="#download">Download</a></li>
+                <li><a href="#whats-included">What's included</a></li>
+                <li><a class="back-to-top" href="#top">Back to top</a></li>
+            </ul>
+          </div>
+        </div-->
+      </div>
+    </div>
+      <footer class="footer">
+      <div class="container">
+        <p class="text-muted">              
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="สัญญาอนุญาตของครีเอทีฟคอมมอนส์" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />ผลงานนี้ ใช้<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">สัญญาอนุญาตของครีเอทีฟคอมมอนส์แบบ แสดงที่มา-ไม่ใช้เพื่อการค้า 4.0 International</a>.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/lib/jquery.min.js"></script>
+    <script src="../js/lib/bootstrap.min.js"></script>
+  	<script type="text/javascript" src="../js/scripts/shCore.js"></script>
+	<script type="text/javascript" src="../js/scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="../js/scripts/shBrushXml.js"></script>    
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+</body></html>

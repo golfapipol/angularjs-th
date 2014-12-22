@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="application">
+<head>
+    <!-- bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- bootstrap theme -->
+    <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+</head>
+<body>
+    <div class="container">
+		<ul class="nav nav-pills">
+			<li><a ui-sref="abstract.home">Home</a></li>
+			<li><a ui-sref="about">about</a></li>
+			<li><a ui-sref="contact">contact</a></li>
+		</ul>
+		<div>
+			<p>Next of this line is ui-view</p>
+			<div ui-view></div>
+		</div>
+	</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/lib/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="../js/lib/bootstrap.min.js"></script>
+    <!-- AngularJS JavaScript -->
+    <script src="../js/lib/angular.min.js"></script>
+	<!--AngularUI Router Library -->
+	<script src="../js/lib/angular-ui-router.js"></script>
+    <script src="../js/demo/multipleview.js"></script>
+</body>
+</html>

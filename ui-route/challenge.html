@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="application" ng-controller="uichallenge">
+<head>
+    <meta charset="utf-8">
+	<link rel="shortcut icon" href="../image/angularico.png" type="image/x-icon">
+    <title>Angular UI : Challenge</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../css/styles/shThemeDefault.css"/>
+	<link type="text/css" rel="stylesheet" href="../css/styles/shCore.css"/>
+	<style>.my-menu{background-color: #222;}.container-main{margin-top: 70px;}.lesson-header{background-color: #9c2e2e;color:white}.lesson-body{margin-bottom: 70px;}</style>
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top " role="navigation" style="height:75px">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html"><img src="../image/AngularJS-large.png" style="width:200px" /></a>
+        </div>
+        <div class="collapse navbar-collapse my-menu">
+          <ul class="nav navbar-nav">
+            <li ><a href="../home.html">Getting Started</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lesson<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li class="dropdown-header">Basic AngularJS</li>
+                <li><a href="../lesson/lesson1.html">Lesson 1</a></li>
+                <li><a href="../lesson/lesson2.html">Lesson 2</a></li>
+                <li><a href="../lesson/lesson3.html">Lesson 3</a></li>
+                <li><a href="../lesson/lesson4.html">Lesson 4</a></li>
+                <li><a href="../lesson/lesson5.html">Lesson 5</a></li>
+                <li><a href="../lesson/lesson6.html">Lesson 6</a></li>
+                <li><a href="../lesson/lesson7.html">Lesson 7</a></li>
+                <li><a href="../lesson/lesson8.html">Lesson 8</a></li>
+                <li><a href="../lesson/lesson9.html">Lesson 9</a></li>
+                <li><a href="../lesson/lesson10.html">Lesson 10</a></li>
+                <li><a href="../lesson/lesson11.html">Lesson 11</a></li>
+                <li><a href="../lesson/lesson12.html">Lesson 12</a></li>
+              </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Directive<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li class="dropdown-header">Basic Directive</li>
+				<li><a href="../directive/directive.html">Directive Restrict</a></li>
+				<li><a href="../directive/template.html">Directive Template</a></li>
+				<li><a href="../directive/controller.html">Directive Controller</a></li>
+				<li><a href="../directive/link.html">Directive Link</a></li>
+				<li class="dropdown-header">Isolated Scope</li>
+                <li><a href="../directive/isolate.html">Isolated Scope</a></li>
+                <li><a href="../directive/scopeand.html">Scope Expression & </a></li>
+                <li><a href="../directive/scopeadd.html">Scope Attribute @ </a></li>
+                <li><a href="../directive/scopeequal.html">Scope Two way Binding =</a></li>
+				<li><a href="../directive/scopedifferent.html">$scope VS scope</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Scope<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../scope/rootscope.html">rootScope & Scope</a></li>
+				<li><a href="../scope/watch.html">$watch()</a></li>
+				<li><a href="../scope/apply.html">$apply()</a></li>
+				<li><a href="../scope/broadcast.html">$broadcast() & $on()</a></li>
+				<li><a href="../scope/emit.html">$emit() & $on()</a></li>
+				<li><a href="../scope/destory.html">$destory()</a></li>
+           	  </ul>
+            </li>
+      			<li class="dropdown">
+				<a href="../service/service.html">Service</a>
+			</li>
+			<li class="dropdown active">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">UI Router<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../ui-route/uiroute.html">Introduction UI Router</a></li>
+				<li><a href="../ui-route/basicroute.html">Basic Routing</a></li>
+				<li><a href="../ui-route/resolve.html">Resolve & Data</a></li>
+				<li><a href="../ui-route/nestedrouting.html">Nested Routing</a></li>
+				<li><a href="../ui-route/multipleview.html">Multiple Views</a></li>
+				<li><a href="../ui-route/event.html">Event</a></li>
+				<li><a href="../ui-route/urlprovider.html">URL Provider</a></li>
+				<li><a href="../ui-route/statego.html">$state.go()</a></li>
+				<li class="active"><a href="../ui-route/challenge.html">Challenge</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Example<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../example/validate.html">Input Validation</a></li>
+				<li><a href="../example/advance.html">Advance Validation</a></li>
+				<li><a href="../example/alert.html">Alert Validation</a></li>
+				<li><a href="../example/dynamic.html">Dynamic Validation</a></li>
+				<li><a href="../example/custom.html">Custom Validation</a></li>
+				<li><a href="../example/ngform.html">ngForm Validation</a></li>
+           	  </ul>
+            </li>
+            <li><a href="../about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	<div class="lesson-header">
+		<div class="container container-main">
+			<h1>Angular UI: Challenge</h1>
+		</div>
+	</div>
+    <div class="container lesson-body">
+      <div class="row">
+        <div class="col-md-9" role="main">
+			<div>
+				<h2 class="page-header">Challenge!! The Sushi Shop</h2>
+				<h3 class="page-header">Checkpoint 1: ทำการสร้าง sushi shop </h3><h4>โดยในหน้าจะประกอบด้วยส่วนของเมนูและส่วนของรายการที่สั่ง</h4>
+				<h4>ไฟล์ index.html ตั้งต้น</h4>
+				<pre class="brush:html">
+&lt;div class="container">
+	&lt;div class="row" ui-view>
+
+	&lt;/div>
+&lt;/div>
+</pre>
+				<ul>
+					<li>สร้าง state ชื่อ sushi</li>
+					<li>ทำการดึงข้อมูล sushi จาก resolve โดยมีรายละเอียดดังนี้
+						<ul>
+							<li ng-repeat="item in sushi">{{item.name}} ราคา {{item.price}} yen</li>
+						</ul>
+					</li>
+					<li>กำหนด templateUrl เป็น shop.html
+					<h4>shop.html</h4>
+					<pre class="brush: html">
+&lt;div class="col-md-8">
+	&lt;ul class="nav nav-pills navbar-default">
+		&lt;li>&lt;a ui-sref="sushi">Sushi&lt;/a>&lt;/li>
+	&lt;/ul>
+	&lt;div>
+		&lt;div class="list-group">
+			&lt;div class="list-group-item row" ng-repeat="item in menuItem" ng-init="item.quantity = 0">
+				&lt;h2 class="col-md-4">\{\{item.name}}&lt;/h2>
+				&lt;div class="col-md-2">&lt;em>\{\{item.price | number:2}} Yen &lt;/div>
+				&lt;div class="col-md-2">&lt;p>X \{\{item.quantity}}&lt;/p> &lt;button class="btn btn-default" ng-click="increase(item)">increse&lt;/button>
+				&lt;button class="btn btn-default" ng-click="decrease(item)">decrese&lt;/button>&lt;/div>
+				&lt;div class="col-md-2">&lt;button class="btn btn-default pull-right" ng-click="orderCall(item)">+&lt;/button>&lt;/div>
+			&lt;/div>
+		&lt;/div>
+	&lt;/div>
+	&lt;/div>
+	&lt;div class="col-md-4">
+		&lt;div class="list-group">
+			&lt;div class="list-group-item row" ng-repeat="item in orderItem">
+				&lt;h2 class="col-md-4">\{\{item.name}}&lt;/h2>
+				&lt;div class="col-md-4">&lt;em>\{\{item.price | number:2}} Yen &lt;/div>
+				&lt;div class="col-md-2">&lt;p>X \{\{item.quantity}}&lt;/p>&lt;/div>
+				&lt;div class="col-md-2">&lt;button class="btn btn-default pull-right" ng-click="removeOrder(item)">X&lt;/button>&lt;/div>
+			&lt;/div>
+			&lt;button ng-show="orderItem.length > 0" ng-click="checkOut()" class="btn btn-danger col-md-12">Check Out&lt;/button>
+		&lt;/div>
+	&lt;/div>
+&lt;/div>		
+</pre>
+					</li>
+					<li>กำหนด controller ให้มีรายละเอียดดังนี้
+						<pre class="brush: js">
+controller: function ($scope, sushiItem) {
+	$scope.orderItem = [];
+	$scope.menuItem = sushiItem;
+	$scope.increase = function (item) { };
+	$scope.decrease = function (item) {	};
+	$scope.orderCall = function (item) { };
+	$scope.removeOrder = function (item) { };
+	$scope.checkOut = function () { };
+}
+</pre>
+					</li>
+				</ul>
+				<h3 class="page-header">Checkpoint 1: จะได้ผลลัพธ์ดังรูป</h3>
+				<img src="../image/sushi/checkpoint1.png" style="width:60%; border:1px black solid">
+				<button class="btn btn-info" ng-click="answer1 = !answer1">เฉลย / ซ่อน Check Point 1</button>
+				<div ng-show="answer1"><h4>Answer of Checkpoint 1</h4>
+					<pre class="brush: js">
+angular.module('application', ['ui.router'])
+    .config(function ($stateProvider, $urlRouterProvider) {
+		$stateProvider
+            .state('sushi', {
+				url: '/sushi',
+				resolve: {
+					sushiItem: function () {
+						var item = [
+							{name: "Otaro", price: 200},
+							{name: "Maguro", price: 300},
+							{name: "Tamago", price: 120},
+							{name: "Saba", price: 100},
+							{name: "Tako", price: 150}
+						];
+						return item;
+					}
+				},
+				templateUrl: 'shop.html',
+				controller: function ($scope, sushiItem) {
+					$scope.orderItem = [];
+					$scope.menuItem = sushiItem;
+					$scope.increase = function (item) { };
+					$scope.decrease = function (item) {	};
+					$scope.orderCall = function (item) { };
+					$scope.removeOrder = function (item) { };
+					$scope.checkOut = function () { };
+				}
+			});
+</pre>
+				</div>
+				<h3 class="page-header">Checkpoint 2: เราต้องการที่จะเพิ่มประเภทของเมนูเพิ่มเติม คือ appetizer และ drink </h3>
+				<img src="../image/sushi/checkpointtemplate.png"  style="width:60%; border:1px black solid">
+				<h4>จากรูปสังเกตได้ว่าในหน้านี้มีส่วนที่เหมือนกัน คือ [ส่วนของประเภทอาหาร]และ[ส่วนรายการที่สั่ง]</h4>
+				<h4>และส่วนที่ต่างกันคือ ข้อมูลใน [ส่วนของเมนูอาหาร]</h4>
+				<h4>เราจึงทำการสร้าง abstract state ชื่อว่า shop เป็น template ให้สามารถ reuse ส่วนต่างๆของ template ได้</h4>
+				<h4>โดยจะแบ่ง view ของเป็น 3 หน้าดังนี้</h4>
+				<ul>
+					<li>shop.html
+						<pre class="brush: html">
+&lt;div class="col-md-8">
+	&lt;ul class="nav nav-pills navbar-default">
+		&lt;li>&lt;a ui-sref="sushi">Sushi&lt;/a>&lt;/li>
+		&lt;li>&lt;a ui-sref="appetizer">Appetizer&lt;/a>&lt;/li>
+		&lt;li>&lt;a ui-sref="drink">Drink&lt;/a>&lt;/li>
+	&lt;/ul>&lt;div ui-view="menulist">&lt;/div>&lt;/div>
+	&lt;div class="col-md-4" ui-view="order">
+	&lt;/div>
+&lt;/div>	
+</pre>
+					</li>
+					<li>menu.html
+						<pre class="brush: html">
+&lt;div class="list-group">
+	&lt;div class="list-group-item row" ng-repeat="item in menuItem" ng-init="item.quantity = 0">
+		&lt;h2 class="col-md-4">\{\{item.name}}&lt;/h2>
+		&lt;div class="col-md-2">&lt;em>\{\{item.price | number:2}} Yen &lt;/div>
+		&lt;div class="col-md-2">&lt;p>X \{\{item.quantity}}&lt;/p> &lt;button class="btn btn-default" ng-click="increase(item)">increse&lt;/button>
+		&lt;button class="btn btn-default" ng-click="decrease(item)">decrese&lt;/button>&lt;/div>
+		&lt;div class="col-md-2">&lt;button class="btn btn-default pull-right" ng-click="orderCall(item)">+&lt;/button>&lt;/div>
+	&lt;/div>
+&lt;/div>
+</pre>
+					</li>
+					<li>order.html
+						<pre class="brush: html">
+&lt;div class="list-group">
+	&lt;div class="list-group-item row" ng-repeat="item in orderItem">
+		&lt;h2 class="col-md-4">\{\{item.name}}&lt;/h2>
+		&lt;div class="col-md-4">&lt;em>\{\{item.price | number:2}} Yen &lt;/div>
+		&lt;div class="col-md-2">&lt;p>X \{\{item.quantity}}&lt;/p>&lt;/div>
+		&lt;div class="col-md-2">&lt;button class="btn btn-default pull-right" ng-click="removeOrder(item)">X&lt;/button>&lt;/div>
+	&lt;/div>
+	&lt;button ng-show="orderItem.length > 0" ng-click="checkOut()" class="btn btn-danger col-md-12">Check Out&lt;/button>
+&lt;/div>
+</pre>
+					</li>
+				</ul>
+				<h4>จากนั้นทำการสร้าง shop state ขึ้นมา โดย</h4>
+				<ul>
+					<li>กำหนดให้เป็น abstrct state</li>
+					<li>กำหนด templateUrl ไปที่ shop.html</li>
+					<li>ย้ายข้อมูลใน controller ของ sushi แยกออกมาดังนี้
+						<pre class="brush: js">
+function ($scope, $state) {
+	$scope.orderItem = [];
+	$scope.increase = function (item) { };
+	$scope.decrease = function (item) {	};
+	$scope.orderCall = function (item) { };
+	$scope.removeOrder = function (item) { };
+	$scope.checkOut = function () { };
+}
+</pre>
+					</li>
+				</ul>
+				<h4>เมื่อเราต้องการใช้ส่วนต่างๆของ shop state ก็ทำการกำหนดให้เป็น child state</h4>
+				<img src="../image/sushi/stateparent.png"  style="width:40%; border:1px black solid">
+				<h4>กำหนด sushi state เป็น child state ของ shop</h4>
+				<ul>
+					<li>กำหนดให้ sushi เป็น child state ของ shop</li>
+					<li>กำหนด views แทนการใช้ templateUrl โดยมี 2 views ดังนี้
+						<ul>
+							<li>menulist
+								<ul>
+									<li>กำหนด templateUrl ไปที่ menu.html</li>
+									<li>กำหนด resolve ให้ดึงข้อมูล sushi มาแสดง</li>
+									<li>ใน controller ทำการกำหนดค่าให้กับ menuItem</li>
+								</ul>
+							</li>
+							<li>order 
+								<ul>
+									<li>กำหนดให้ templateUrl ไปที่ order.html</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<h4>เพิ่ม appetizer state และ drink state โดยจะมีลักษณะ  interface เหมือนกับ sushi </h4>
+				<ul>
+					<li>appetizer state จะมีข้อมูลที่ต้อง resolve ดังนี้
+						<ul>
+							<li ng-repeat="item in appetizer">{{item.name}} ราคา {{item.price}} yen</li>
+						</ul>
+					</li>
+					<li>drink state จะมีข้อมูลที่ต้อง resolve ดังนี้
+						<ul>
+							<li ng-repeat="item in drink">{{item.name}} ราคา {{item.price}} yen</li>
+						</ul>
+					</li>
+				</ul>
+				<h3 class="page-header">Checkpoint 2: จะได้ผลลัพธ์ดังรูป</h3>
+				<img src="../image/sushi/checkpoint2.png" style="width:60%; border:1px black solid">
+				<button class="btn btn-info" ng-click="answer2 = !answer2">เฉลย / ซ่อน Check Point 2</button>
+				<div ng-show="answer2"><h4>Answer of Checkpoint 2</h4>
+					<pre class="brush: js">
+angular.module('application', ['ui.router'])
+    .config(function ($stateProvider, $urlRouterProvider) {
+		$stateProvider
+			.state('shop', {
+				abstract: true
+				templateUrl: 'shop.html',
+				controller: function ($scope, sushiItem) {
+					$scope.orderItem = [];
+					$scope.menuItem = sushiItem;
+					
+					$scope.increase = function (item) { };
+					$scope.decrease = function (item) {	};
+					$scope.orderCall = function (item) { };
+					$scope.removeOrder = function (item) { };
+					$scope.checkOut = function () { };
+				}
+			})
+            .state('shop.sushi', {
+				url: '/sushi',
+				resolve: {
+					sushiItem: function () {
+						var item = [
+							{name: "Otaro", price: 200},
+							{name: "Maguro", price: 300},
+							{name: "Tamago", price: 120},
+							{name: "Saba", price: 100},
+							{name: "Tako", price: 150}
+						];
+						return item;
+					}
+				},
+				views: {
+					"menulist": {
+						templateUrl: 'menu.html',
+						controller: function ($scope, sushiItem) {
+							$scope.menuItem = sushiItem;
+						}
+					},
+					"order": {
+						templateUrl: 'order.html'
+					}
+				}
+			})
+			.state('shop.appetizer', {
+				url: '/appetizer',
+				resolve: {
+					sushiItem: function () {
+						var item = [
+							{name: "Takoyaki", price: 500},
+							{name: "Okonomiyaki", price: 500},
+							{name: "Yakisoba", price: 650},
+							{name: "Soba", price: 400}
+						];
+						return item;
+					}
+				},
+				views: {
+					"menulist": {
+						templateUrl: 'menu.html',
+						controller: function ($scope, sushiItem) {
+							$scope.menuItem = sushiItem;
+						}
+					},
+					"order": {
+						templateUrl: 'order.html'
+					}
+				}
+			})
+			.state('shop.drink', {
+				url: '/drink',
+				resolve: {
+					sushiItem: function () {
+						var item = [
+							{name: "Coke", price: 100},
+							{name: "Water", price: 100},
+							{name: "Lemon Soda", price: 250},
+							{name: "Matcha", price: 200}
+						];
+						return item;
+					}
+				},
+				views: {
+					"menulist": {
+						templateUrl: 'menu.html',
+						controller: function ($scope, sushiItem) {
+							$scope.menuItem = sushiItem;
+						}
+					},
+					"order": {
+						templateUrl: 'order.html'
+					}
+				}
+			});
+</pre>
+				</div>
+				<h3 class="page-header">Checkpoint 3: กำหนดการทำงานให้กับฟังก์ชั่นต่างๆ ดังนี้</h3>
+				<ul>
+					<li>increase(item) - เพิ่มจำนวนซูชิที่ต้องการ </li>
+					<li>decrease(item) - ลดจำนวนซูชิที่ต้องการ [hint: จำนวนไม่น้อยกว่า 0]</li>
+					<li>orderCall(item) - เพิ่มรายการที่สั่งลง orderItem [hint: push()]</li>
+					<li>removeOrder(item) - ลบรายการที่สั่งออกจาก orderItem [hint: splice()]</li>
+				</ul>
+				<h3 class="page-header">Checkpoint 3: จะได้ผลลัพธ์ดังรูป</h3>
+				<img src="../image/sushi/checkpoint3.png" style="width:60%; border:1px black solid">
+				<button class="btn btn-info" ng-click="answer3 = !answer3">เฉลย / ซ่อน Check Point 3</button>
+				<div ng-show="answer3"><h4>Answer of Checkpoint 3</h4>
+					<pre class="brush: js">
+angular.module('application', ['ui.router'])
+    .config(function ($stateProvider, $urlRouterProvider) {
+		$stateProvider
+			.state('shop', {
+				abstract: true
+				templateUrl: 'shop.html',
+				controller: function ($scope, sushiItem) {
+					$scope.orderItem = [];
+					$scope.menuItem = sushiItem;
+					
+					$scope.increase = function (item) {
+						if (item.quantity !== null) {
+							item.quantity += 1;
+						}
+					};
+					$scope.decrease = function (item) {
+						if (item.quantity !== null && item.quantity > 0) {
+							item.quantity -= 1;
+						}
+					};
+					$scope.orderCall = function (item) {
+						if (item.quantity !== null && item.quantity > 0) {
+							var addItem = angular.copy(item);
+							$scope.orderItem.push(addItem);
+							item.quantity = 0;
+						}
+					};
+					$scope.removeOrder = function (item) {
+						var index = $scope.orderItem.indexOf(item);
+						$scope.orderItem.splice(index, 1);
+					}
+					$scope.checkOut = function () { };
+				}
+			})
+            .state('shop.sushi', { ... })
+			.state('shop.appetizer', { ... })
+			.state('shop.drink', { ... });
+</pre>
+				</div>
+				<h3 class="page-header">Checkpoint 4: กำหนด checkout state สำหรับการสรุปค่าใช้จ่าย</h3>
+				<h4>สร้าง checkout state ขึ้นมา</h4>
+				<ul>
+					<li>กำหนด templateUrl เป็น checkout.html
+						<h4>checkout.html</h4>
+						<pre class="brush: html">
+&lt;div>
+	&lt;ul class="nav nav-pills navbar-default">
+		&lt;li>&lt;a ui-sref="sushi">Back&lt;/a>&lt;/li>
+	&lt;/ul>
+&lt;/div>
+&lt;div class="list-group">
+	&lt;div class="list-group-item row" ng-repeat="item in orderItem">
+		&lt;h2 class="col-md-4">\{\{item.name}}&lt;/h2>
+		&lt;div class="col-md-4">
+			&lt;em>\{\{item.price | number:2}} Yen X \{\{item.quantity}} = \{\{item.quantity * item.price}} Yen
+		&lt;/div>
+	&lt;/div>
+	&lt;div class="list-group-item row" >
+		&lt;h2 class="col-md-4">Total&lt;/h2>
+		&lt;h2 class="col-md-4">\{\{sum}} Yen&lt;/h2>
+	&lt;/div>
+	&lt;button ng-click="payMoney()" class="btn btn-danger col-md-12">Pay&lt;/button>
+&lt;/div>
+</pre>
+					</li>
+					<li>กำหนด params ให้รับค่า orderItem
+						<pre class="brush:js">
+params: {'orderItem':''}						
+</pre>
+					</li>
+					<li>กำหนดรายละเอียดของ controller ดังนี้
+						<pre class="brush: js">
+function ($scope, $stateParams, $state) {
+	$scope.orderItem = $stateParams.orderItem;
+	$scope.sum = 0;
+	angular.forEach($scope.orderItem, function (item) {
+		$scope.sum += (item.price * item.quantity);
+	});
+	$scope.payMoney = function () {
+		alert("Thank you.");
+		$state.go('menu.sushi');
+	}
+}
+</pre>
+					</li>
+				</ul>
+				<h4>แต่เรายังหาทางไปยัง checkout ไม่ได้ ฉะนั้นให้ทำการกำหนดฟังก์ชั่น checkOut() ใน shop state</h4>
+				<ul>
+					<li>กำหนดให้ map "orderItem" เข้ากับค่าของ orderItem ใส่ลงในตัวแปร params</li>
+					<li>ส่งค่า params ไปยัง checkout state</li>
+				</ul>
+				<h3 class="page-header">Checkpoint 4: จะได้ผลลัพธ์ดังรูป</h3>
+				<img src="../image/sushi/checkpoint4.png" style="width:60%; border:1px black solid">
+				<button class="btn btn-info" ng-click="answer4 = !answer4">เฉลย / ซ่อน Check Point 4</button>
+				<div ng-show="answer4"><h4>Answer of Checkpoint 4</h4>
+					<pre class="brush: js">
+angular.module('application', ['ui.router'])
+    .config(function ($stateProvider, $urlRouterProvider) {
+		$stateProvider
+			.state('shop', {
+				abstract: true
+				templateUrl: 'shop.html',
+				controller: function ($scope, sushiItem) {
+					$scope.orderItem = [];
+					$scope.menuItem = sushiItem;
+					...
+					$scope.checkOut = function () { 
+						var params = {"orderItem":$scope.orderItem};
+						$state.go("checkout", params);
+					};
+				}
+			})
+            .state('shop.sushi', { ... })
+			.state('shop.appetizer', { ... })
+			.state('shop.drink', { ... })
+			.state('checkout', {
+				url: '/checkout',
+				params: {'orderItem':''},
+				templateUrl: 'checkout.html',
+				controller: function ($scope, $stateParams, $state) {
+					$scope.orderItem = $stateParams.orderItem;
+					$scope.sum = 0;
+					angular.forEach($scope.orderItem, function (item) {
+						$scope.sum += (item.price * item.quantity);
+					});
+					$scope.payMoney = function () {
+						alert("Thank you.");
+						$state.go('shop.sushi');
+					}
+				}
+			});
+</pre>
+				</div>
+				<h4>สามารถดูผลลัพธ์ที่เสร็จแล้วได้ <a href="../demo/uirouterchallenge.html">ที่นี่</a></h4>
+			</div>
+			<ul class="btn-group pull-right">
+				<a href="urlprovider.html">
+					<li class="btn btn-primary"><i class="glyphicon glyphicon-step-backward"></i> ย้อนกลับ</li>
+				</a>
+			</ul>
+        </div>
+		
+        <!--div class="col-md-3">
+          <div class="hidden-print hidden-xs hidden-sm affix" role="complementary">
+            <ul class="nav">
+                <li class="active"><a href="#download">Download</a></li>
+                <li><a href="#whats-included">What's included</a></li>
+                <li><a class="back-to-top" href="#top">Back to top</a></li>
+            </ul>
+          </div>
+        </div-->
+      </div>
+    </div>
+      <footer class="footer">
+      <div class="container">
+        <p class="text-muted">              
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="สัญญาอนุญาตของครีเอทีฟคอมมอนส์" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />ผลงานนี้ ใช้<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">สัญญาอนุญาตของครีเอทีฟคอมมอนส์แบบ แสดงที่มา-ไม่ใช้เพื่อการค้า 4.0 International</a>.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/lib/jquery.min.js"></script>
+    <script src="../js/lib/bootstrap.min.js"></script>
+    <!-- AngularJS JavaScript -->
+    <script src="../js/lib/angular.js"></script>
+	<!--AngularUI Router Library -->
+	<script src="../js/lib/angular-ui-router.js"></script>
+    <script src="../js/demo/uichallenge.js"></script>
+  	<script type="text/javascript" src="../js/scripts/shCore.js"></script>
+	<script type="text/javascript" src="../js/scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="../js/scripts/shBrushXml.js"></script>    
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+</body></html>

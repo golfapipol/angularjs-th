@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="application">
+<head>
+	<meta charset="utf-8">
+    <!-- bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- bootstrap theme -->
+    <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+</head>
+<body>
+	<div class="list-group" ng-controller="storeController as store" >
+		<div class="list-group-item" ng-repeat="sushi in sushis">
+			<h1>{{sushi.name}}</h1>
+			<h2>{{sushi.price}} yen</h2>
+			<p>{{sushi.description}}</p>
+			<button class="btn btn-default" ng-show="sushi.canPurchase">สั่งซื้อ</button>
+        	<h3 ng-hide="sushi.canPurchase">ขายหมดแล้วจ้า</h3>
+		</div>
+	</div>
+            
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/lib/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="../js/lib/bootstrap.min.js"></script>
+    <!-- AngularJS JavaScript -->
+    <script src="../js/lib/angular.min.js"></script>
+    <script src="../js/demo/lesson4.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html ng-app="application">
+<head>
+	<meta charset="utf-8">
+    <!-- bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- bootstrap theme -->
+    <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+	<style>.selected{background-color: red;color:white}</style>
+</head>
+<body>
+	<div class="container" style="margin-top:100px">
+        <div class="row">
+			<h3>เมื่อทำการ Set ค่าใหม่ ค่าของ Service จะถูกเปลี่ยนไปด้วย </h3>
+		</div>
+		<div class="row">
+            <div class="col-md-6" ng-controller="example1Controller as example1">
+				<form name="form" novalidate>
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="textinput">Example 1 Controller</label>  
+					  <div class="col-md-8">
+					  	<input id="textinput" ng-model="data" name="textinput" type="text" class="form-control input-md" value="{{data}}">
+					  	<span class="help-block"></span>  
+					  </div>
+					</div>
+					<!-- Text input-->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="textinput">Data</label>  
+					  <div class="col-md-8">
+						  {{data}}
+					  	<span class="help-block"></span>  
+					  </div>
+					</div>
+					<!-- Button (Double) -->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="button1id"></label>
+					  <div class="col-md-8">
+						<button id="button1id" name="button1id" ng-click="get()" class="btn btn-success">GET!!</button>
+						<button id="button2id" name="button2id" ng-click="set(data)" class="btn btn-danger">SET!</button>
+					  </div>
+					</div>
+				</form>
+			</div>
+            <div class="col-md-6" ng-controller="example2Controller as example2">
+				<form name="form" novalidate>
+					<!-- Text input-->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="textinput">Example 2 Controller</label>  
+					  <div class="col-md-8">
+					  	<input id="textinput" ng-model="data" name="textinput" type="text" class="form-control input-md" value="{{data}}">
+					  	<span class="help-block"></span>  
+					  </div>
+					</div>
+					<!-- Text input-->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="textinput">Data</label>  
+					  <div class="col-md-8">
+						  {{data}}
+					  	<span class="help-block"></span>  
+					  </div>
+					</div>
+					<!-- Button (Double) -->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="button1id"></label>
+					  <div class="col-md-8">
+						<button id="button1id" name="button1id" ng-click="get()" class="btn btn-success">GET!!</button>
+						<button id="button2id" name="button2id" ng-click="set(data)" class="btn btn-danger">SET!</button>
+					  </div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>  
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/lib/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="../js/lib/bootstrap.min.js"></script>
+    <!-- AngularJS JavaScript -->
+    <script src="../js/lib/angular.min.js"></script>
+    <script src="../js/demo/lesson11.js"></script>
+</body>
+</html>

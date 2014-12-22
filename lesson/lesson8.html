@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<link rel="shortcut icon" href="../image/angularico.png" type="image/x-icon">
+    <title>AngularJS : Lesson 8</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../css/styles/shThemeDefault.css"/>
+	<link type="text/css" rel="stylesheet" href="../css/styles/shCore.css"/>
+	<style>.my-menu{background-color: #222;}.container-main{margin-top: 70px;}.lesson-header{background-color: #9c2e2e;color:white}.lesson-body{margin-bottom: 70px;}</style>
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top " role="navigation" style="height:75px">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html"><img src="../image/AngularJS-large.png" style="width:200px" /></a>
+        </div>
+        <div class="collapse navbar-collapse my-menu">
+          <ul class="nav navbar-nav ">
+            <li ><a href="../home.html">Getting Started</a></li>
+            <li class="dropdown active">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lesson<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li class="dropdown-header">Basic AngularJS</li>
+                <li><a href="lesson1.html">Lesson 1</a></li>
+                <li><a href="lesson2.html">Lesson 2</a></li>
+                <li><a href="lesson3.html">Lesson 3</a></li>
+                <li><a href="lesson4.html">Lesson 4</a></li>
+                <li><a href="lesson5.html">Lesson 5</a></li>
+                <li><a href="lesson6.html">Lesson 6</a></li>
+                <li><a href="lesson7.html">Lesson 7</a></li>
+                <li class="active"><a href="lesson8.html">Lesson 8</a></li>
+                <li><a href="lesson9.html">Lesson 9</a></li>
+                <li><a href="lesson10.html">Lesson 10</a></li>
+                <li><a href="lesson11.html">Lesson 11</a></li>
+                <li><a href="lesson12.html">Lesson 12</a></li>
+              </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Directive<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li class="dropdown-header">Basic Directive</li>
+				<li><a href="../directive/directive.html">Directive Restrict</a></li>
+				<li><a href="../directive/template.html">Directive Template</a></li>
+				<li><a href="../directive/controller.html">Directive Controller</a></li>
+				<li><a href="../directive/link.html">Directive Link</a></li>
+				<li class="dropdown-header">Isolated Scope</li>
+                <li><a href="../directive/isolate.html">Isolated Scope</a></li>
+                <li><a href="../directive/scopeand.html">Scope Expression & </a></li>
+                <li><a href="../directive/scopeadd.html">Scope Attribute @ </a></li>
+                <li><a href="../directive/scopeequal.html">Scope Two way Binding =</a></li>
+				<li><a href="../directive/scopedifferent.html">$scope VS scope</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Scope<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../scope/rootscope.html">rootScope & Scope</a></li>
+				<li><a href="../scope/watch.html">$watch()</a></li>
+				<li><a href="../scope/apply.html">$apply()</a></li>
+				<li><a href="../scope/broadcast.html">$broadcast() & $on()</a></li>
+				<li><a href="../scope/emit.html">$emit() & $on()</a></li>
+				<li><a href="../scope/destory.html">$destory()</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown">
+				<a href="../service/service.html" >Service</a>
+			</li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">UI Router<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../ui-route/uiroute.html">Introduction UI Router</a></li>
+				<li><a href="../ui-route/basicroute.html">Basic Routing</a></li>
+				<li><a href="../ui-route/resolve.html">Resolve & Data</a></li>
+				<li><a href="../ui-route/nestedrouting.html">Nested Routing</a></li>
+				<li><a href="../ui-route/multipleview.html">Multiple Views</a></li>
+				<li><a href="../ui-route/event.html">Event</a></li>
+				<li><a href="../ui-route/urlprovider.html">URL Provider</a></li>
+				<li><a href="../ui-route/statego.html">$state.go()</a></li>
+				<li><a href="../ui-route/challenge.html">Challenge</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Example<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../example/validate.html">Input Validation</a></li>
+				<li><a href="../example/advance.html">Advance Validation</a></li>
+				<li><a href="../example/alert.html">Alert Validation</a></li>
+				<li><a href="../example/dynamic.html">Dynamic Validation</a></li>
+				<li><a href="../example/custom.html">Custom Validation</a></li>
+				<li><a href="../example/ngform.html">ngForm Validation</a></li>
+           	  </ul>
+            </li>
+            <li><a href="../about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	<div class="lesson-header">
+		<div class="container container-main">
+			<h1>Lesson 8: การใช้งานฟอร์มกับ AngularJS </h1>
+		</div>
+	</div>
+    <div class="container lesson-body">
+      <div class="row">
+        <div class="col-md-9" role="main">
+			<div>
+            	<h2 class="page-header">สิ่งที่ควรรู้</h2>
+				<h3>การใช้งานฟอร์ม</h3>
+				<h4>จากบทที่แล้วได้พูดถึงแนวคิดแบบ Two-Way Binding ของ AngularJS เราจะทำให้คุณมองเห็นภาพนั้นมากขึ้นด้วย</h4>
+				<h4>ด้วย <strong>Ng-Model</strong></h4>
+				<h3>Ng-Model คือ อะไร ?</h3>
+				<p>Ng-Model เป็น Directive ที่ใช้เชื่อมโยงค่าระหว่าง model และ view ตามแนวคิด Two-Way Binding</p>
+				<p>โดยจะใส่ไว้ใน form control ต่างๆ </p>
+				<pre>
+&lt;input [type=*] ng-model="ชื่อตัวแปร" />
+&lt;select ng-model="ชื่อตัวแปร" />
+</pre>
+				<h4>ตัวอย่างของ Ng-Model สามารถดูได้ที่ลิงค์นี้ <a href="../demo/lesson8ngmodel.html">Demo</a></h4>
+				<p>ไฟล์ demo.html</p>
+				<pre class="brush: html">
+&lt;!DOCTYPE html>
+&lt;html ng-app="application">
+&lt;head>
+	&lt;meta charset="utf-8">
+    &lt;!-- bootstrap CSS -->
+    &lt;link rel="stylesheet" href="../css/bootstrap.min.css">
+    &lt;!-- bootstrap theme -->
+    &lt;link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+&lt;/head>
+&lt;body>
+	&lt;div class="list-group" ng-controller="demoController as demo">
+		&lt;div class="list-group-item clearfix">
+			&lt;input type="text" ng-model="text" />
+			&lt;p>Text is {{text}}&lt;/p>
+			&lt;p>เมื่อมีการเปลี่ยนแปลงค่าใน model (input) ค่าของ text ที่แสดง(view) ก็จะเปลี่ยนไปด้วย&lt;/p>
+		&lt;/div>
+	&lt;/div>
+	&lt;!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    &lt;script src="js/lib/jquery.min.js">&lt;/script>
+    &lt;!-- Bootstrap JavaScript -->
+    &lt;script src="js/lib/bootstrap.min.js">&lt;/script>
+    &lt;!-- AngularJS JavaScript -->
+    &lt;script src="js/lib/angular.min.js">&lt;/script>
+    &lt;script src="js/demo.js">&lt;/script>
+&lt;/body>
+&lt;/html>
+</pre>
+				<p>ไฟล์ demo.js</p>
+				<pre class="brush: js">
+(function () {
+	'use strict';
+	
+	var app = angular.module('application', []);
+	app.controller('demoController', function ($scope) {
+		$scope.text = "test";
+	});
+	
+})();				
+</pre>
+				<h3>Ng-Submit คือ อะไร ?</h3>
+				<p>Ng-Submit เป็น Directive ที่ AngularJS ใช้ Binding Event onSubmit ที่ใช้ในการส่งค่าจากฟอร์ม</p>
+				<pre>&lt;form ng-submit="ฟังก์ชั่น/เงื่อนไข"></pre>
+			</div>
+			<div>
+				<h2 class="page-header">ลองสร้างฟอร์มกันดีกว่า</h2>
+				<h4>สร้างไฟล์ html ใหม่ แล้วทำการสร้างฟอร์มที่มี form control 3 อัน ได้แก่
+					<ul>
+						<li>input</li>
+						<li>select item</li>
+						<li>textarea</li>
+					</ul>
+				</h4>
+				<pre class="brush: html; highlight:[]">
+&lt;!DOCTYPE html>
+&lt;html ng-app="application">
+&lt;head>
+	&lt;meta charset="utf-8">
+    &lt;!-- bootstrap CSS -->
+    &lt;link rel="stylesheet" href="css/bootstrap.min.css">
+    &lt;!-- bootstrap theme -->
+    &lt;link rel="stylesheet" href="css/bootstrap-theme.min.css">
+&lt;/head>
+&lt;body ng-controller="demoController as demo">
+	&lt;div class="container">
+	&lt;form class="form-horizontal" ng-submit="addData(datas)">
+		&lt;fieldset>
+		&lt;!-- Form Name -->
+		&lt;legend>Form Name&lt;/legend>
+		&lt;!-- Text input-->
+		&lt;div class="form-group">
+		  &lt;label class="col-md-4 control-label" for="textinput">Text Input&lt;/label>  
+		  &lt;div class="col-md-4">
+			&lt;input type="text" ng-model="data.text" name="textinput" id="textinput" class="form-control input-md">
+		  &lt;/div>
+		&lt;/div>
+		&lt;!-- Select Basic -->
+		&lt;div class="form-group">
+		  &lt;label class="col-md-4 control-label" for="selectbasic">Select Basic&lt;/label>
+		  &lt;div class="col-md-4">
+			&lt;select ng-model="data.select" id="selectbasic" name="selectbasic" class="form-control">
+			  &lt;option value="" selected>&lt;/option>
+			  &lt;option value="1">Option one&lt;/option>
+			  &lt;option value="2">Option two&lt;/option>
+			&lt;/select>
+		  &lt;/div>
+		&lt;/div>
+		&lt;!-- Textarea -->
+		&lt;div class="form-group">
+		  &lt;label class="col-md-4 control-label" for="textarea">Text Area&lt;/label>
+		  &lt;div class="col-md-4">                     
+			&lt;textarea ng-model="data.textarea" name="textarea" id="textarea"  class="form-control" >default text&lt;/textarea>
+		  &lt;/div>
+		&lt;/div>
+		&lt;!-- Button -->
+		&lt;div class="form-group">
+			&lt;label class="col-md-4 control-label" for="singlebutton">Submit&lt;/label>
+			&lt;div class="col-md-4">
+				&lt;button type="submit" class="btn btn-primary">Submit&lt;/button>
+			&lt;/div>
+		&lt;/div>
+		&lt;/fieldset>
+	&lt;/form>
+	&lt;!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    &lt;script src="js/lib/jquery.min.js">&lt;/script>
+    &lt;!-- Bootstrap JavaScript -->
+    &lt;script src="js/lib/bootstrap.min.js">&lt;/script>
+    &lt;!-- AngularJS JavaScript -->
+    &lt;script src="js/lib/angular.min.js">&lt;/script>
+    &lt;script src="js/demoform.js">&lt;/script>
+&lt;/body>
+&lt;/html>
+</pre>
+				<p>สร้างไฟล์ demoform.js โดยมีรายละเอียดดังนี้</p>
+				<pre class="brush: js">
+(function () {
+	'use strict';
+	
+	var app = angular.module('application', []);
+	app.controller('demoController', function ($scope) {
+		$scope.datas =[];		// เก็บข้อมูลทั้งหมดที่ถูกส่งจากฟอร์ม
+		$scope.data ={};		// ข้อมูลที่ผูกกับ form
+		// ฟังก์ชั่น เพิ่มข้อมูลลง datas
+		$scope.addData = function (datas) { 
+			datas.push($scope.data);
+			$scope.data = {};
+		};
+	});
+	
+})();
+</pre>
+				<p>จากนั้นทำการใส่ ng-submit ใน &lt;form> โดยรับตัวแปร datas เป็นพารามิเตอร์</p>
+				<pre class="brush: html; first-line: 11; highlight: [12];">
+&lt;div class="container">
+	&lt;form class="form-horizontal" ng-submit="addData(datas)">
+		&lt;fieldset>
+</pre>
+				<p>เพิ่มส่วนแสดงผลค่าที่ถูกส่งมา</p>
+				<pre class="brush: js; first-line: 49; highlight: [];">
+&lt;/form>
+	&lt;div class="list-group">
+		&lt;div class="list-group-item clearfix" ng-repeat="data in datas">
+			&lt;h3>Text Input : {{data.text}}&lt;/h3>
+			&lt;h3>Select : {{data.select}}&lt;/h3>
+			&lt;h3>Text Area : {{data.textarea}}&lt;/h3>
+		&lt;/div>
+	&lt;/div>
+&lt;/div></pre>
+				<h4>จะได้ผลลัพธ์ดังนี้ <a href="../demo/lesson8ngform.html">Demo</a></h4>
+			</div>
+			<div>
+            	<h1 class="page-header">Challenge 8: Add Review</h1>
+				<h4>อยู่ๆ คุณทานากะก็บอกว่า เค้าอยากได้หน้าเว็บส่วนของการ Review ร้าน โดยมีข้อมูลดังนี้
+					<ul>
+						<li>ชื่อ - สกุล</li>
+						<li>อีเมล์</li>
+						<li>จำนวนดาว</li>
+						<li>ข้อเสนอแนะเพิ่มเติม</li>
+					</ul>
+				</h4>
+				<p>โดยให้สร้างหน้า Review ร้านใหม่อยู่ในโฟลเดอร์เดียวกับที่เก็บ sushistore.html</p>
+				<h3>สามารถดูผลลัพธ์ได้ที่ <a href="../demo/challenge8.html">Demo</a></h3>
+				<h4>ไฟล์ storereview.html</h4>
+				<pre class="brush: html; ruler: true;">&lt;!DOCTYPE html>
+&lt;html ng-app="application">
+&lt;head>
+	&lt;meta charset="utf-8">
+    &lt;!-- bootstrap CSS -->
+    &lt;link rel="stylesheet" href="css/bootstrap.min.css">
+    &lt;!-- bootstrap theme -->
+    &lt;link rel="stylesheet" href="css/bootstrap-theme.min.css">
+&lt;/head>
+&lt;body>
+	&lt;header>
+      &lt;h1 class="text-center">Review {{"Tanaka" | uppercase}}{{"-San"}}'s Sushi Store&lt;/h1>
+      &lt;h2 class="text-center">Open Since {{10*200}}.&lt;/h2>
+    &lt;/header>
+    &lt;div class="container" ng-controller="reviewController as review">
+		&lt;div class="list-group">
+			&lt;legend>Reviews&lt;/legend>
+			&lt;blockquote ng-repeat="...">&lt;!-- Review ทั้งหมด -->
+				&lt;b>ชื่อ - จำนวนดาว Star(s)&lt;/b>
+				&lt;p>แนะนำ&lt;/p>
+				&lt;small>อีเมล์&lt;/small>
+			&lt;/blockquote>
+			&lt;blockquote>
+				&lt;b>ชื่อ - จำนวนดาว Star(s)&lt;/b>
+				&lt;p>แนะนำ&lt;/p>
+				&lt;small>อีเมล์&lt;/small>
+			&lt;/blockquote>
+		&lt;/div>
+		&lt;form class="form-horizontal" ng-submit="...">
+			&lt;fieldset>
+			&lt;!-- Form Name -->
+			&lt;legend>Review Form&lt;/legend>
+			&lt;!-- Text input-->
+			&lt;div class="form-group">
+			  &lt;label class="col-md-4 control-label" for="textinput">ชื่อ&lt;/label>  
+			  &lt;div class="col-md-4">
+				&lt;input type="text" ng-model="..." name="textinput" id="textinput" class="form-control input-md">
+			  &lt;/div>
+			&lt;/div>
+			&lt;!-- email input-->
+			&lt;div class="form-group">
+			  &lt;label class="col-md-4 control-label" for="textinput">อีเมล์&lt;/label>  
+			  &lt;div class="col-md-4">
+				&lt;input type="text" ng-model="..." name="textinput" id="textinput" class="form-control input-md">
+			  &lt;/div>
+			&lt;/div>
+			&lt;!-- Select Basic -->
+			&lt;div class="form-group">
+			  &lt;label class="col-md-4 control-label" for="selectbasic">Select Basic&lt;/label>
+			  &lt;div  class="col-md-4">
+				&lt;select ng-model="..." id="selectbasic" name="selectbasic" class="form-control">
+				  &lt;option value="1">1 Stars&lt;/option>
+				  &lt;option value="2">2 Stars&lt;/option>
+				  &lt;option value="3">3 Stars&lt;/option>
+				  &lt;option value="4">4 Stars&lt;/option>
+				  &lt;option value="5">5 Stars&lt;/option>
+				&lt;/select>
+			  &lt;/div>
+			&lt;/div>
+			&lt;!-- Textarea -->
+			&lt;div class="form-group">
+			  &lt;label class="col-md-4 control-label" for="textarea">Text Area&lt;/label>
+			  &lt;div class="col-md-4">                     
+				&lt;textarea ng-model="..." name="textarea" id="textarea"  class="form-control" >default text&lt;/textarea>
+			  &lt;/div>
+			&lt;/div>
+			&lt;!-- Button -->
+			&lt;div class="form-group">
+				&lt;label class="col-md-4 control-label" for="singlebutton">&nbsp;&lt;/label>
+				&lt;div class="col-md-4">
+					&lt;button type="submit" class="btn btn-primary">Submit&lt;/button>
+				&lt;/div>
+			&lt;/div>
+			&lt;/fieldset>
+		&lt;/form>
+	&lt;/div>  
+    &lt;!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    &lt;script src="js/lib/jquery.min.js">&lt;/script>
+    &lt;!-- Bootstrap JavaScript -->
+    &lt;script src="js/lib/bootstrap.min.js">&lt;/script>
+    &lt;!-- AngularJS JavaScript -->
+    &lt;script src="js/lib/angular.min.js">&lt;/script>
+    &lt;script src="js/review.js">&lt;/script>
+&lt;/body>
+&lt;/html></pre>
+				<h4>ไฟล์ review.js</h4>
+				<pre class="brush: js; ">
+(function () {
+	'use strict';
+	
+	var app = angular.module('application', []);
+	app.controller('reviewController', function ($scope) {
+		
+	});
+})();</pre>
+			</div>
+			<ul class="btn-group pull-right">
+				<a href="lesson7.html">
+					<li class="btn btn-primary"><i class="glyphicon glyphicon-step-backward"></i> ย้อนกลับ</li>
+				</a>
+				<a href="lesson9.html">
+					<li class="btn btn-primary">ถัดไป <i class="glyphicon glyphicon-step-forward"></i></li>
+				</a>
+			</ul>
+        </div>
+		
+        <!--div class="col-md-3">
+          <div class="hidden-print hidden-xs hidden-sm affix" role="complementary">
+            <ul class="nav">
+                <li class="active"><a href="#download">Download</a></li>
+                <li><a href="#whats-included">What's included</a></li>
+                <li><a class="back-to-top" href="#top">Back to top</a></li>
+            </ul>
+          </div>
+        </div-->
+      </div>
+    </div>
+      <footer class="footer">
+      <div class="container">
+        <p class="text-muted">              
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="สัญญาอนุญาตของครีเอทีฟคอมมอนส์" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />ผลงานนี้ ใช้<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">สัญญาอนุญาตของครีเอทีฟคอมมอนส์แบบ แสดงที่มา-ไม่ใช้เพื่อการค้า 4.0 International</a>.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/lib/jquery.min.js"></script>
+    <script src="../js/lib/bootstrap.min.js"></script>
+  	<script type="text/javascript" src="../js/scripts/shCore.js"></script>
+	<script type="text/javascript" src="../js/scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="../js/scripts/shBrushXml.js"></script>    
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+</body></html>

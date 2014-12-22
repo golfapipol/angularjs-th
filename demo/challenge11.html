@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="application">
+<head>
+	<meta charset="utf-8">
+    <!-- bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- bootstrap theme -->
+    <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+	<style>.selected{background-color: red;color:white}</style>
+</head>
+<body>
+	<header>
+      <h1 class="text-center">{{"Tanaka" | uppercase}}{{"-San"}}'s Sushi Store</h1>
+      <h2 class="text-center">Open Since {{10*200}}.</h2>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+				<div class="list-group" ng-controller="storeController as store" >
+					<div class="list-group-item clearfix" ng-repeat="sushi in sushis" ng-class="{'selected':purchase(sushi)}">
+						<h1>{{sushi.name}}
+							<em class="pull-right">{{sushi.price | number:2}} yen</em>
+						</h1>
+						<div class="col-md-6"><img ng-src="{{sushi.image}}" /></div>
+						<div class="col-md-6">
+							<h3><strong>{{sushi.quantity}}</strong></h3>
+							<button class="btn btn-default pull-right" ng-show="purchase(sushi)">สั่งซื้อ</button>
+							<button class="btn btn-default" ng-click="clickAdd(sushi)">&Delta;</button>
+							<button class="btn btn-default" ng-click="clickRemove(sushi)">&nabla;</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>  
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/lib/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="../js/lib/bootstrap.min.js"></script>
+    <!-- AngularJS JavaScript -->
+    <script src="../js/lib/angular.min.js"></script>
+    <script src="../js/demo/challenge11.js"></script>
+</body>
+</html>

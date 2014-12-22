@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<link rel="shortcut icon" href="../image/angularico.png" type="image/x-icon">
+    <title>AngularJS : Lesson 4</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../css/styles/shThemeDefault.css"/>
+	<link type="text/css" rel="stylesheet" href="../css/styles/shCore.css"/>
+	<style>.my-menu{background-color: #222;}.container-main{margin-top: 70px;}.lesson-header{background-color: #9c2e2e;color:white}.lesson-body{margin-bottom: 70px;}</style>
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top " role="navigation" style="height:75px">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html"><img src="../image/AngularJS-large.png" style="width:200px" /></a>
+        </div>
+        <div class="collapse navbar-collapse my-menu">
+          <ul class="nav navbar-nav">
+            <li ><a href="../home.html">Getting Started</a></li>
+            <li class="dropdown active">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lesson<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li class="dropdown-header">Basic AngularJS</li>
+                <li><a href="lesson1.html">Lesson 1</a></li>
+                <li><a href="lesson2.html">Lesson 2</a></li>
+                <li><a href="lesson3.html">Lesson 3</a></li>
+                <li class="active"><a href="lesson4.html">Lesson 4</a></li>
+                <li><a href="lesson5.html">Lesson 5</a></li>
+                <li><a href="lesson6.html">Lesson 6</a></li>
+                <li><a href="lesson7.html">Lesson 7</a></li>
+                <li><a href="lesson8.html">Lesson 8</a></li>
+                <li><a href="lesson9.html">Lesson 9</a></li>
+                <li><a href="lesson10.html">Lesson 10</a></li>
+                <li><a href="lesson11.html">Lesson 11</a></li>
+                <li><a href="lesson12.html">Lesson 12</a></li>
+              </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Directive<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li class="dropdown-header">Basic Directive</li>
+				<li><a href="../directive/directive.html">Directive Restrict</a></li>
+				<li><a href="../directive/template.html">Directive Template</a></li>
+				<li><a href="../directive/controller.html">Directive Controller</a></li>
+				<li><a href="../directive/link.html">Directive Link</a></li>
+				<li class="dropdown-header">Isolated Scope</li>
+                <li><a href="../directive/isolate.html">Isolated Scope</a></li>
+                <li><a href="../directive/scopeand.html">Scope Expression & </a></li>
+                <li><a href="../directive/scopeadd.html">Scope Attribute @ </a></li>
+                <li><a href="../directive/scopeequal.html">Scope Two way Binding =</a></li>
+				<li><a href="../directive/scopedifferent.html">$scope VS scope</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Scope<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../scope/rootscope.html">rootScope & Scope</a></li>
+				<li><a href="../scope/watch.html">$watch()</a></li>
+				<li><a href="../scope/apply.html">$apply()</a></li>
+				<li><a href="../scope/broadcast.html">$broadcast() & $on()</a></li>
+				<li><a href="../scope/emit.html">$emit() & $on()</a></li>
+				<li><a href="../scope/destory.html">$destory()</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown">
+				<a href="../service/service.html" >Service</a>
+			</li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">UI Router<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../ui-route/uiroute.html">Introduction UI Router</a></li>
+				<li><a href="../ui-route/basicroute.html">Basic Routing</a></li>
+				<li><a href="../ui-route/resolve.html">Resolve & Data</a></li>
+				<li><a href="../ui-route/nestedrouting.html">Nested Routing</a></li>
+				<li><a href="../ui-route/multipleview.html">Multiple Views</a></li>
+				<li><a href="../ui-route/event.html">Event</a></li>
+				<li><a href="../ui-route/urlprovider.html">URL Provider</a></li>
+				<li><a href="../ui-route/statego.html">$state.go()</a></li>
+				<li><a href="../ui-route/challenge.html">Challenge</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Example<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../example/validate.html">Input Validation</a></li>
+				<li><a href="../example/advance.html">Advance Validation</a></li>
+				<li><a href="../example/alert.html">Alert Validation</a></li>
+				<li><a href="../example/dynamic.html">Dynamic Validation</a></li>
+				<li><a href="../example/custom.html">Custom Validation</a></li>
+				<li><a href="../example/ngform.html">ngForm Validation</a></li>
+           	  </ul>
+            </li>
+            <li><a href="../about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	<div class="lesson-header">
+		<div class="container container-main">
+			<h1>Lesson 4: การใช้งาน Array กับ AngularJS</h1>
+		</div>
+	</div>
+    <div class="container lesson-body">
+      <div class="row">
+        <div class="col-md-9" role="main">
+			<div>
+            	<h2 class="page-header">สิ่งที่ควรรู้</h2>
+				<h3>ข้อมูลไม่ได้มีเพียงหนึ่งเดียว</h3>
+				<p>จากหัวข้อที่กล่าวมาข้างต้น ข้อมูลโดยปกติแล้วจะมีลักษณะเป็น <strong>ชุดข้อมูล (Array)</strong></p>
+				<p>มันก็เหมือนกับร้านซูชิที่ไม่ได้ขายซูชิแค่ชนิดเดียว</p>
+				<h3>แล้วเราจะทำยังไงกับ Array ?</h3>
+				<pre class="brush: js;">
+$scope.sushis = [
+	{
+		name: 'Maguro',
+		price: 200,
+		description: 'Fat Tuna'
+	},
+	{
+		name: 'Tamago',
+		price: 120,
+		description: 'Rice with Egg'	
+	},...
+];</pre>
+				<p>โดยปกติเราเข้าถึงข้อมูลแบบ Array ได้จากการระบุ<strong>ลำดับ (index)</strong> ของข้อมูล</p>
+				<pre class="brush: html; highlight: [3,4,5,6,7,10,11,12,13,14]">
+&lt;div class="list-group" ng-controller="storeController as store">
+	&lt;div class="list-group-item">
+		&lt;h1>{{sushis[0].name}}&lt;/h1>
+		&lt;h2>{{sushis[0].price}} yen&lt;/h2>
+		&lt;p>{{sushis[0].description}}&lt;/p>
+		&lt;button ng-show="sushis[0].canPurchase">สั่งซื้อ&lt;/button>
+		&lt;h3 ng-hide="sushis[0].canPurchase">ขายหมดแล้วจ้า&lt;/h3>
+	&lt;/div>
+	&lt;div class="list-group-item">
+		&lt;h1>{{sushis[1].name}}&lt;/h1>
+		&lt;h2>{{sushis[1].price}} yen&lt;/h2>
+		&lt;p>{{sushis[1].description}}&lt;/p>
+		&lt;button class="btn btn-default" ng-show="sushis[1].canPurchase">สั่งซื้อ&lt;/button>
+		&lt;h3 ng-hide="sushis[1].canPurchase">ขายหมดแล้วจ้า&lt;/h3>
+	&lt;/div>
+&lt;/div>				
+</pre>
+				<p>แต่มันคงจะต้องเหนื่อยแน่เลยถ้ามันมีสัก 100 รายการ คงเขียนตายเลย</p>
+				<p>AngularJS จึงได้กำหนด Directive ชื่อ <strong>ng-repeat</strong> เพื่อใช้กับ Array</p>
+			</div>
+			<div>
+            	<h2 class="page-header">Ng-Repeat ทำงานยังไง ?	</h2>
+				<pre>ng-repeat="ชื่อตัวแปรที่จะเรียก in ตัวแปร Array"</pre>
+				<p>Ng-Repeat ใช้สำหรับการแสดงชุดข้อมูล โดยใส่ Directive ไว้ที่ HTML tag ที่เป็น Parent node ของส่วนที่เราต้องการแสดงผลแบบ Array ดังนี้</p>
+				<pre class="brush: html; highlight: [2,3,4,5,6,7,8,9];">
+&lt;div class="list-group" ng-controller="storeController as store">
+					&lt;!--ng-repeat="ชื่อตัวแปรที่จะเรียก in ตัวแปร Array"-->
+	&lt;div class="list-group-item" ng-repeat="sushi in sushis">
+		&lt;h1>{{sushi.name}}&lt;/h1>
+		&lt;h2>{{sushi.price}} yen&lt;/h2>
+		&lt;p>{{sushi.description}}&lt;/p>
+		&lt;button class="btn btn-default" ng-show="sushi.canPurchase">สั่งซื้อ&lt;/button>
+		&lt;h3 ng-hide="sushi.canPurchase">ขายหมดแล้วจ้า&lt;/h3>
+	&lt;/div>
+&lt;/div>	
+</pre>
+				<h4>หากต้องการดูตัวอย่างให้เข้าลิงนี้ <a href="../demo/lesson4.html">Demo</a></h4>
+			</div>	
+			<div>
+            	<h1 class="page-header">Challenge 4: More Sushi!!</h1>
+				<h4>คุณทานากะต้องการให้เราเพิ่มเมนูใหม่เข้าไป ซึ่งประกอบไปด้วย</h4>
+				<ul>
+					<li>Tamago - ข้าวปั้นหน้าไข่ ราคา 120 yen</li>
+					<li>Ebi - ข้าวปั้นหน้ากุ้ง ราคา 150 yen</li>
+					<li>Tako - ข้าวปั้นหน้าปลาหมึก ราคา 180 yen</li>
+				</ul>
+				<p>โดยมีโค้ดให้บางส่วน จงเติมส่วนที่ขาดหายไป เพื่อให้เว็บทำงานได้</p>
+				<h3>สามารถดูหน้าเว็บตัวอย่างได้ที่ <a href="../demo/challenge4.html">Demo</a></h3>
+				<h4>ไฟล์ sushistore.html</h4>
+				<pre class="brush: html; ruler: true;">&lt;!DOCTYPE html>
+&lt;html ng-app="application">
+&lt;head>
+	&lt;meta charset="utf-8">
+    &lt;!-- bootstrap CSS -->
+    &lt;link rel="stylesheet" href="css/bootstrap.min.css">
+    &lt;!-- bootstrap theme -->
+    &lt;link rel="stylesheet" href="css/bootstrap-theme.min.css">
+&lt;/head>
+&lt;body>
+	&lt;header>
+      &lt;h1 class="text-center">{{"Tanaka-San"}}'s Sushi Store&lt;/h1>
+      &lt;h2 class="text-center">Open Since {{10*200}}.&lt;/h2>
+    &lt;/header>
+    &lt;div class="container">
+        &lt;div class="row">
+            &lt;div class="col-md-6">
+				&lt;div class="list-group">
+					&lt;div class="list-group-item" ng-controller="storeController as store" >
+						&lt;h1>{{sushi.name}}&lt;/h1>
+						&lt;h2>{{sushi.price}} yen&lt;/h2>
+						&lt;p>{{sushi.description}}&lt;/p>
+						&lt;button class="btn btn-default" ng-show="sushi.canPurchase">สั่งซื้อ&lt;/button>
+						&lt;h3 ng-hide="sushi.canPurchase">ขายหมดแล้วจ้า&lt;/h3>
+					&lt;/div>
+				&lt;/div>
+            &lt;/div>
+		&lt;/div>
+	&lt;/div>
+    &lt;!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    &lt;script src="js/lib/jquery.min.js">&lt;/script>
+    &lt;!-- Bootstrap JavaScript -->
+    &lt;script src="js/lib/bootstrap.min.js">&lt;/script>
+    &lt;!-- AngularJS JavaScript -->
+    &lt;script src="js/lib/angular.min.js">&lt;/script>
+    &lt;script src="js/app.js">&lt;/script>
+&lt;/body>
+&lt;/html></pre>
+				<h4>ไฟล์ app.js</h4>
+				<pre class="brush: js; ">
+(function () {
+	'use strict';
+	
+	var app = angular.module('application', []);
+	app.controller('storeController', function ($scope) {
+		$scope.sushi = [{
+			name: 'maguro',
+			price: 200,
+			description: "Fat Tuna",
+			canPurchase: true
+		}];
+	});
+	
+})();</pre>
+			</div>
+			<ul class="btn-group pull-right">
+				<a href="lesson3.html">
+					<li class="btn btn-primary"><i class="glyphicon glyphicon-step-backward"></i> ย้อนกลับ</li>
+				</a>
+				<a href="lesson5.html">
+					<li class="btn btn-primary">ถัดไป <i class="glyphicon glyphicon-step-forward"></i></li>
+				</a>
+			</ul>
+        </div>
+		
+        <!--div class="col-md-3">
+          <div class="hidden-print hidden-xs hidden-sm affix" role="complementary">
+            <ul class="nav">
+                <li class="active"><a href="#download">Download</a></li>
+                <li><a href="#whats-included">What's included</a></li>
+                <li><a class="back-to-top" href="#top">Back to top</a></li>
+            </ul>
+          </div>
+        </div-->
+      </div>
+    </div>
+      <footer class="footer">
+      <div class="container">
+        <p class="text-muted">              
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="สัญญาอนุญาตของครีเอทีฟคอมมอนส์" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />ผลงานนี้ ใช้<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">สัญญาอนุญาตของครีเอทีฟคอมมอนส์แบบ แสดงที่มา-ไม่ใช้เพื่อการค้า 4.0 International</a>.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/lib/jquery.min.js"></script>
+    <script src="../js/lib/bootstrap.min.js"></script>
+  	<script type="text/javascript" src="../js/scripts/shCore.js"></script>
+	<script type="text/javascript" src="../js/scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="../js/scripts/shBrushXml.js"></script>    
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+</body></html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="application">
+<head>
+	<meta charset="utf-8">
+    <!-- bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- bootstrap theme -->
+    <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+</head>
+<body ng-controller="demoController as demo">
+	<div class="container">
+	<form class="form-horizontal" ng-submit="addData(datas)">
+		<fieldset>
+		<!-- Form Name -->
+		<legend>Form Name</legend>
+		<!-- Text input-->
+		<div class="form-group">
+		  <label class="col-md-4 control-label" for="textinput">Text Input</label>  
+		  <div class="col-md-4">
+			<input type="text" ng-model="data.text" name="textinput" id="textinput" class="form-control input-md">
+		  </div>
+		</div>
+		<!-- Select Basic -->
+		<div class="form-group">
+		  <label class="col-md-4 control-label" for="selectbasic">Select Basic</label>
+		  <div ng-model="data.select" class="col-md-4">
+			<select id="selectbasic" name="selectbasic" class="form-control">
+			  <option value="" selected></option>
+			  <option value="1">Option one</option>
+			  <option value="2">Option two</option>
+			</select>
+		  </div>
+		</div>
+		<!-- Textarea -->
+		<div class="form-group">
+		  <label class="col-md-4 control-label" for="textarea">Text Area</label>
+		  <div class="col-md-4">                     
+			<textarea ng-model="data.textarea" name="textarea" id="textarea"  class="form-control" >default text</textarea>
+		  </div>
+		</div>
+		<!-- Button -->
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="singlebutton">Submit</label>
+			<div class="col-md-4">
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</div>
+		</div>
+		</fieldset>
+	</form>
+	
+		<div class="list-group">
+			<div class="list-group-item clearfix" ng-repeat="data in datas">
+				<h3>Text Input : {{data.text}}</h3>
+				<h3>Select : {{data.select}}</h3>
+				<h3>Text Area : {{data.textarea}}</h3>
+			</div>
+		</div>
+	</div>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/lib/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="../js/lib/bootstrap.min.js"></script>
+    <!-- AngularJS JavaScript -->
+    <script src="../js/lib/angular.min.js"></script>
+    <script src="../js/demo/lesson8ngform.js"></script>
+</body>
+</html>

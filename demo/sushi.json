@@ -1,0 +1,30 @@
+[
+	{
+		"name": "Maguro",
+		"price": 200,
+		"description": "Fat Tuna",
+		"quantity": 0,
+		"image": "../image/sushi/maguro.jpg"
+	},
+	{
+		"name": "Tamago",
+		"price": 120,
+		"description": "Rice With Egg",
+		"quantity": 0,
+		"image": "../image/sushi/tamago.jpg"
+	},
+	{
+		"name": "Ebi",
+		"price": 150,
+		"description": "Rice With shrimp",
+		"quantity": 0,
+		"image": "../image/sushi/ebi.jpg"
+	},
+	{
+		"name": "Tako",
+		"price": 180,
+		"description": "Rice With Octopus",
+		"quantity": 0,
+		"image": "../image/sushi/tako.jpg"
+	}
+]

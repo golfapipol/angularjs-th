@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="application">
+<head>
+    <!-- bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- bootstrap theme -->
+    <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+	
+	<link type="text/css" rel="stylesheet" href="../css/styles/shThemeDefault.css"/>
+	<link type="text/css" rel="stylesheet" href="../css/styles/shCore.css"/>
+</head>
+<body>
+    <div class="container">
+		<div ng-controller="testSingleton as demo1">
+			<h3>[DEMO1] text From singletonService is : [ {{ showText }} ]</h3>
+			<input type="text" ng-model="updateText">
+			<button ng-click="sendText(updateText)">Set</button>
+			<button ng-click="receiveText()">Get</button>
+		</div>
+		<div ng-controller="testSingleton as demo2">
+			<h3>[DEMO2] text From singletonService is : [ {{ showText }} ]</h3>
+			<input type="text" ng-model="updateText">
+			<button ng-click="sendText(updateText)">Set</button>
+			<button ng-click="receiveText()">Get</button>
+		</div>
+		<pre class="brush:js">
+angular.module('application', [])				
+	.service('singletonService', function () {
+		this.text = "First Text";
+		this.setText = function (text) {
+			this.text = text;
+		};
+		this.getText = function () {
+			return this.text;
+		};
+	})
+	.controller('testSingleton', function ($scope, singletonService) {
+		console.log(singletonService.getText());
+		$scope.showText = singletonService.getText();
+
+		$scope.sendText = function (text) {
+			singletonService.setText(text);
+			$scope.showText = singletonService.getText();
+			console.log(singletonService.getText());
+		};
+		
+		$scope.receiveText = function () {
+			$scope.showText = singletonService.getText();
+		}
+	});
+</pre>
+	</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/lib/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="../js/lib/bootstrap.min.js"></script>
+    <!-- AngularJS JavaScript -->
+    <script src="../js/lib/angular.js"></script>
+	<!--AngularUI Router Library -->
+	<script src="../js/lib/angular-ui-router.js"></script>
+    <script src="../js/demo/service2.js"></script>
+	<script type="text/javascript" src="../js/scripts/shCore.js"></script>
+	<script type="text/javascript" src="../js/scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="../js/scripts/shBrushXml.js"></script>    
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+</body>
+</html>

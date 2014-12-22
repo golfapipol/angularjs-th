@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<link rel="shortcut icon" href="../image/angularico.png" type="image/x-icon">
+    <title>Angular UI : Event</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../css/styles/shThemeDefault.css"/>
+	<link type="text/css" rel="stylesheet" href="../css/styles/shCore.css"/>
+	<style>.my-menu{background-color: #222;}.container-main{margin-top: 70px;}.lesson-header{background-color: #9c2e2e;color:white}.lesson-body{margin-bottom: 70px;}</style>
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top " role="navigation" style="height:75px">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html"><img src="../image/AngularJS-large.png" style="width:200px" /></a>
+        </div>
+        <div class="collapse navbar-collapse my-menu">
+          <ul class="nav navbar-nav">
+            <li ><a href="../home.html">Getting Started</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lesson<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li class="dropdown-header">Basic AngularJS</li>
+                <li><a href="../lesson/lesson1.html">Lesson 1</a></li>
+                <li><a href="../lesson/lesson2.html">Lesson 2</a></li>
+                <li><a href="../lesson/lesson3.html">Lesson 3</a></li>
+                <li><a href="../lesson/lesson4.html">Lesson 4</a></li>
+                <li><a href="../lesson/lesson5.html">Lesson 5</a></li>
+                <li><a href="../lesson/lesson6.html">Lesson 6</a></li>
+                <li><a href="../lesson/lesson7.html">Lesson 7</a></li>
+                <li><a href="../lesson/lesson8.html">Lesson 8</a></li>
+                <li><a href="../lesson/lesson9.html">Lesson 9</a></li>
+                <li><a href="../lesson/lesson10.html">Lesson 10</a></li>
+                <li><a href="../lesson/lesson11.html">Lesson 11</a></li>
+                <li><a href="../lesson/lesson12.html">Lesson 12</a></li>
+              </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Directive<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li class="dropdown-header">Basic Directive</li>
+				<li><a href="../directive/directive.html">Directive Restrict</a></li>
+				<li><a href="../directive/template.html">Directive Template</a></li>
+				<li><a href="../directive/controller.html">Directive Controller</a></li>
+				<li><a href="../directive/link.html">Directive Link</a></li>
+				<li class="dropdown-header">Isolated Scope</li>
+                <li><a href="../directive/isolate.html">Isolated Scope</a></li>
+                <li><a href="../directive/scopeand.html">Scope Expression & </a></li>
+                <li><a href="../directive/scopeadd.html">Scope Attribute @ </a></li>
+                <li><a href="../directive/scopeequal.html">Scope Two way Binding =</a></li>
+				<li><a href="../directive/scopedifferent.html">$scope VS scope</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Scope<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../scope/rootscope.html">rootScope & Scope</a></li>
+				<li><a href="../scope/watch.html">$watch()</a></li>
+				<li><a href="../scope/apply.html">$apply()</a></li>
+				<li><a href="../scope/broadcast.html">$broadcast() & $on()</a></li>
+				<li><a href="../scope/emit.html">$emit() & $on()</a></li>
+				<li><a href="../scope/destory.html">$destory()</a></li>
+           	  </ul>
+            </li>
+            			<li class="dropdown">
+				<a href="../service/service.html">Service</a>
+			</li>
+			<li class="dropdown active">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">UI Router<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../ui-route/uiroute.html">Introduction UI Router</a></li>
+				<li><a href="../ui-route/basicroute.html">Basic Routing</a></li>
+				<li><a href="../ui-route/resolve.html">Resolve & Data</a></li>
+				<li><a href="../ui-route/nestedrouting.html">Nested Routing</a></li>
+				<li><a href="../ui-route/multipleview.html">Multiple Views</a></li>
+				<li class="active"><a href="../ui-route/event.html">Event</a></li>
+				<li><a href="../ui-route/urlprovider.html">URL Provider</a></li>
+				<li><a href="../ui-route/statego.html">$state.go()</a></li>
+				<li><a href="../ui-route/challenge.html">Challenge</a></li>
+           	  </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Example<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+				<li><a href="../example/validate.html">Input Validation</a></li>
+				<li><a href="../example/advance.html">Advance Validation</a></li>
+				<li><a href="../example/alert.html">Alert Validation</a></li>
+				<li><a href="../example/dynamic.html">Dynamic Validation</a></li>
+				<li><a href="../example/custom.html">Custom Validation</a></li>
+				<li><a href="../example/ngform.html">ngForm Validation</a></li>
+           	  </ul>
+            </li>
+            <li><a href="../about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	<div class="lesson-header">
+		<div class="container container-main">
+			<h1>Angular UI: Event</h1>
+		</div>
+	</div>
+    <div class="container lesson-body">
+      <div class="row">
+        <div class="col-md-9" role="main">
+			<div>
+            	<h2 class="page-header">สิ่งที่ควรรู้</h2>
+				<h3>onEnter & onExit property</h3>
+				<p>onEnter เป็น property ของ state จะถูกเรียกใช้เมื่อก่อนที่จะเริ่มต้น state นั้นๆ สามารถนำไปใช้กับการตรวจสอบ permission ได้</p>
+				<p>onExit เป็น property ของ state จะถูกเรียกใช้เมื่อก่อนที่จะออกจาก state นั้นๆ โดยส่วนมากมักจะใช้ในการยืนยันข้อมูลพวก modal dialog ต่างๆ</p>
+				<pre class="brush:js">
+$stateProvider.state("stateName", {
+  template: 'someHtml',
+  resolve: { 'someData': 'someValue' },
+  controller: function($scope, someData){
+    ...
+  },
+  onEnter: function(someData){
+    if(someData){ /*** do something ***/ }
+  },
+  onExit: function(someData){
+    if(someData){ /*** do something ***/ }
+  }
+})
+</pre>
+				<h4>การทำงานของ ฟังก์ชั่นใน state จะเรียงลำดับตามนี้</h4>
+				<img src="../image/onEnteronExit.png">
+				<h3>State Change Events</h3>
+				<p>Event ที่เกี่ยวข้องกับการเปลี่ยนแปลง state มีทั้งหมด 4 Event</p>
+				<ul>
+					<li>$stateChangeStart</li>
+					<li>$stateNotFound</li>
+					<li>$stateChangeSuccess</li>
+					<li>$stateChangeError</li>
+				</ul>
+				<p>โดย Event ทั้งหมดนั้นจะอยู่ภายใต้ scope ของ $rootScope</p>
+				<h4>$stateChangeStart</h4>
+				<p>Event นี้จะถูกใช้ เมื่อเริ่มการเปลี่ยนจาก state ปัจจุบันไปยัง state ถัดไป</p>
+				<p>โดยจะมีโครงสร้างฟังก์ชั่นดังนี้</p>
+				<pre class="brush:js">
+$rootScope.$on('$stateChangeStart', 
+function(event, toState, toParams, fromState, fromParams){ 
+	... 
+});
+</pre>
+				<h4>$stateNotFound</h4>
+				<p>Event นี้จะถูกใช้ เมื่อเรียกใช้งาน state ที่ไม่มีอยู่</p>
+				<p>โดยจะมีโครงสร้างฟังก์ชั่นดังนี้</p>
+				<pre class="brush:js">
+$rootScope.$on('$stateNotFound', 
+function(event, unfoundState, fromState, fromParams){ 
+	console.log(unfoundState.to); // unfound State 
+    console.log(unfoundState.toParams); // state parameter
+    console.log(unfoundState.options); // options
+});
+</pre>
+				<h4>$stateChangeSuccess</h4>
+				<p>Event นี้จะถูกใช้ เมื่อการเปลี่ยนจาก state ปัจจุบันไปยัง state ถัดไปเสร็จสิ้น</p>
+				<p>โดยจะมีโครงสร้างฟังก์ชั่นดังนี้</p>
+				<pre class="brush:js">
+$rootScope.$on('$stateChangeSuccess', 
+function(event, toState, toParams, fromState, fromParams){ 
+	... 
+});
+</pre>
+				<h4>$stateChangeError</h4>
+				<p>Event นี้จะถูกใช้ เมื่อเกิดข้อผิดพลาดขึ้นระหว่างการเปลี่ยน state โดยส่วนมากจะเป็นข้อผิดพลาดที่ไม่สามารถโหลด resolve promise ได้</p>
+				<p>โดยจะมีโครงสร้างฟังก์ชั่นดังนี้</p>
+				<pre class="brush:js">
+$rootScope.$on('$stateChangeError', 
+function(event, toState, toParams, fromState, fromParams, error){ 
+	... 
+});
+</pre>
+				<h4>การเปลี่ยน state จะมี event เรียงลำดับตามนี้</h4>
+				<img src="../image/statechangeevent.png">
+				<h3>View Load Events</h3>
+				<p>Event ที่เกี่ยวข้องกับการโหลดหน้าเว็บ (view) มีทั้งหมด 2 Event</p>
+				<ul>
+					<li>$viewContentLoading</li>
+					<li>$viewContentLoaded</li>
+				</ul>
+				<p>โดย Event ทั้งหมดนั้นจะอยู่ภายใต้ scope ของ $rootScope</p>
+				<h4>$viewContentLoading</h4>
+				<p>Event นี้จะถูกใช้ เมื่อเริ่มมีการโหลดหน้าเว็บ ก่อนที่จะทำการ render DOM โดยใช้ $broadcast ในการส่ง event</p>
+				<p></p>
+				<pre class="brush:js">
+$scope.$on('$viewContentLoading', 
+function(event, viewConfig){ 
+    // Access to all the view config properties.
+    // and one special property 'targetView'
+    // viewConfig.targetView 
+});</pre>
+				<h4>$viewContentLoaded</h4>
+				<p>Event นี้จะถูกใช้ หลังจากการ render DOM เสร็จสิ้น โดยใช้ $emit ในการส่ง event</p>
+				<p></p>
+				<pre class="brush:js">
+$scope.$on('$viewContentLoaded', function(event){ 
+	... 
+});</pre>
+			</div>
+			<div>
+				<h2 class="page-header">ตัวอย่างการทำงานของ Event ต่างๆ</h2>
+				<p>ใน config กำหนด state ขึ้นมา 3 state</p>
+				<pre class="brush:js; highlight: [4,5,6,7,8,9,10,11,12,13,14,15]">
+angular.module('application', ['ui.router'])
+    .config(function ($stateProvider, $urlRouterProvider) {
+        $stateProvider
+            .state('one', {
+                url: '/one',
+                template: '&lt;p>this is state one&lt;/p>&lt;p ui-view>&lt;/p>'
+			})
+			.state('one.two', {
+                url: '/two',
+                template: '&lt;p>this is state one-two&lt;/p>',
+            })
+			.state('three', {
+                url: '/three',
+                template: '&lt;p>this is state three&lt;/p>',
+            })
+    });
+</pre>
+				<p>ใน html ทำการกำหนด link ไปยัง state ต่างๆ</p>
+				<pre class="brush:html; highlight: [3,4,5,9]">
+&lt;div class="container">
+		&lt;ul class="nav nav-pills">
+			&lt;li>&lt;a ui-sref="one">State One&lt;/a>&lt;/li>
+			&lt;li>&lt;a ui-sref="one.two">State Two&lt;/a>&lt;/li>
+			&lt;li>&lt;a ui-sref="three">State Three&lt;/a>&lt;/li>
+		&lt;/ul>
+		&lt;div>
+			&lt;p>Next of this line is ui-view&lt;/p>
+			&lt;div ui-view>&lt;/div>
+		&lt;/div>
+	&lt;/div>
+</pre>
+				<p>เพิ่มฟังก์ชั่น onEnter และ onExit ให้กับแต่ละ state</p>
+				<pre class="brush: js">
+.state('one', {
+	url: '/one',
+	template: '&lt;p>this is state one&lt;/p>&lt;p ui-view>&lt;/p>',
+	onEnter: function () {
+		console.log("[onEnter]State One onEnter");
+	},
+	onExit: function () {
+		console.log("[onExit]State One onExit");
+	},
+	controller: function () {
+		console.log("[controller]State One Controller");
+	}
+})
+.state('one.two', {
+	url: '/two',
+	template: '&lt;p>this is state one-two&lt;/p>',
+	onEnter: function () {
+		console.log("[onEnter] State One.Two onEnter");
+	},
+	onExit: function () {
+		console.log("[onExit] State One.Two onExit");
+	}
+})
+.state('three', {
+	url: '/three',
+	template: '&lt;p>this is state three&lt;/p>',
+	onEnter: function () {
+		console.log("[onEnter] State Three onEnter");
+	},
+	onExit: function () {
+		console.log("[onExit] State Three onExit");
+	},
+	controller: function () {
+		console.log("[controller] State Three Controller");
+	}
+});
+</pre>
+				<p>เพิ่มข้อความแสดงใน log โดยกำหนด Event ใน $rootScope</p>
+				<pre class="brush: js">
+angular.module('application', ['ui.router'])
+    .config(function ($stateProvider, $urlRouterProvider) { 
+		... 
+	})
+	.run(function ($state, $rootScope) {
+		// State Change Event
+		$rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
+			console.log("[$stateChangeStart] From: ", (fromState.name) ? fromState.name: "No State", "To: ", toState.name);
+		});
+		$rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
+			console.log("[$stateChangeSuccess] From: ", (fromState.name) ? fromState.name: "No State", "To: ", toState.name);
+		});
+		// View Loading Event
+		$rootScope.$on('$viewContentLoading', function (event, viewConfig) { 
+    		console.log("[$viewContentLoading] View Loading...");
+		});
+		$rootScope.$on('$viewContentLoaded', function (event) { 
+    		console.log("[$viewContentLoaded] Loaded Complete");
+		});
+	});
+</pre>
+				<h4>สามารถดูตัวอย่างผลลัพธ์ได้ที่นี่ <a href="../demo/event.html">Demo</a> </h4>
+				<p style="color: red">สังเกตได้ว่า เมื่อมีการเปลี่ยนแปลง state จะมีการทำงานของ stateChange Event และ viewLoad Event</p> 
+				<p style="color: red">โดยจะทำ stateChange Event ก่อน viewLoad Event</p>
+			</div>
+			<ul class="btn-group pull-right">
+				<a href="multipleview.html">
+					<li class="btn btn-primary"><i class="glyphicon glyphicon-step-backward"></i> ย้อนกลับ</li>
+				</a>
+				<a href="urlprovider.html">
+					<li class="btn btn-primary">ถัดไป <i class="glyphicon glyphicon-step-forward"></i></li>
+				</a>
+			</ul>
+        </div>
+		
+        <!--div class="col-md-3">
+          <div class="hidden-print hidden-xs hidden-sm affix" role="complementary">
+            <ul class="nav">
+                <li class="active"><a href="#download">Download</a></li>
+                <li><a href="#whats-included">What's included</a></li>
+                <li><a class="back-to-top" href="#top">Back to top</a></li>
+            </ul>
+          </div>
+        </div-->
+      </div>
+    </div>
+      <footer class="footer">
+      <div class="container">
+        <p class="text-muted">              
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="สัญญาอนุญาตของครีเอทีฟคอมมอนส์" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />ผลงานนี้ ใช้<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">สัญญาอนุญาตของครีเอทีฟคอมมอนส์แบบ แสดงที่มา-ไม่ใช้เพื่อการค้า 4.0 International</a>.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/lib/jquery.min.js"></script>
+    <script src="../js/lib/bootstrap.min.js"></script>
+  	<script type="text/javascript" src="../js/scripts/shCore.js"></script>
+	<script type="text/javascript" src="../js/scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="../js/scripts/shBrushXml.js"></script>    
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+</body></html>
