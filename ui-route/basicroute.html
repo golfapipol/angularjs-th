@@ -126,7 +126,7 @@
 				</ul>
 				<p>ซึ่งมีรายละเอียดดังนี้</p>
 				<pre class="brush: js">
-angular.module('application', ['ui-router'])
+angular.module('application', ['ui.router'])
 	.config(function ($stateProvider, $urlRouterProvider) {
 		$stateProvider
 			.state('stateName', {
@@ -162,7 +162,7 @@ angular.module('application', ['ui-router'])
 				<h2 class="page-header">ตัวอย่างการใช้งาน UI Router</h2>
 				<p>ในไฟล์ js ทำการกำหนด state ขึ้นมา 2 state คือ home และ about</p>
 				<pre class="brush: js">
-angular.module('application', ['ui-router'])
+angular.module('application', ['ui.router'])
 	.config(function ($stateProvider, $urlRouterProvider) {
 		$stateProvider
 			.state('home', {
@@ -194,7 +194,7 @@ angular.module('application', ['ui-router'])
 				<h3>กำหนด state ให้กับ state เริ่มต้น</h3>
 				<p>ทำการกำหนด state index โดยมีรายละเอียดดังนี้</p>
 				<pre class="brush: js; highlight: []">
-angular.module('application', ['ui-router'])
+angular.module('application', ['ui.router'])
 	.config(function ($stateProvider, $urlRouterProvider) {
 		$stateProvider
 			.state('index', {
@@ -217,7 +217,7 @@ angular.module('application', ['ui-router'])
 				<h2 class="page-header">เพิ่ม Controller ลงใน state</h2>
 				<p>ในกรณีที่ในแต่ละหน้ามีตัวแปรและฟังก์ชั่นต่างๆอยู่ภายในเราก็สามารถกำหนด property controller ใน state ได้</p>
 				<pre class="brush: js; highlight: [11,12,13]">
-angular.module('application', ['ui-router'])
+angular.module('application', ['ui.router'])
 	.config(function ($stateProvider, $urlRouterProvider) {
 		$stateProvider
 			.state('home', {
