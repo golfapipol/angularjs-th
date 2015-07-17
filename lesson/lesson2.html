@@ -31,7 +31,8 @@
               <ul class="dropdown-menu" role="menu">
 				<li class="dropdown-header">Basic AngularJS</li>
                 <li><a href="lesson1.html">Lesson 1</a></li>
-                <li class="active"><a href="lesson2.html">Lesson 2</a></li>
+                <li><a href="lesson2.html">Lesson 2</a></li>
+                <li class="active"><a href="lesson2.5.html">Lesson 2.5</a></li>
                 <li><a href="lesson3.html">Lesson 3</a></li>
                 <li><a href="lesson4.html">Lesson 4</a></li>
                 <li><a href="lesson5.html">Lesson 5</a></li>
@@ -113,15 +114,13 @@
       <div class="row">
         <div class="col-md-9" role="main">
 			<div>
-				
-            	<h2 class="page-header">สิ่งที่ควรรู้</h2>
+				<h2 class="page-header">สิ่งที่ควรรู้</h2>
 				<h4>การพัฒนาโปรแกรมด้วย AngularJS Framework จะใช้โครงสร้างแบบ <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">MVC</a></h4>
             	<h3>Controller คือ อะไร ?</h3>
 				<p>ข้อมูลและฟังก์ชั่นต่างๆ จะถูกกำหนดไว้ใน Controller เพื่อให้ง่ายต่อการกำหนดขอบเขตของข้อมูลและฟังก์ชั่น 
 				</p>
-				<h3>$scope คือ อะไร ?</h3>
-				<p>$scope เป็นตัวกำหนดว่าข้อมูลและฟังก์ชั่นต่างๆ อยู่ภายใต้ Controller ตัวนี้</p>
-			<div>
+            </div>
+            <div>
             	<h2 class="page-header">ลองเขียน Controller กันเถอะ</h2>
 				<p>เราต้องการสร้างหน้าแสดงผลค่าของข้อมูลที่เอามาจาก Controller</p>
 				<p>1.สร้าง Controller เริ่มจากในไฟล์ js/app.js ทำการสร้าง Controller ชื่อ storeController โดยมีรายละเอียดดังนี้</p>
@@ -131,13 +130,13 @@
 	
 	var app = angular.module('application', []);
 	
-	app.controller('storeController', function ($scope) {
+	app.controller('storeController', function () {
 	});
 })();</pre>
 				<p>2.กำหนดตัวแปรเก็บรายละเอียดข้อมูล ทำการกำหนดข้อมูลเพิ่มลงใน storeController โดยจะยกตัวอย่างเป็นข้อมูลซูชิหน้าปลามาคุโร่</p>
 				<pre class="brush: js; ruler: true; first-line: 6; highlight: [7,8,9,10,11]">
-app.controller('storeController', function ($scope) {
-	$scope.sushi = {
+app.controller('storeController', function () {
+	this.sushi = {
 		name: 'Maguro',
 		price: 200,
 		description: 'Fat tuna'
@@ -162,9 +161,9 @@ app.controller('storeController', function ($scope) {
 &lt;body>
 	&lt;div class="list-group">					<!-- ชื่อของ Controller as ชื่อเรียกในส่วนนี้(Alias)-->
 		&lt;div class="list-group-item" ng-controller="storeController as store">
-			&lt;h1>{{sushi.name}}&lt;/h1>
-			&lt;h2>{{sushi.price}} yen&lt;h2>
-			&lt;p>{{sushi.description}}&lt;p>
+			&lt;h1>{{store.sushi.name}}&lt;/h1>
+			&lt;h2>{{store.sushi.price}} yen&lt;h2>
+			&lt;p>{{store.sushi.description}}&lt;p>
 		&lt;/div>
 	&lt;/div>
 ...
@@ -176,11 +175,11 @@ app.controller('storeController', function ($scope) {
 &lt;body>
 	&lt;div class="list-group">					<!-- ชื่อของ Controller as ชื่อเรียกในส่วนนี้(Alias)-->
 		&lt;div class="list-group-item" ng-controller="storeController as store">
-			&lt;h1>{{sushi.name}}&lt;/h1>
-			&lt;h2>{{sushi.price}} yen&lt;/h2>
-			&lt;p>{{sushi.description}}&lt;/p>
+			&lt;h1>{{store.sushi.name}}&lt;/h1>
+			&lt;h2>{{store.sushi.price}} yen&lt;/h2>
+			&lt;p>{{store.sushi.description}}&lt;/p>
 		&lt;/div>
-		{{sushi.name}} <!-- ไม่สามารถใช้ได้เนื่องจากอยู่นอกขอบเขตของ storeController-->
+		{{store.sushi.name}} <!-- ไม่สามารถใช้ได้เนื่องจากอยู่นอกขอบเขตของ storeController-->
 	&lt;/div>
 ...
 </pre>
@@ -234,7 +233,7 @@ app.controller('storeController', function ($scope) {
 	'use strict';
 	
 	var app = angular.module('application', []);
-	app.controller('storeController', function ($scope) {
+	app.controller('storeController', function () {
 
 	});
 	
@@ -244,21 +243,11 @@ app.controller('storeController', function ($scope) {
 				<a href="lesson1.html">
 					<li class="btn btn-primary"><i class="glyphicon glyphicon-step-backward"></i> ย้อนกลับ</li>
 				</a>
-				<a href="lesson3.html">
+				<a href="lesson2.5.html">
 					<li class="btn btn-primary">ถัดไป <i class="glyphicon glyphicon-step-forward"></i></li>
 				</a>
 			</ul>
         </div>
-		
-        <!--div class="col-md-3">
-          <div class="hidden-print hidden-xs hidden-sm affix" role="complementary">
-            <ul class="nav">
-                <li class="active"><a href="#download">Download</a></li>
-                <li><a href="#whats-included">What's included</a></li>
-                <li><a class="back-to-top" href="#top">Back to top</a></li>
-            </ul>
-          </div>
-        </div-->
       </div>
     </div>
           <footer class="footer">

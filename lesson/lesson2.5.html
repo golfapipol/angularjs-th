@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
 	<link rel="shortcut icon" href="../image/angularico.png" type="image/x-icon">
-    <title>Directive : Link</title>
+    <title>AngularJS : Lesson 2</title>
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link type="text/css" rel="stylesheet" href="../css/styles/shThemeDefault.css"/>
@@ -24,41 +24,40 @@
           <a class="navbar-brand" href="../index.html"><img src="../image/AngularJS-large.png" style="width:200px" /></a>
         </div>
         <div class="collapse navbar-collapse my-menu">
-          <ul class="nav navbar-nav ">
+          <ul class="nav navbar-nav">
             <li ><a href="../home.html">Getting Started</a></li>
-            <li class="dropdown">
+            <li class="dropdown active">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lesson<span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
 				<li class="dropdown-header">Basic AngularJS</li>
-                <li><a href="../lesson/lesson1.html">Lesson 1</a></li>
-                <li><a href="../lesson/lesson2.html">Lesson 2</a></li>
-                <li><a href="../lesson/lesson2.5.html">Lesson 2.5</a></li>
-                <li><a href="../lesson/lesson3.html">Lesson 3</a></li>
-                <li><a href="../lesson/lesson4.html">Lesson 4</a></li>
-                <li><a href="../lesson/lesson5.html">Lesson 5</a></li>
-                <li><a href="../lesson/lesson6.html">Lesson 6</a></li>
-                <li><a href="../lesson/lesson7.html">Lesson 7</a></li>
-                <li><a href="../lesson/lesson8.html">Lesson 8</a></li>
-                <li><a href="../lesson/lesson9.html">Lesson 9</a></li>
-               	<li><a href="../lesson/lesson10.html">Lesson 10</a></li>
-                <li><a href="../lesson/lesson11.html">Lesson 11</a></li>
-                <li><a href="../lesson/lesson12.html">Lesson 12</a></li>
+                <li><a href="lesson1.html">Lesson 1</a></li>
+                <li class="active"><a href="lesson2.html">Lesson 2</a></li>
+                <li><a href="lesson3.html">Lesson 3</a></li>
+                <li><a href="lesson4.html">Lesson 4</a></li>
+                <li><a href="lesson5.html">Lesson 5</a></li>
+                <li><a href="lesson6.html">Lesson 6</a></li>
+                <li><a href="lesson7.html">Lesson 7</a></li>
+                <li><a href="lesson8.html">Lesson 8</a></li>
+                <li><a href="lesson9.html">Lesson 9</a></li>
+                <li><a href="lesson10.html">Lesson 10</a></li>
+                <li><a href="lesson11.html">Lesson 11</a></li>
+                <li><a href="lesson12.html">Lesson 12</a></li>
               </ul>
             </li>
-			<li class="dropdown active">
+			<li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Directive<span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
 				<li class="dropdown-header">Basic Directive</li>
-				<li><a href="directive.html">Directive Restrict</a></li>
-				<li><a href="template.html">Directive Template</a></li>
-				<li><a href="controller.html">Directive Controller</a></li>
-				<li class="active"><a href="link.html">Directive Link</a></li>
+				<li><a href="../directive/directive.html">Directive Restrict</a></li>
+				<li><a href="../directive/template.html">Directive Template</a></li>
+				<li><a href="../directive/controller.html">Directive Controller</a></li>
+				<li><a href="../directive/link.html">Directive Link</a></li>
 				<li class="dropdown-header">Isolated Scope</li>
-                <li><a href="isolate.html">Isolated Scope</a></li>
-                <li><a href="scopeand.html">Scope Expression & </a></li>
-                <li><a href="scopeadd.html">Scope Attribute @ </a></li>
-                <li><a href="scopeequal.html">Scope Two way Binding =</a></li>
-				<li><a href="scopedifferent.html">$scope VS scope</a></li>
+                <li><a href="../directive/isolate.html">Isolated Scope</a></li>
+                <li><a href="../directive/scopeand.html">Scope Expression & </a></li>
+                <li><a href="../directive/scopeadd.html">Scope Attribute @ </a></li>
+                <li><a href="../directive/scopeequal.html">Scope Two way Binding =</a></li>
+				<li><a href="../directive/scopedifferent.html">$scope VS scope</a></li>
            	  </ul>
             </li>
 			<li class="dropdown">
@@ -107,37 +106,59 @@
     </div>
 	<div class="lesson-header">
 		<div class="container container-main">
-			<h1>Directive: Link </h1>
+			<h1>Lesson 2.5: $scope</h1>
 		</div>
 	</div>
     <div class="container lesson-body">
       <div class="row">
         <div class="col-md-9" role="main">
 			<div>
+				
             	<h2 class="page-header">สิ่งที่ควรรู้</h2>
-				<h4>ในกรณีที่จำเป็นต้องทำการ Binding Event ต่างๆให้กับสิ่งต่างๆใน Directive จำเป็นจะต้องใช้ Link</h4>
-				<h3>Link คือ อะไร ?</h3>
-				<p>Link เป็น property ที่ใช้สำหรับทำการ Binding  Event ต่างๆ และติดตามการเปลี่ยนแปลงของข้อมูลภายใน Directive</p>
-				<p>โดยใช้ฟังก์ชั่นของ jqlite ในการ binding event ต่างๆ ซึ่งมีลักษณะเหมือนกับ jQuery ทุกประการ</p>
-				<pre class="brush: js">
-angular.directive('someDirective', function () {
-	return {
-		restrict: 'A',
-		link: function (scope, element, attrs) {
-			element.click(function () {...});
-			element.blur(function () {...});
-			element.focus(function () {...});
-			$('input').blur(function () {...});
-		}
+				<h3>$scope คือ อะไร ?</h3>
+				<p>$scope เป็นตัวกำหนดว่าข้อมูลและฟังก์ชั่นต่างๆ ในภายใต้ขอบเขตของข้อมูลนั้นๆ เช่น ใน controller </p>
+			<div>
+            	<h2 class="page-header">ปรับโค้ดจาก Lesson 2: Controller</h2>
+				<p>1. เพิ่ม $scope ลงในพารามิเตอร์ของ controller </p>
+				<pre class="brush: js; ruler: true; highlight: [6,7]">
+(function () {
+	'use strict'
+	
+	var app = angular.module('application', []);
+	
+	app.controller('storeController', function ($scope) {
+	});
+})();</pre>
+				<p>2.เปลี่ยนตัวแปร this เป็น $scope</p>
+				<pre class="brush: js; ruler: true; first-line: 6; highlight: [7,8,9,10,11]">
+app.controller('storeController', function ($scope) {
+	$scope.sushi = {
+		name: 'Maguro',
+		price: 200,
+		description: 'Fat tuna'
 	};
-});					
+});</pre>
+				<p>3.เราสามารถเรียกใช้งาน sushi ได้โดยไม่ต้องเรียนผ่าน storeController </p>
+				<pre class="brush: html; ruler: true; first-line: 9; highlight: [12,13,14];">
+&lt;body>
+	&lt;div class="list-group">					<!-- ชื่อของ Controller as ชื่อเรียกในส่วนนี้(Alias)-->
+		&lt;div class="list-group-item" ng-controller="storeController as store">
+			&lt;h1>{{sushi.name}}&lt;/h1>
+			&lt;h2>{{sushi.price}} yen&lt;h2>
+			&lt;p>{{sushi.description}}&lt;p>
+		&lt;/div>
+	&lt;/div>
+...
 </pre>
+				<h4>หากต้องการดูตัวอย่างให้เข้าลิงค์นี้ <a href="../demo/lesson2.5.html">Demo</a></h4>
+				<h3 style="color: red">ข้อควรระวัง</h3>
+				<p style="color: red">การใช้ตัวแปร $scope มากๆ อาจจะทำให้เกิดปัญหาเรื่องperformance ของระบบ แต่สำหรับมือใหม่ไม่ต้องกังวล</p>
 			</div>
 			<ul class="btn-group pull-right">
-				<a href="controller.html">
+				<a href="lesson2.html">
 					<li class="btn btn-primary"><i class="glyphicon glyphicon-step-backward"></i> ย้อนกลับ</li>
 				</a>
-				<a href="isolate.html">
+				<a href="lesson3.html">
 					<li class="btn btn-primary">ถัดไป <i class="glyphicon glyphicon-step-forward"></i></li>
 				</a>
 			</ul>
@@ -154,7 +175,7 @@ angular.directive('someDirective', function () {
         </div-->
       </div>
     </div>
-      <footer class="footer">
+          <footer class="footer">
       <div class="container">
         <p class="text-muted">              
           <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="สัญญาอนุญาตของครีเอทีฟคอมมอนส์" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />ผลงานนี้ ใช้<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">สัญญาอนุญาตของครีเอทีฟคอมมอนส์แบบ แสดงที่มา-ไม่ใช้เพื่อการค้า 4.0 International</a>.
