@@ -133,9 +133,11 @@ var app = angular.module('myApplication', []);
 app.config(['$compileProvider', function ($compileProvider) {
     $compileProvider.debugInfoEnabled(false);
 }]);
-</pre>
-                <p>จะพบว่าส่วนต่างๆ ที่ angular เป็นคนเพิ่มเข้ามาเองจะไม่แสดงให้เห็น ซึ่งดีต่อการใช้งานบน Production Code</p>
+</pre><br>
+                <p>จะพบว่าส่วนต่างๆ ที่ angular เป็นคนเพิ่มเข้ามาเองจะไม่แสดงให้เห็น ซึ่งดีต่อการใช้งานบน Production Code</p><br>
                 <img src="../image/debuginfooff.png" style="width:100%"/>
+                <br><p>แต่ถ้าอยากให้แสดง debugInfo ก็สามารถเรียกผ่าน browser console ได้ โดยใช้คำสั่ง</p>
+                <pre>angular.reloadWithDebugInfo();</pre>
             </div>
 			<ul class="btn-group pull-right">
 				<!--a href="watch.html">
