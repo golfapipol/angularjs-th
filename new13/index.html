@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  ng-app="application" >
 <head>
     <meta charset="utf-8">
 	<link rel="shortcut icon" href="../image/angularico.png" type="image/x-icon">
-    <title>Angular UI : URL Provider</title>
+    <title>What's Change from 1.2 to 1.3</title>
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link type="text/css" rel="stylesheet" href="../css/styles/shThemeDefault.css"/>
@@ -24,13 +24,13 @@
           <a class="navbar-brand" href="../index.html"><img src="../image/AngularJS-large.png" style="width:200px" /></a>
         </div>
         <div class="collapse navbar-collapse my-menu">
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav ">
             <li ><a href="../home.html">Getting Started</a></li>
-            <li class="dropdown">
+            <li class="dropdown active">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Change (1.3)<span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
 				<li class="dropdown-header">New Change in 1.3</li>
-                <li><a href="../new13/disable_debug_info.html">Performance Boost</a></li>
+                <li><a href="index.html">Migration from 1.2 to 1.3</a></li>
               </ul>
             </li>
             <li class="dropdown">
@@ -39,6 +39,7 @@
 				<li class="dropdown-header">Basic AngularJS</li>
                 <li><a href="../lesson/lesson1.html">Lesson 1</a></li>
                 <li><a href="../lesson/lesson2.html">Lesson 2</a></li>
+                <li><a href="../lesson/lesson2.5.html">Lesson 2.5</a></li>
                 <li><a href="../lesson/lesson3.html">Lesson 3</a></li>
                 <li><a href="../lesson/lesson4.html">Lesson 4</a></li>
                 <li><a href="../lesson/lesson5.html">Lesson 5</a></li>
@@ -46,7 +47,7 @@
                 <li><a href="../lesson/lesson7.html">Lesson 7</a></li>
                 <li><a href="../lesson/lesson8.html">Lesson 8</a></li>
                 <li><a href="../lesson/lesson9.html">Lesson 9</a></li>
-                <li><a href="../lesson/lesson10.html">Lesson 10</a></li>
+               	<li><a href="../lesson/lesson10.html">Lesson 10</a></li>
                 <li><a href="../lesson/lesson11.html">Lesson 11</a></li>
                 <li><a href="../lesson/lesson12.html">Lesson 12</a></li>
               </ul>
@@ -69,19 +70,19 @@
             </li>
 			<li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Scope<span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-				<li><a href="../scope/rootscope.html">rootScope & Scope</a></li>
-				<li><a href="../scope/watch.html">$watch()</a></li>
-				<li><a href="../scope/apply.html">$apply()</a></li>
-				<li><a href="../scope/broadcast.html">$broadcast() & $on()</a></li>
-				<li><a href="../scope/emit.html">$emit() & $on()</a></li>
-				<li><a href="../scope/destory.html">$destory()</a></li>
+              <ul class="dropdown-menu  active" role="menu">
+				<li><a href="rootscope.html">rootScope & Scope</a></li>
+				<li><a href="watch.html">$watch()</a></li>
+				<li><a href="apply.html">$apply()</a></li>
+				<li><a href="broadcast.html">$broadcast() & $on()</a></li>
+				<li><a href="emit.html">$emit() & $on()</a></li>
+				<li><a href="destory.html">$destory()</a></li>
            	  </ul>
             </li>
-            			<li class="dropdown">
+			<li class="dropdown">
 				<a href="../service/service.html">Service</a>
 			</li>
-			<li class="dropdown active">
+			<li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">UI Router<span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
 				<li><a href="../ui-route/uiroute.html">Introduction UI Router</a></li>
@@ -90,7 +91,7 @@
 				<li><a href="../ui-route/nestedrouting.html">Nested Routing</a></li>
 				<li><a href="../ui-route/multipleview.html">Multiple Views</a></li>
 				<li><a href="../ui-route/event.html">Event</a></li>
-				<li class="active"><a href="../ui-route/urlprovider.html">URL Provider</a></li>
+				<li><a href="../ui-route/urlprovider.html">URL Provider</a></li>
 				<li><a href="../ui-route/statego.html">$state.go()</a></li>
 				<li><a href="../ui-route/challenge.html">Challenge</a></li>
            	  </ul>
@@ -113,107 +114,36 @@
     </div>
 	<div class="lesson-header">
 		<div class="container container-main">
-			<h1>Angular UI: URL Provider</h1>
+			<h1>ก้าวข้าม V1.2 สู่ V1.3 from <a href="http://ng-learn.org/2014/06/Migration_Guide_from_1-2_to1-3/">ng-learn</a></h1>
 		</div>
 	</div>
     <div class="container lesson-body">
       <div class="row">
         <div class="col-md-9" role="main">
 			<div>
-            	<h2 class="page-header">สิ่งที่ควรรู้</h2>
-				<h3>$urlRouterProvider คือ อะไร ?</h3>
-				<p>เป็นตัวจัดการกับ URL ทุกครั้งที่มีการเรียก URL ที่กำหนดไว้ โดยมีฟังก์ชั่นที่ให้ใช้งาน 3 ฟังก์ชั่น</p>
-				<ul>
-					<li>when()</li>
-					<li>otherwise()</li>
-					<li>rule()</li>
-				</ul>
-				<h4>when()</h4>
-				<p>when() เป็นฟังก์ชั่นสำหรับเมื่อเราต้องการ redirect โดยมีรายละเอียดดังนี้</p>
-				<ul>
-					<li>what - เป็น pathOfUrl ที่ส่งมา</li>
-					<li>handler - เป็น pathOfUrl ที่ต้องการ redirect ไป / ฟังก์ชั่น</li>
-				</ul>
-				<pre class="brush:js;highlight:[2]">
-.config(function($urlRouterProvider) {
-  $urlRouterProvider.when(what, handler);
-});
-</pre>
-				<p style="color:red">กรณีที่ handler เป็นฟังก์ชั่นจะสามารถ return ค่าได้ 3 ลักษณะ</p>
-				<ul style="color:red">
-					<li>False - เพื่อระบุให้ $urlRouter ไม่ตรงกับ ที่กำหนดไว้ โดย $urlRouter จะไปหา state ที่ถูกต้อง ใช้เพื่อระบุว่าผู้ใช้เข้าใช้ได้ถูก URL</li>
-					<li>String (URL) - จะทำการ redirect ไปที่ URL ดังกล่าว</li>
-					<li>True/Undefinded - เพื่อระบุให้ $urlRouter รู้ว่ากำลังใช้งาน URL ดังกล่าว</li>
-				</ul>
-				<h4>otherwise()</h4>
-				<p>otherwise() เป็นฟังก์ชั่นที่ใช้ในกรณีที่ URL ไม่ถูกต้อง otherwise จะทำการ redirect ไปยัง url ที่เราต้องการ</p>
-				<pre class="brush:js">
-.config(function($urlRouterProvider){
-    // otherwise use for invalid route
-    $urlRouterProvider.otherwise('/index');
+            	<h2 class="page-header">แนวคิด</h2>
+				<p>AngularJS V. 1.3 จุดประสงค์หลักของเวอร์ชั่นนี้คือการเปลี่ยนแปลงส่วนหลักของ AngularJS Core ให้กลายเป็น Angular 2.0 ได้ง่ายขึ้น</p>
+				
+			</div>
+			<div class="col-md-6">
+				<h3 style="color: green">Feature เด่นๆ ที่เพิ่มเข้ามา</h3>
+                <p>เพิ่ม One-Way Binding</p>
+                <p>เพิ่ม <strong>ngModelOptions</strong> เข้ามาช่วยให้จัดการ ngModel ง่ายขึ้น</p>
+                <p>เพิ่ม Directive <strong>ngMessages</strong> เข้ามา</p>
+			</div>
+            <div class="col-md-6">
+				<h3 style="color: red">Breaking Changes ของที่พัง!</h3>
+				<p style="color: red"> เลิก support IE8 แล้วจ้าาาา</p>
+				<p><strong>input</strong> ที่เป็นตระกูล date, time, datetime-local, month, week ทั้งหลาย ข้อมูลต้องเป็น Date Object</p>
+				<p><strong>$animate</strong> ต้องใส่ CSS Transition เพิ่มเองบางส่วน ไม่มี Default ให้แล้ว</p>
+				<p><strong>$http interceptor</strong> เปลี่ยนวิธีการใช้งาน</p>
+			</div>
 
-    // Advance otherwise
-    $urlRouterProvider.otherwise(function($injector, $location){
-        ... some advanced code...
-    });
-</pre>
-				<h4>rule()</h4>
-				<p>rule() เป็นฟังก์ชั่นที่ใช้ในการกำหนด custom routing ก่อนที่จะไปเช็คกับ routing อื่นๆ ที่กำหนดไว้</p>
-				<pre class="brush:js">
-.config(function($urlRouterProvider){
- 	$urlRouterProvider.rule(function($injector, $location) {
-		return '/index';
-	});
-</pre>
-			</div>
-			<div>
-				<h2 class="page-header">ตัวอย่างการใช้งาน otherwise</h2>
-				<p>ทำการสร้าง state ไว้ 3 state</p>
-				<pre class="brush:js">
-.config(function ($stateProvider, $urlRouterProvider) {
-	$stateProvider
-		.state('one', {
-			url: '/one',
-			template: '&lt;p>this is state one&lt;/p>&lt;p ui-view>&lt;/p>'
-		})
-		.state('one.two', {
-			url: '/two',
-			template: '&lt;p>this is state one-two&lt;/p>'
-		})
-		.state('three', {
-			url: '/three',
-			template: '&lt;p>this is state three&lt;/p>'
-		});
-});
-</pre>
-				<p>กำหนด otherwise ให้เมื่อกรอก url ไม่ถูกต้องให้ส่งกลับมาที่ state one</p>
-				<pre class="brush:js; highlight:[2]">
-.config(function ($stateProvider, $urlRouterProvider) {
-	$urlRouterProvider.otherwise('/one');
-	
-	$stateProvider
-		.state('one', {
-			url: '/one',
-			template: '&lt;p>this is state one&lt;/p>&lt;p ui-view>&lt;/p>'
-		})
-		.state('one.two', {
-			url: '/two',
-			template: '&lt;p>this is state one-two&lt;/p>'
-		})
-		.state('three', {
-			url: '/three',
-			template: '&lt;p>this is state three&lt;/p>'
-		});
-});
-</pre>
-				<h4>สามารถดูตัวอย่างผลลัพธ์ได้ที่นี่ <a href="../demo/urlprovider.html">Demo</a></h4>
-				<p style="color:red">สังเกตได้ว่า กรณีที่ URL ไม่ตรงกับ state ไหนเลย จะทำการ redirect ไปยัง state one</p>
-			</div>
 			<ul class="btn-group pull-right">
-				<a href="event.html">
+				<!--a href="watch.html">
 					<li class="btn btn-primary"><i class="glyphicon glyphicon-step-backward"></i> ย้อนกลับ</li>
-				</a>
-				<a href="challenge.html">
+				</a-->
+				<a href="#"><!--broadcast.html"-->
 					<li class="btn btn-primary">ถัดไป <i class="glyphicon glyphicon-step-forward"></i></li>
 				</a>
 			</ul>
@@ -243,7 +173,11 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="../js/lib/jquery.min.js"></script>
     <script src="../js/lib/bootstrap.min.js"></script>
-  	<script type="text/javascript" src="../js/scripts/shCore.js"></script>
+	<!--AngularJS Javascript -->
+    <script src="../js/lib/angular.min.js"></script>
+    <script src="../js/demo/apply.js"></script>
+    <script src="../js/plugin/tree.js"></script>
+	<script type="text/javascript" src="../js/scripts/shCore.js"></script>
 	<script type="text/javascript" src="../js/scripts/shBrushJScript.js"></script>
 	<script type="text/javascript" src="../js/scripts/shBrushXml.js"></script>    
 	<script type="text/javascript">SyntaxHighlighter.all();</script>
