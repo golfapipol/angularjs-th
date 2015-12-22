@@ -182,7 +182,7 @@ app.controller('storeController', function ($scope) {
 	&lt;div class="list-group-item" ng-controller="storeController as store">
 		&lt;h1>{{sushi.name}}&lt;/h1>
 		&lt;h2>{{sushi.price}} yen&lt;/h2>
-		&lt;p>{{sushi.descriptionn&lt;span ng-if="checked && sushi.canPurchase"> + Wasabi&lt;/span>&lt;/p>
+		&lt;p>{{sushi.description}}&lt;span ng-if="checked && sushi.canPurchase"> + Wasabi&lt;/span>&lt;/p>
             &lt;div ng-show="sushi.canPurchase">
 				ใส่วาซาบิ : &lt;input type="checkbox" ng-model="checked" />&lt;/br>
 			&lt;button class="btn btn-default" >สั่งซื้อ&lt;/button>
